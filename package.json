@@ -8,9 +8,9 @@
     "email": "huyenpv@dansolutions.vn"
   },
   "scripts": {
-    "dev": "export NODE_TLS_REJECT_UNAUTHORIZED=0 && next dev",
-    "build": "export NODE_EXTRA_CA_CERTS=./cert-skl.pem && next build",
-    "start": "export NODE_EXTRA_CA_CERTS=./cert-skl.pem && next start",
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint",
     "tsc": "tsc --noEmit"
   },
