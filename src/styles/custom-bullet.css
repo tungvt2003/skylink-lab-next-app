@@ -1,0 +1,22 @@
+.custom-swiper-pagination-bullet {
+  height: 0.625rem;
+  background-color: #ffffff;
+  border-radius: 100%;
+  width: 0.625rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  display: inline-block;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.custom-swiper-pagination-bullet-active {
+  height: 0.625rem;
+  border-radius: 0.25rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  display: inline-block;
+  background-color: #00a19a;
+  width: 1.823125rem;
+  pointer-events: all;
+}

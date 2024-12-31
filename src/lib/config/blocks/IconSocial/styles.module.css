@@ -1,0 +1,11 @@
+/* Mobile */
+.button {
+    width: 20px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .button {
+        width: 30px;
+    }
+}

@@ -1,0 +1,20 @@
+.ant-select-selection-placeholder {
+  font-size: 16px;
+  text-align: start;
+}
+
+.ant-select-selection-item {
+  text-align: start;
+}
+
+.ant-select-arrow {
+  color: #1A1A1A !important;
+}
+
+.ant-form-item-explain-error {
+  text-align: start;
+}
+
+ant-select-selection-placeholder {
+  text-align: start;
+}

@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "args": "start -p 9998",
+      "cwd": "./",
+      "exec_mode": "cluster",
+      "instances": "2",
+      "max_memory_restart": "2G",
+      "name": "skyline-ui",
+      "script": "node_modules/next/dist/bin/next"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+.custom-swiper-pagination-section-bullet {
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  width: 6px;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  display: inline-block;
+  pointer-events: all;
+  cursor: pointer;
+  border: 2px solid #ffffff80;
+}
+
+.custom-swiper-pagination-section-bullet-active {
+  height: 6px;
+  border-radius: 0.25rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  display: inline-block;
+  background-color: #00a19a;
+  width: 12px;
+  pointer-events: all;
+  border: 2px solid #ffffff80;
+}

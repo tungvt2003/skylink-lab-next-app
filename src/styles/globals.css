@@ -1,0 +1,491 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+/* body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* @layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+
+body {
+  font-family: var(--font-inter);
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+
+    --input: 240 5.9% 90%;
+
+    --ring: 240 10% 3.9%;
+
+    --chart-1: 12 76% 61%;
+
+    --chart-2: 173 58% 39%;
+
+    --chart-3: 197 37% 24%;
+
+    --chart-4: 43 74% 66%;
+
+    --chart-5: 27 87% 67%;
+
+    --radius: 0.5rem;
+
+    --font-inter: "Inter";
+
+    --font-open_sans: "Open Sans";
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+
+    --input: 240 3.7% 15.9%;
+
+    --ring: 240 4.9% 83.9%;
+
+    --chart-1: 220 70% 50%;
+
+    --chart-2: 160 60% 45%;
+
+    --chart-3: 30 80% 55%;
+
+    --chart-4: 280 65% 60%;
+
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-black-tertiary;
+  }
+}
+
+@layer components {
+  .button-primary {
+    @apply flex items-center justify-center text-sm leading-5.5 font-medium text-white bg-green rounded-lg;
+  }
+
+  .container-curriculum-post {
+    @apply bg-white pt-[3.75rem] px-[16.125rem] pb-[6.25rem] flex flex-col w-full;
+  }
+
+  .title-curriculum-post {
+    @apply uppercase text-center font-semibold leading-12 text-3.5xl text-[#31343E];
+  }
+
+  .tag-p-curriculum-post {
+    @apply font-normal text-base text-[#000000] leading-6;
+  }
+
+  .content-curriculum-post {
+    @apply px-[6.25rem] flex flex-col tag-p-curriculum-post;
+  }
+
+  .feature-img-curriculum-post {
+    @apply relative h-[29.5rem];
+  }
+
+  .button-link-curriculum-post {
+    @apply flex flex-row w-fit h-11 px-4 py-3 items-center justify-center self-center font-normal leading-5 text-sm text-green bg-white border border-green rounded-lg hover:bg-green hover:text-white gap-2 shadow-custom transition-all;
+  }
+
+  .sub-title-curriculum-post {
+    @apply font-semibold text-lg leading-6 text-[#000000] flex flex-col gap-2.5 uppercase pb-3;
+  }
+
+  .border-sub-title-curriculum-post {
+    @apply border-b-2 border-green w-[5.5625rem] h-0;
+  }
+
+  .container-button-curriculum-post {
+    @apply flex flex-row gap-4 pt-3;
+  }
+
+  .content-curriculum-post ul {
+    @apply list-outside list-disc pl-6;
+  }
+
+  .content-curriculum-post img {
+    @apply self-center;
+  }
+
+  .content-curriculum-post h4 {
+    @apply mb-1 ml-1;
+  }
+
+  .content-curriculum-post strong {
+    @apply font-semibold;
+  }
+}
+
+.gm-style-iw-chr button {
+  display: none !important;
+}
+
+.gm-style-iw.gm-style-iw-c {
+  top: -30px;
+  box-shadow: 0 4px 4px 0px #00000040;
+}
+
+.gm-style .gm-style-iw-tc {
+  top: -30px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: black;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.ant-modal .ant-modal-content {
+  padding: 0;
+}
+
+.ant-radio-inner {
+  @apply border-[#009688];
+}
+
+.ant-radio-inner::after {
+  background-color: #009688;
+}
+
+.ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+  @apply border-[#009688];
+  border-width: 2px;
+  background-color: transparent;
+}
+
+.ant-radio-checked .ant-radio-inner::after {
+  background-color: #009688;
+}
+
+.ant-radio-wrapper:hover .ant-radio-inner {
+  border-color: #009688;
+}
+
+.modal-mobile .ant-modal-close {
+  top: 16px;
+  right: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.modal-mobile .ant-modal-body {
+  overflow-y: auto;
+}
+
+.modal-mobile .ant-modal-close:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-mobile .ant-modal-close .ant-modal-close-x {
+  color: #000;
+  font-size: 16px;
+}
+
+.ant-select-focused.ant-select-outlined:not(.ant-select-disabled):not(.ant-select-customize-input):not(
+    .ant-pagination-size-changer
+  )
+  .ant-select-selector {
+  border-color: rgba(0, 0, 0, 0.4);
+  box-shadow: none;
+}
+
+.modal-search.ant-modal .ant-modal-content {
+  background-color: transparent;
+  border-radius: 100px;
+  border: 1px solid #009688;
+}
+
+.modal-search.ant-modal .ant-modal-content .ant-modal-close {
+  color: #0096879a;
+}
+
+.modal-search.ant-modal .ant-modal-content .ant-modal-close:hover {
+  background-color: transparent;
+  color: #009688;
+}
+
+.custom-select-language .ant-select-selector {
+  padding: 0 !important;
+}
+
+.custom-select-language .ant-select-selection-item {
+  padding-inline-end: 0 !important;
+}
+
+.custom-button-shadow {
+  @apply hover:shadow-[0_0_10px_5px_#01A19A];
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+.ql-size-small {
+  font-size: 14px;
+}
+
+.ql-size-normal {
+  font-size: 18px;
+}
+
+.ql-size-large {
+  font-size: 24px;
+}
+
+.ql-size-huge {
+  font-size: 32px;
+}
+
+.ql-font-Roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.ql-font-Lato {
+  font-family: "Lato", sans-serif;
+}
+
+.ql-font-serif {
+  font-family: serif;
+}
+
+.ql-font-sans-serif {
+  font-family: sans-serif;
+}
+
+.ql-font-monospace {
+  font-family: monospace;
+}
+
+.ql-font-Pacifico {
+  font-family: "Pacifico", cursive;
+}
+
+.ql-picker.ql-font {
+  .ql-picker-item {
+    font-size: 0;
+
+    &:before {
+      content: attr(data-value) !important;
+      font-size: 14px;
+    }
+  }
+}
+
+.ql-picker.ql-font {
+  .ql-active {
+    &:before {
+      content: attr(data-value) !important;
+      font-size: 14px;
+    }
+  }
+}
+
+.ql-picker.ql-font .ql-picker-label[data-value="Roboto"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Roboto"]::before {
+  font-family: "Roboto", cursive;
+  content: "Roboto" !important;
+}
+
+.ql-picker.ql-font .ql-picker-label[data-value="Raleway"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Raleway"]::before {
+  font-family: "Raleway", cursive;
+  content: "Raleway" !important;
+}
+
+.ql-picker.ql-font .ql-picker-label[data-value="Montserrat"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Montserrat"]::before {
+  font-family: "Montserrat", cursive;
+  content: "Montserrat" !important;
+}
+
+.ql-picker.ql-font .ql-picker-label[data-value="Lato"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Lato"]::before {
+  font-family: "Lato", cursive;
+  content: "Lato" !important;
+}
+
+.ql-picker.ql-font .ql-picker-label[data-value="Rubik"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Rubik"]::before {
+  font-family: "Rubik", cursive;
+  content: "Rubik" !important;
+}
+
+.ql-picker.ql-font .ql-picker-label[data-value="Open Sans"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Open Sans"]::before {
+  font-family: "Open Sans", sans-serif;
+  content: "Open Sans" !important;
+}
+
+.ql-picker.ql-font .ql-picker-label[data-value="Poppins"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Poppins"]::before {
+  font-family: "Poppins", sans-serif;
+  content: "Poppins" !important;
+}
+
+.ql-picker.ql-font .ql-picker-label[data-value="Nunito"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Nunito"]::before {
+  font-family: "Nunito", sans-serif;
+  content: "Nunito" !important;
+}
+
+.ql-picker.ql-font .ql-picker-label[data-value="Merriweather"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Merriweather"]::before {
+  font-family: "Merriweather", serif;
+  content: "Merriweather" !important;
+}
+
+.ql-font-Roboto {
+  font-family: "Roboto";
+}
+
+.ql-font-Raleway {
+  font-family: "Raleway";
+}
+
+.ql-font-Montserrat {
+  font-family: "Montserrat";
+}
+
+.ql-font-Lato {
+  font-family: "Lato";
+}
+
+.ql-font-Rubik {
+  font-family: "Rubik";
+}
+
+.ql-font-OpenSans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.ql-font-Poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.ql-font-Nunito {
+  font-family: "Nunito", sans-serif;
+}
+
+.ql-font-Merriweather {
+  font-family: "Merriweather", serif;
+}
+
+@font-face {
+  font-family: "Amazone";
+  src: url("../../public/fonts/AMAZONE.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.image-align-left {
+  float: left;
+  margin-right: 1rem;
+}
+
+.image-align-center {
+  display: block;
+  margin: 0 auto;
+}
+
+.image-align-right {
+  float: right;
+  margin-left: 1rem;
+}
+
+image-align-right {
+  float: right;
+  margin-left: 1rem;
+}
