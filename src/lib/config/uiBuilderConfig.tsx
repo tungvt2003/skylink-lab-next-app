@@ -55,6 +55,8 @@ import { SKESimpleSlider } from "./themes/ske/SKESimpleSlider/SKESimpleSlider"
 import { SKETabBlockWithMedia } from "./themes/ske/SKETabBlockWithMedia/SKETabBlockWithMedia"
 import { SKECustomTabs } from "./themes/ske/Tabs"
 import { SKETitle } from "./themes/ske/Tittle/SKETitle"
+import { SKLLabFooter } from "./themes/skylink-lab/footer"
+import { SKLLabHeader } from "./themes/skylink-lab/header"
 
 const components = {
   Container,
@@ -118,6 +120,8 @@ const components = {
   SKEProcessSlide,
   SKETabBlockWithMedia,
   ImageFlip,
+  SKLLabHeader,
+  SKLLabFooter,
 }
 
 export const common = {
@@ -192,6 +196,10 @@ export const common = {
         "SKELPFormRegister",
         "SKELPEnrollmentCard2",
       ],
+    },
+    themesSKLLab: {
+      title: "Themes - SKYLINK Lab",
+      components: ["SKLLabHeader", "SKLLabFooter"],
     },
   },
   root: {
@@ -289,6 +297,8 @@ import { RenderConfig as NewSKESimpleSlider } from "./themes/ske/SKESimpleSlider
 import { RenderConfig as NewSKETabBlockWithMedia } from "./themes/ske/SKETabBlockWithMedia/RenderConfig"
 import { RenderConfig as NewSKECustomTabs } from "./themes/ske/Tabs/RenderConfig"
 import { RenderConfig as NewSKETitle } from "./themes/ske/Tittle/RenderConfig"
+import { RenderConfig as NewSKLLabFooter } from "./themes/skylink-lab/footer/RenderConfig"
+import { RenderConfig as NewSKLLabHeader } from "./themes/skylink-lab/header/RenderConfig"
 
 export const newRenderComponents = {
   Container: NewContainer,
@@ -352,6 +362,8 @@ export const newRenderComponents = {
   SKEProcessSlide: NewSKEProcessSlide,
   SKETabBlockWithMedia: NewSKETabBlockWithMedia,
   ImageFlip: NewImageFlip,
+  SKLLabHeader: NewSKLLabHeader,
+  SKLLabFooter: NewSKLLabFooter,
 }
 
 // @ts-ignore

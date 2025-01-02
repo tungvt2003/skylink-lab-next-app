@@ -53,6 +53,8 @@ import { SKESchoolSystem } from "./themes/ske/SKESchoolSystem/SKESchoolSystem"
 import { SKETabBlockWithMedia } from "./themes/ske/SKETabBlockWithMedia/SKETabBlockWithMedia"
 import { SKECustomTabs } from "./themes/ske/Tabs"
 import { SKETitle } from "./themes/ske/Tittle/SKETitle"
+import { SKLLabFooter } from "./themes/skylink-lab/footer"
+import { SKLLabHeader } from "./themes/skylink-lab/header"
 
 export const uiBuilderComponents = {
   Container,
@@ -110,4 +112,6 @@ export const uiBuilderComponents = {
   SKEProcessSlide,
   SKETabBlockWithMedia,
   ImageFlip,
+  SKLLabFooter,
+  SKLLabHeader,
 }

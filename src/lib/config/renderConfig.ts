@@ -59,6 +59,8 @@ import { SKESimpleSlider } from "./themes/ske/SKESimpleSlider/SKESimpleSlider"
 import { SKETabBlockWithMedia } from "./themes/ske/SKETabBlockWithMedia/SKETabBlockWithMedia"
 import { SKECustomTabs } from "./themes/ske/Tabs"
 import { SKETitle } from "./themes/ske/Tittle/SKETitle"
+import { SKLLabFooter } from "./themes/skylink-lab/footer"
+import { SKLLabHeader } from "./themes/skylink-lab/header"
 
 export const renderConfig: Config = {
   components: {
@@ -123,7 +125,9 @@ export const renderConfig: Config = {
     SKECustomTabs,
     SKEProcessSlide,
     SKETabBlockWithMedia,
-    ImageFlip
+    ImageFlip,
+    SKLLabFooter,
+    SKLLabHeader,
   },
   // ...commonConfig,
   categories: {
@@ -191,6 +195,10 @@ export const renderConfig: Config = {
     themesManuBG: {
       title: "Themes - Manu Bac Giang",
       components: ["ButtonMABG", "ManuCountdownBG", "FormRegisterBG", "ManuDropDownBG"],
+    },
+    themesSKLLab: {
+      title: "Themes - SKYLINK Lab",
+      components: ["SKLLabHeader", "SKLLabFooter"],
     },
   },
   root: {

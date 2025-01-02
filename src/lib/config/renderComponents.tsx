@@ -54,6 +54,8 @@ import { RenderConfig as SKESimpleSlider } from "./themes/ske/SKESimpleSlider/Re
 import { RenderConfig as SKETabBlockWithMedia } from "./themes/ske/SKETabBlockWithMedia/RenderConfig"
 import { SKECustomTabs } from "./themes/ske/Tabs"
 import { RenderConfig as SKETitle } from "./themes/ske/Tittle/RenderConfig"
+import { RenderConfig as SKLLabFooter } from "./themes/skylink-lab/footer/RenderConfig"
+import { RenderConfig as SKLLabHeader } from "./themes/skylink-lab/header/RenderConfig"
 
 export const renderComponents = {
   Container,
@@ -112,4 +114,6 @@ export const renderComponents = {
   SKEProcessSlide,
   SKETabBlockWithMedia,
   ImageFlip,
+  SKLLabHeader,
+  SKLLabFooter,
 }
