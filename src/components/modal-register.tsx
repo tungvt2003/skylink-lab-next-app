@@ -6,7 +6,6 @@ import TextArea from "antd/es/input/TextArea"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import { Images } from "../constants/images"
 import useIsMobile from "../lib/config/lib/use-is-mobile"
 import { DataSettingItem } from "../lib/config/types"
 import httpClient from "../lib/http-client"
@@ -136,7 +135,7 @@ const ModalRegister = ({ dict, open, onClose }: { dict?: any; open: boolean; onC
           <Modal width={1137} height={628} centered open={open} footer={null} className="p-0 z-9999" onCancel={onClose}>
             <div className="flex items-center gap-[92px] bg-[#F6F5FA] h-[628px] mx-auto rounded-xl">
               <div className="w-2/4 h-full overflow-hidden rounded-s-lg">
-                <Image src={Images.imgContactNew} alt="Contact Image" className="w-full h-full object-cover" />
+                <Image src={""} alt="Contact Image" className="w-full h-full object-cover" />
               </div>
               <div className="flex flex-col items-center w-1/3 py-12">
                 <h2 className="font-semibold text-[32px] leading-12 mb-2 sm:mb-5 uppercase">{t("Đăng ký tư vấn")}</h2>
@@ -248,13 +247,7 @@ const ModalRegister = ({ dict, open, onClose }: { dict?: any; open: boolean; onC
         <Modal width="343px" centered open={open} footer={null} className="modal-mobile p-0 z-9999" onCancel={onClose}>
           {/* <div className="flex flex-col items-center bg-[#F6F5FA] rounded-xl"> */}
           <div className="w-full h-full overflow-hidden rounded-t-xl">
-            <Image
-              src={Images.imgContactNew}
-              width={343}
-              height={228}
-              alt="Contact Image"
-              className="w-full h-full object-cover"
-            />
+            <Image src={""} width={343} height={228} alt="Contact Image" className="w-full h-full object-cover" />
           </div>
           <div className="flex flex-col items-center space-y-4 p-4 w-[343px]">
             <h2 className="font-semibold text-lg leading-6 uppercase">{t("Đăng ký tư vấn")}</h2>

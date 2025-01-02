@@ -121,7 +121,8 @@ const ContactPage = () => {
   const fetchSetting = async () => {
     try {
       const response = await getSettings()
-      const emailTo = response?.find((item: DataSettingItem) => item.attributes.key === "contactEmail")?.attributes.value
+      const emailTo = response?.find((item: DataSettingItem) => item.attributes.key === "contactEmail")?.attributes
+        .value
       setFormData(prev => ({ ...prev, emailTo: emailTo }))
     } catch (error) {
       console.error("Error fetching setting data:", error)
@@ -353,7 +354,7 @@ const ContactPage = () => {
       <div className="flex sm:flex-row flex-col items-center justify-center bg-[#F6F5FA] h-[45rem] sm:mb-20 mb-0 mx-auto p-0 sm:p-8 ">
         <div className="sm:mr-10 mr-0 sm:w-[34.25rem] w-[343px] sm:h-[33rem] h-[228px] overflow-hidden">
           <Image
-            src={Images.imgContact}
+            src={""}
             width={548}
             height={528}
             alt="Contact Image"
