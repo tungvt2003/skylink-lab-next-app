@@ -8,6 +8,7 @@ import "@/styles/globals.css"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Providers from "../../../components/progress-bar/progress-bar"
+import ScrollToTop from "../../../components/scroll-to-top"
 import { routing } from "../../../i18n/routing"
 import { getSettings } from "../../../lib/navigation-services"
 
@@ -50,6 +51,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider messages={messages}>
           <Header locale={locale} />
           {/* <FloatingButton /> */}
+          <ScrollToTop />
           <Providers>{children}</Providers>
           <Footer dict={messages} lang={locale} />
         </NextIntlClientProvider>

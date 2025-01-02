@@ -1,4 +1,5 @@
 "use client"
+import { configs, DefaultImage } from "../../external-components"
 import { CommonCSSProps } from "./commonCSSProps"
 
 interface PopularCSSProps extends CommonCSSProps {
@@ -212,4 +213,9 @@ export const tryParse = (jsonString: string) => {
   } catch (error) {
     return null
   }
+}
+
+export const getImageUrl = (image: string | null | undefined): string => {
+  const API_URL = configs.API_URL
+  return image ? `${API_URL}${image}` : DefaultImage
 }

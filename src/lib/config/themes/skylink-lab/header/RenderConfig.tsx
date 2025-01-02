@@ -140,7 +140,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
           className={`${
             isScrollingUp || isTop ? "translate-y-0" : "-translate-y-[100px]"
           } transition-transform duration-300 fixed top-0 w-full z-50 ${
-            isTop ? "bg-white shadow-md" : "bg-[#eceffe] shadow-md"
+            isHome ? (isTop ? "bg-white shadow-md" : "bg-[#eceffe] shadow-md") : "bg-[#eceffe] shadow-md"
           }`}
           style={{ height: "59px" }}
         >
@@ -150,36 +150,42 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                 <div className="pr-5 h-full flex items-center">
                   <a href="/">
                     {configs?.API_URL &&
-                      (isTop ? (
-                        <img src={configs.API_URL + imgTop} alt="logo" className="w-[116px] h-7" />
+                      (isHome ? (
+                        isTop ? (
+                          <img src={configs.API_URL + imgTop} alt="logo" className="w-[116px] h-7" />
+                        ) : (
+                          <img src={configs.API_URL + img} alt="logo" className="w-[93px] h-7" />
+                        )
                       ) : (
                         <img src={configs.API_URL + img} alt="logo" className="w-[93px] h-7" />
                       ))}
                   </a>
                 </div>
                 <div className="hidden sm:flex h-full">
-                  {isHome &&
-                    !isTop &&
-                    dataMenu?.map((item, index) => (
-                      <div
-                        key={item?.id}
-                        className="h-full flex items-center cursor-pointer transition-opacity duration-300 group"
-                      >
-                        <a href={item.url}>
-                          <span
-                            className={`menu-item item-${index} flex items-center h-full px-5 text-[13px] font-semibold text-[#7E4FF9] transition-all duration-300`}
-                          >
-                            {item?.name}
-                          </span>
-                        </a>
-                      </div>
-                    ))}
+                  {(!isHome || !isTop) && (
+                    <div className="h-full flex items-center group">
+                      {dataMenu?.map((item, index) => (
+                        <div
+                          key={item?.id}
+                          className="h-full flex items-center cursor-pointer transition-opacity duration-300 group-hover:opacity-40 hover:!opacity-100"
+                        >
+                          <a href={item.url} className="flex items-center h-full w-full">
+                            <span
+                              className={`menu-item item-${index} flex items-center h-full px-5 text-[13px] font-semibold text-[#7E4FF9] transition-all duration-300 hover:text-black`}
+                            >
+                              {item?.name}
+                            </span>
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="flex gap-5 items-center">
                 <button
                   className={`py-[13px] px-[25px] ${
-                    isTop ? "bg-white text-black" : "bg-[#CD41FA] text-white"
+                    isHome ? (isTop ? "bg-white text-black" : "bg-[#CD41FA] text-white") : "bg-[#CD41FA] text-white"
                   } hover:bg-[#7e4ff9] hover:text-white duration-300 text-sm leading-4 font-medium rounded-full`}
                 >
                   Get the app

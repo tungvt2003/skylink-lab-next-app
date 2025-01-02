@@ -42,11 +42,6 @@ import logoFooterFile from "../lib/config/assets/logoFooter.svg"
 import ButtonPlayFile from "../lib/config/assets/play-button.svg"
 import iconTiktokNewFile from "../lib/config/assets/tiktok-logo-new.svg"
 import iconSearchFooterFile from "../lib/config/assets/vector-input.svg"
-import chinhThucIcon from "../lib/config/themes/ske/MultiLayout/assets/chinh-chuc.svg"
-import doiMoiIcon from "../lib/config/themes/ske/MultiLayout/assets/doi-moi.svg"
-import thauCamIcon from "../lib/config/themes/ske/MultiLayout/assets/thau-cam.svg"
-import trachNhiemIcon from "../lib/config/themes/ske/MultiLayout/assets/trach-nhiem.svg"
-import tuChuIcon from "../lib/config/themes/ske/MultiLayout/assets/tu-chu.svg"
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -123,7 +118,7 @@ const fetchPostByCategories = async (categoriesId: string[]) => {
       data: modifiedResponse,
       meta: response.meta,
     }
-  } catch (error) { }
+  } catch (error) {}
 }
 
 export interface BaseSystem {
@@ -195,11 +190,6 @@ const iconMoney = iconMoneyFile.src
 const iconMoneyMobile = iconMoneyMobileFile.src
 const iconType = iconTypeFile.src
 const iconTypeMobile = iconTypeMobileFile.src
-const iconTrachNhiem = trachNhiemIcon.src
-const iconDoiMoi = doiMoiIcon.src
-const iconChinhThuc = chinhThucIcon.src
-const iconThauCam = thauCamIcon.src
-const iconTuChu = tuChuIcon.src
 const iconTwitter = iconTwitterFile.src
 const iconLinkedin = iconLinkedinFile.src
 const iconDateCreated = iconDateCreatedFile.src
@@ -228,11 +218,11 @@ export {
   iconCalender,
   iconCalenderMobile,
   iconCall,
-  iconChinhThuc,
   iconDateCreated,
-  iconDoiMoi,
   iconDropdown,
-  iconFacebook, iconFaceBookNew, iconLinkedin,
+  iconFacebook,
+  iconFaceBookNew,
+  iconLinkedin,
   iconLocation,
   iconLocationMap,
   iconLocationRecruiment,
@@ -243,16 +233,18 @@ export {
   iconMoneyMobile,
   iconPhoneMap,
   iconSearchFooter,
-  iconThauCam,
-  iconTiktok, iconTiktokNew, iconTrachNhiem,
-  iconTuChu,
+  iconTiktok,
+  iconTiktokNew,
   iconTwitter,
   iconType,
   iconTypeMobile,
   iconWeb,
-  iconYoutube, iconYoutubeNew, iconZalo, iconZaloNew, logoFooter,
+  iconYoutube,
+  iconYoutubeNew,
+  iconZalo,
+  iconZaloNew,
+  logoFooter,
   Media,
   MediaUpload,
-  useUiBuilder
+  useUiBuilder,
 }
-

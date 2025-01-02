@@ -1,5 +1,4 @@
 import { MetadataRoute } from "next"
-import { getAllPages, getAllPost } from "../lib/sitemap-services"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const BASE_URL = process.env.BASE_URL

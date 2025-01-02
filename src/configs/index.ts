@@ -8,15 +8,7 @@ export const APPCONFIG = {
     en: 182,
   },
   DEFAULT_SLUG: {
-    en: "home-page",
-    vi: "trang-chu",
-  },
-  DEFAULT_SLUG_LANDING_PAGE: {
-    en: "ske-landingpage-en",
-    vi: "landing-page",
-  },
-  DEFAULT_SLUG_THANK_YOU: {
-    en: "thank-you-en",
-    vi: "thank-you",
+    en: "skylink-lab-home-page",
+    vi: "skylink-lab-home-page",
   },
 }

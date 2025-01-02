@@ -38,7 +38,7 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
 
     const fetchMenuPreference = async () => {
       try {
-        const API_PREFIX_MENUPREFERENCE_PATH = "/api/menu-preferences"
+        const API_PREFIX_MENUPREFERENCE_PATH = "menu-preferences"
         const response = await httpClient.get<{ data: { attributes: { items: MenuItem[] } } }>(
           `${API_PREFIX_MENUPREFERENCE_PATH}/${idMenu}`,
           {
@@ -49,7 +49,6 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
           },
         )
         if (response.data) {
-          console.log(response.data)
           setMenuData(response.data)
         }
         return response
@@ -58,7 +57,6 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
       }
     }
     const structuredMenu = createMenuStructure(menuData && menuData.attributes.items)
-    console.log(structuredMenu)
     useEffect(() => {
       if (idMenu) fetchMenuPreference()
     }, [idMenu])

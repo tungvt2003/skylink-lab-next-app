@@ -71,6 +71,7 @@ const config: Config = {
           secondary: "#00000066",
           tertiary: "#31343E",
           quaternary: "#302E2E",
+          quinary: "#3F4349",
         },
         blue: {
           DEFAULT: "#007AFF",
@@ -168,10 +169,9 @@ const config: Config = {
       },
       backgroundImage: {
         "custom-gradient": "linear-gradient(180deg, #6D428C -5.58%, #00A29A 106.62%)",
-      },
-      fontFamily: {
-        inter: ["var(--font-inter)"],
-        open_sans: ["var(--font-open_sans)"],
+        "hover-gradient": "linear-gradient(90deg, #CD41FA 0%, #7E4FF9 100%)",
+        "gradient-180": "linear-gradient(180deg, #FFADFD54 0%, #ECEFFE 100%)",
+        "gradient-core-value": "linear-gradient(180deg, #FFADFD54 0%, #ECEFFE 100%)",
       },
       keyframes: {
         fadeInScale: {
