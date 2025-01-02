@@ -24,7 +24,6 @@ const Page = async (props: { params: Promise<{ slugs: string[] }> }) => {
 
 export default Page
 
-// Generating Metadata
 export async function generateMetadata(context: { params: Promise<{ slugs?: string[] }> }): Promise<Metadata> {
   try {
     const resolvedParams = await context.params
