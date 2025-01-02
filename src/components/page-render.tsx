@@ -5,7 +5,6 @@ import { useEffect, useState } from "react"
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 import NotFound from "../app/[locale]/not-found"
-import { APPCONFIG } from "../configs"
 import { tryParse } from "../lib/config/lib/helper"
 import { newRenderConfig } from "../lib/config/uiBuilderConfig"
 import {
@@ -77,7 +76,7 @@ const PageRender = ({ pageData, hasBreadcrumb, isTemplate, dict, base_url }: Pag
   const [updatedAtBlog, setUpdatedAtBlog] = useState<string>("")
   const [dataRelatedPost, setDataRelatedPost] = useState<PageData[]>()
 
-  const slug = pageData?.[0]?.attributes?.slug as keyof typeof APPCONFIG.BLOG_DATES
+  const slug = pageData?.[0]?.attributes?.slug
 
   const fetchPostDataByCategories = async (slug: string) => {
     const response = await getPostByCategories(slug)
@@ -190,9 +189,7 @@ const PageRender = ({ pageData, hasBreadcrumb, isTemplate, dict, base_url }: Pag
                               style={{ height: "20px", width: "20px" }}
                             />
 
-                            {slug && APPCONFIG.BLOG_DATES[slug]
-                              ? APPCONFIG.BLOG_DATES[slug]
-                              : dateFormat(updatedAtBlog, "vi-VN")}
+                            {slug && dateFormat(updatedAtBlog, "vi-VN")}
                           </p>
                           <div className="flex items-center gap-2">
                             <p className="leading-5.25 text-4.25 sm:text-base text-[#31343E]">Chia sẻ</p>

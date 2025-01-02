@@ -7,8 +7,8 @@ import { inter, open_sans } from "@/lib/get-font"
 import "@/styles/globals.css"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
-import FloatingButton from "../../../components/floating-button"
 import Providers from "../../../components/progress-bar/progress-bar"
+import ScrollToTop from "../../../components/scroll-to-top"
 import { routing } from "../../../i18n/routing"
 import { getSettings } from "../../../lib/navigation-services"
 
@@ -50,7 +50,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className={`${inter.variable} ${open_sans.variable} bg-white`}>
         <NextIntlClientProvider messages={messages}>
           <Header locale={locale} />
-          <FloatingButton />
+          <ScrollToTop />
           <Providers>{children}</Providers>
           <Footer dict={messages} lang={locale} />
         </NextIntlClientProvider>

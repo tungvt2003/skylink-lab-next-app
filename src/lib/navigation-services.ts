@@ -20,6 +20,15 @@ export const getFooter = async (id: number, lang?: string) => {
   return null
 }
 
+export const getHeader = async (id: number, lang?: string) => {
+  const response = await httpClient.get<{ data: any }>(`pages/${id}?populate=*&locale=${lang}`)
+  if (response.data?.attributes?.publishedAt) {
+    return response.data
+  }
+
+  return null
+}
+
 export const getSearchPost = async (name: string) => {
   const response = await httpClient.get<{ data: any }>(
     `posts?populate=*&filters[name][$containsi]=${name}&filters[name][$containsi]=${name.toUpperCase()}`,

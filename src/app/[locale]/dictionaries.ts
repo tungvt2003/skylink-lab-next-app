@@ -4,12 +4,12 @@ const dictionaries: Record<string, () => Promise<any>> = {
   en: () =>
     fetch(`${process.env.BASE_URL || ""}/api/dictionaries`, {
       method: "POST",
-      body: JSON.stringify({ lang: "en" }),
+      body: JSON.stringify({ locale: "en" }),
     }).then(res => res.json()),
   vi: () =>
     fetch(`${process.env.BASE_URL || ""}/api/dictionaries`, {
       method: "POST",
-      body: JSON.stringify({ lang: "vi" }),
+      body: JSON.stringify({ locale: "vi" }),
     }).then(res => res.json()),
 }
 

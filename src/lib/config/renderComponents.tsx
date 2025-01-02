@@ -19,41 +19,22 @@ import { RenderConfig as Text } from "./blocks/Text/RenderConfig"
 import { RenderConfig as VericalSpace } from "./blocks/VerticalSpace/RenderConfig"
 import { RenderConfig as Video } from "./blocks/Video/RenderConfig"
 import { RenderConfig as VideoLibrary } from "./blocks/VideoLibrary/RenderConfig"
-import { RenderConfig as ManuBGButton } from "./themes/manu-bacgiang/Button/RenderConfig"
-import { RenderConfig as ManuBGCountDown } from "./themes/manu-bacgiang/Countdown/RenderConfig"
-import { RenderConfig as ManuBGRegister } from "./themes/manu-bacgiang/FormRegister/RenderConfig"
-import { RenderConfig as ManuBGDropDown } from "./themes/manu-bacgiang/ManDropDown/RenderConfig"
-import { RenderConfig as ButtonMTA } from "./themes/manu/Button/RenderConfig"
-import { RenderConfig as FormRegister } from "./themes/manu/FormRegister/RenderConfig"
-import { SliderScroll } from "./themes/manu/SliderScroll"
-import { SKELPEnrollmentCard } from "./themes/ske-landing-page/EnrollmentCard/SKEEnrollmentCard"
-import { SKELPEnrollmentCard2 } from "./themes/ske-landing-page/EnrollmentCard2/SKEEnrollmentCard"
-import { SKELPFormRegister } from "./themes/ske-landing-page/FormRegister"
-import { SKELPGalleryLayout } from "./themes/ske-landing-page/GalleryLayout"
-import { SKELPPopup } from "./themes/ske-landing-page/Popup"
-import { SKELPRegister } from "./themes/ske-landing-page/SKESchoolSystem/SKESchoolSystem"
-import { SKELPCustomTabs } from "./themes/ske-landing-page/Tabs"
-import { SKELPTuitionCard } from "./themes/ske-landing-page/TuitionCard/SKEEnrollmentCard"
-import { RenderConfig as SKEActionButton } from "./themes/ske/ActionButton/RenderConfig"
-import { SKEBaseSystem } from "./themes/ske/BaseSystem"
-import { SKEContactForm } from "./themes/ske/ContactForm"
-import { RenderConfig as SKEContentDescription } from "./themes/ske/ContentDescription/RenderConfig"
-import { RenderConfig as SKEContentHeading } from "./themes/ske/ContentHeading/RenderConfig"
-import { RenderConfig as SKEContentText } from "./themes/ske/ContentText/RenderConfig"
-import { ManCountdown } from "./themes/ske/Countdown/ManCountdown"
-import { SKEEducationalCard } from "./themes/ske/EducationalCard/SKEEnrollmentCard"
-import { RenderConfig as SKEEnrollmentCard } from "./themes/ske/EnrollmentCard/RenderConfig"
-import { RenderConfig as SKEEnrollmentProcess } from "./themes/ske/EnrollmentProcess/RenderConfig"
-import { ImageFlip } from "./themes/ske/ImageFlip"
-import { RenderConfig as ImageSection } from "./themes/ske/ImageSection/RenderConfig"
-import { ManDropDown } from "./themes/ske/ManDropDown"
-import { SKEProcessSlide } from "./themes/ske/ProcessSlide/ProcessSlide"
-import { RenderConfig as SKEFooter } from "./themes/ske/SKEFooter/RenderConfig"
-import { RenderConfig as SKESchoolSystem } from "./themes/ske/SKESchoolSystem/RenderConfig"
-import { RenderConfig as SKESimpleSlider } from "./themes/ske/SKESimpleSlider/RenderConfig"
-import { RenderConfig as SKETabBlockWithMedia } from "./themes/ske/SKETabBlockWithMedia/RenderConfig"
-import { SKECustomTabs } from "./themes/ske/Tabs"
-import { RenderConfig as SKETitle } from "./themes/ske/Tittle/RenderConfig"
+import { RenderConfig as BannerHover } from "./themes/skylink-lab/bannerHover/RenderConfig"
+import { RenderConfig as ButtonSKLLab } from "./themes/skylink-lab/button/RenderConfig"
+import { RenderConfig as CardOurCoreValue } from "./themes/skylink-lab/CardOurCoreValue/RenderConfig"
+import { RenderConfig as CollapseSKLLab } from "./themes/skylink-lab/collapseCustom/RenderConfig"
+import { RenderConfig as ContentCard } from "./themes/skylink-lab/ContentCard/RenderConfig"
+import { RenderConfig as CustomCounter } from "./themes/skylink-lab/CustomCounter/RenderConfig"
+import { RenderConfig as CustomImage } from "./themes/skylink-lab/CustomImage/RenderConfig"
+import { RenderConfig as EnhancedIconBox } from "./themes/skylink-lab/EnhancedIconBox/RenderConfig"
+import { RenderConfig as SKLLabFooter } from "./themes/skylink-lab/footer/RenderConfig"
+import { RenderConfig as SKLLabHeader } from "./themes/skylink-lab/header/RenderConfig"
+import { RenderConfig as ImageSKLLab } from "./themes/skylink-lab/imageCustom/RenderConfig"
+import { RenderConfig as ImageKeyAI } from "./themes/skylink-lab/ImageKeyAI/RenderConfig"
+import { RenderConfig as ListKeyAI } from "./themes/skylink-lab/ListKeyAI/RenderConfig"
+import { RenderConfig as ProfileCustomerCard } from "./themes/skylink-lab/ProfileCustomerCard/RenderConfig"
+import { RenderConfig as SKLSimpleSlider } from "./themes/skylink-lab/SimpleSliders/RenderConfig"
+import { RenderConfig as SKLLabHeading } from "./themes/skylink-lab/SKLLabHeading/RenderConfig"
 
 export const renderComponents = {
   Container,
@@ -73,43 +54,24 @@ export const renderComponents = {
   ProfileUserCard,
   SimpleSlider,
   PostGridByCategory,
-  SKETitle,
-  SKEActionButton,
-  SKEContentHeading,
-  SKEContentText,
-  SKEContentDescription,
   PhotoLibrary,
   VideoLibrary,
   DropDown,
-  SKEEnrollmentProcess,
-  SKEEnrollmentCard,
-  ImageSection,
-  ManCountdown,
   Input,
-  ManDropDown,
-  SliderScroll,
-  FormRegister,
-  ButtonMTA,
-  SKESchoolSystem,
-  SKESimpleSlider,
-  SKEFooter,
-  ManuBGButton,
-  ManuBGCountDown,
-  ManuBGRegister,
-  ManuBGDropDown,
-  SKELPEnrollmentCard,
-  SKELPGalleryLayout,
-  SKELPCustomTabs,
-  SKELPRegister,
-  SKELPTuitionCard,
-  SKELPFormRegister,
-  SKELPEnrollmentCard2,
-  SKELPPopup,
-  SKEBaseSystem,
-  SKEContactForm,
-  SKEEducationalCard,
-  SKECustomTabs,
-  SKEProcessSlide,
-  SKETabBlockWithMedia,
-  ImageFlip,
+  SKLLabHeader,
+  SKLLabFooter,
+  BannerHover,
+  ButtonSKLLab,
+  CardOurCoreValue,
+  CollapseSKLLab,
+  ContentCard,
+  CustomCounter,
+  CustomImage,
+  EnhancedIconBox,
+  ImageSKLLab,
+  ImageKeyAI,
+  ListKeyAI,
+  ProfileCustomerCard,
+  SKLSimpleSlider,
+  SKLLabHeading,
 }

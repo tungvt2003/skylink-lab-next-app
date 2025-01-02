@@ -2,6 +2,8 @@
 
 import { ComponentConfig, DropZone } from "@measured/puck"
 
+import Aos from "aos"
+import { useEffect } from "react"
 import { twMerge } from "tailwind-merge"
 import { CommonStylesProps } from "../../lib/commonCSSProps"
 import { generateResponsiveCSS } from "../../lib/helper"
@@ -18,6 +20,9 @@ export const RenderConfig: ComponentConfig<ContainerProps> = {
 
     // Generate responsive CSS
     const responsiveCSS = generateResponsiveCSS(id, styles || {}, responsiveType)
+    useEffect(() => {
+      Aos.init()
+    }, [])
     return (
       <>
         {responsiveCSS}

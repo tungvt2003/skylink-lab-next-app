@@ -15,7 +15,7 @@ const spinnerVariants = cva("flex-col items-center justify-center h-screen lg:pb
   },
 })
 
-const loaderVariants = cva("animate-spin text-green ", {
+const loaderVariants = cva("animate-spin text-[#cd41fa] ", {
   variants: {
     size: {
       small: "size-6",

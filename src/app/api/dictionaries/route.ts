@@ -2,42 +2,62 @@ import { NextResponse } from "next/server"
 import httpClient from "../../../lib/http-client"
 
 export async function POST(req: Request) {
-  const dictionaries = await httpClient.get<{ data: any }>(`dictionaries?populate=*&pagination[pageSize]=100`)
-  const { lang } = await req.json()
+  try {
+    const { locale } = await req.json()
 
-  const texts = dictionaries.data.map((e: any) => {
-    const {
-      attributes: { vi, en, key },
-    } = e
-    return { vi, en, key }
-  })
+    const dictionaries = await httpClient.get<{ data: any }>(`dictionaries?populate=*&pagination[pageSize]=100`)
 
-  const response = texts
-    .map((e: any) => ({ [e.key]: e[lang] }))
-    .reduce((prev: any, curr: any) => {
-      return { ...prev, ...curr }
-    }, {})
+    if (!Array.isArray(dictionaries.data)) {
+      return NextResponse.json({ error: "Invalid dictionaries data" }, { status: 500 })
+    }
 
-  return NextResponse.json({ ...response })
+    const texts = dictionaries.data.map((e: any) => {
+      const {
+        attributes: { vi, en, key },
+      } = e
+      return { vi, en, key }
+    })
+
+    const response = texts
+      .map((e: any) => ({ [e.key]: e[locale] }))
+      .reduce((prev: any, curr: any) => {
+        return { ...prev, ...curr }
+      }, {})
+
+    return NextResponse.json({ ...response })
+  } catch (error) {
+    console.error("Error in POST:", error)
+    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 })
+  }
 }
 
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url)
-  const locale = searchParams.get("locale")
+  try {
+    const { searchParams } = new URL(request.url)
+    const locale = searchParams.get("locale") || "vi"
 
-  const dictionaries = await httpClient.get<{ data: any }>(`dictionaries?populate=*&pagination[pageSize]=100`)
-  const texts = dictionaries.data.map((e: any) => {
-    const {
-      attributes: { vi, en, key },
-    } = e
-    return { vi, en, key }
-  })
+    const dictionaries = await httpClient.get<{ data: any }>(`dictionaries?populate=*&pagination[pageSize]=100`)
 
-  const response = texts
-    .map((e: any) => ({ [e.key]: e[locale || "vi"] }))
-    .reduce((prev: any, curr: any) => {
-      return { ...prev, ...curr }
-    }, {})
+    if (!Array.isArray(dictionaries.data)) {
+      return NextResponse.json({ error: "Invalid dictionaries data" }, { status: 500 })
+    }
 
-  return NextResponse.json({ ...response })
+    const texts = dictionaries.data.map((e: any) => {
+      const {
+        attributes: { vi, en, key },
+      } = e
+      return { vi, en, key }
+    })
+
+    const response = texts
+      .map((e: any) => ({ [e.key]: e[locale] }))
+      .reduce((prev: any, curr: any) => {
+        return { ...prev, ...curr }
+      }, {})
+
+    return NextResponse.json({ ...response })
+  } catch (error) {
+    console.error("Error in GET:", error)
+    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 })
+  }
 }

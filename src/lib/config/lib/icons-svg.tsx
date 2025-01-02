@@ -1,6 +1,8 @@
 import React from "react"
 import { ArrowLeftSVG } from "../assets/arrow-left-svg"
 import { ArrowRightSVG } from "../assets/arrow-right-svg"
+import { IconFacebookSVG } from "../assets/icon-facebook-svg"
+import { IconYoutubeSVG } from "../assets/icon-youtube-svg"
 import { LeftOutlinedSVG } from "../assets/left-outlined"
 
 interface IconOption {
@@ -14,6 +16,8 @@ export const iconOptions: IconOption[] = [
   { label: "ArrowLeftIcon", value: "ArrowLeftIcon", svgFile: ArrowLeftSVG },
   { label: "ArrowRightIcon", value: "ArrowRightIcon", svgFile: ArrowRightSVG },
   { label: "LeftOutlined", value: "LeftOutlined", svgFile: LeftOutlinedSVG },
+  { label: "Facebook", value: "Facebook", svgFile: IconFacebookSVG },
+  { label: "Youtube", value: "Youtube", svgFile: IconYoutubeSVG },
 ]
 
 interface SvgIconRendererProps {
@@ -21,7 +25,6 @@ interface SvgIconRendererProps {
   sizeHeight?: number
   sizeWidth?: number
   color?: string
-  className?: string
 }
 
 const SvgIconRenderer: React.FC<SvgIconRendererProps> = ({
