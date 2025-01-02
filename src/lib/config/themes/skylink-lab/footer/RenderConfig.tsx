@@ -113,7 +113,7 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
                       item.attribute.map((subItem, subIndex) => (
                         <a key={subIndex} href={subItem.url}>
                           <span
-                            className={`menu-item item-${index} flex items-center h-full text-[16px] font-semibold text-[#9E9E9E] transition-all duration-300`}
+                            className={`menu-item item-${index} flex items-center h-full text-[16px] font-semibold text-[#9E9E9E] hover:text-[#CD41FA] transition-all duration-300`}
                           >
                             {subItem?.title}
                           </span>
