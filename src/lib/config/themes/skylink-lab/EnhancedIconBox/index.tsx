@@ -4,6 +4,7 @@ import { ComponentConfig } from "@measured/puck"
 import { Button, Modal } from "antd"
 import { useState } from "react"
 import { configs, DefaultImage, Media, MediaUpload } from "../../../../external-components"
+import CKEditorComponent from "../../../lib/Ckeditor"
 import getClassNameFactory from "../../../lib/get-class-name-factory"
 import { EnhancedIconBoxProps, RenderConfig } from "./RenderConfig"
 import styles from "./styles.module.css"
@@ -111,7 +112,10 @@ export const EnhancedIconBox: ComponentConfig<EnhancedIconBoxProps> = {
     },
     description: {
       label: "Description",
-      type: "text",
+      type: "custom",
+      render: ({ value, onChange }) => {
+        return <CKEditorComponent value={value || ""} onChange={onChange} />
+      },
     },
 
     justifyContent: {
