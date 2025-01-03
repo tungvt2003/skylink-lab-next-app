@@ -48,7 +48,7 @@ export const RenderConfig: ComponentConfig<CustomImageProps> = {
     }
 
     return (
-      <div className="w-full sm:w-1/2 h-full p-2.5 pb-[58.79px] flex justify-center">
+      <div className="w-full sm:w-1/2 h-full p-2.5 sm:pb-[58.79px] mb-5 sm:mb-0 flex justify-center">
         {generateResponsiveCSS(id, styles || {}, responsiveType)}
 
         <div className="w-full flex justify-center content-start relative">

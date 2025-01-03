@@ -32,10 +32,12 @@ export const RenderConfig: ComponentConfig<ContentCardProps> = {
             className,
           )} group border border-[#E5E5E6] hover:border-[#FFFFFF00] hover:bg-hover-gradient transition-colors duration-500 ease-in-out`}
         >
-          <h3 className="text-[32px] leading-[38.4px] font-bold text-[#212121] mb-3 group-hover:text-white">{title}</h3>
-          <div className="text-base leading-[28.8px] text-[#616161] group-hover:text-white">
+          <h3 className="text-[22px] leading-[26.4px] sm:text-[32px] sm:leading-[38.4px] font-bold text-[#212121] mb-3 group-hover:text-white">
+            {title}
+          </h3>
+          <div className="text-[14px] leading-[25.2px] sm:text-base sm:leading-[28.8px] text-[#616161] group-hover:text-white">
             {items?.map((descItem, descIndex) => (
-              <ul className={`${isListItem ? "list-disc pl-[40px]" : ""} my-4`} key={descIndex}>
+              <ul className={`${isListItem ? "list-disc pl-[40px]" : ""} my-[14px] sm:my-4`} key={descIndex}>
                 <li>
                   <span className="font-medium" dangerouslySetInnerHTML={{ __html: descItem.content || "" }} />
                 </li>
