@@ -20,6 +20,7 @@ export interface ImageProps extends CommonStylesProps {
   margin?: string
   multiple?: boolean
   objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down"
+  hoverEffect?: boolean
 }
 
 export const RenderConfig: ComponentConfig<ImageProps> = {
@@ -42,6 +43,7 @@ export const RenderConfig: ComponentConfig<ImageProps> = {
     responsiveType,
     className,
     link,
+    hoverEffect,
   }) => {
     const id = `Image-${Math.random().toString(36).substr(2, 9)}`
 
@@ -53,9 +55,11 @@ export const RenderConfig: ComponentConfig<ImageProps> = {
 
     return (
       <>
-        {generateResponsiveCSS(id, styles || {}, responsiveType)}
-
-        <a href={link ?? "#"}>
+        <a href={link ?? "#"} className="relative group">
+          {hoverEffect && (
+            <div className="absolute sm:hidden left-0 sm:left-[10%] w-full h-[220px] sm:w-[80%] sm:h-[300px] top-[25%] z-0 bg-gradient-180 rounded-[16px] sm:rounded-[24px]"></div>
+          )}
+          {generateResponsiveCSS(id, styles || {}, responsiveType)}
           <img
             id={id}
             src={imageUrl ? `${configs.API_URL}${imageUrl}` : DefaultImage}
@@ -73,6 +77,9 @@ export const RenderConfig: ComponentConfig<ImageProps> = {
             } ${multiple ? "mix-blend-multiply" : ""}`}
             style={{ padding, borderRadius, margin }}
           />
+          {hoverEffect && (
+            <div className="absolute inset-5 border-2 top-[20px] left-[20px] right-[32%] sm:right-[20px] bottom-[20px] border-transparent opacity-0 group-hover:opacity-100 group-hover:border-[#0000001A] transition-all duration-500 ease-linear z-1 w-auto sm:w-[314px]"></div>
+          )}
         </a>
       </>
     )

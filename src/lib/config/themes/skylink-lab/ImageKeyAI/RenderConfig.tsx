@@ -53,36 +53,22 @@ export const RenderConfig: ComponentConfig<ImageKeyAIProps> = {
 
     useEffect(() => {
       const handleScroll = () => {
-        if (isVisible) {
-          const scrollY = window.scrollY || window.pageYOffset
-          const maxScroll = 300 // Chỉnh độ dài của scroll
+        if (sectionRef.current) {
+          const rect = sectionRef.current.getBoundingClientRect() // Lấy vị trí và kích thước phần tử
+          const windowHeight = window.innerHeight // Chiều cao của viewport
+          const maxScrollHeight = rect.height + windowHeight // Tổng chiều cao để cuộn
 
-          // Tính toán giá trị translateY từ 50px đến -100px khi cuộn xuống và từ -100px lên 50px khi cuộn lên
-          const translateValue = Math.min(-30, Math.max(30, 30 - (scrollY / maxScroll) * 150))
+          // Tính toán tỷ lệ cuộn trong khoảng phần tử
+          const scrollRatio = Math.min(1, Math.max(0, (windowHeight - rect.top) / maxScrollHeight))
 
-          setOffset(translateValue)
-        } else {
-          const scrollY = window.scrollY || window.pageYOffset
-          const maxScroll = 300 // Chỉnh độ dài của scroll
-          const translateValue = Math.min(30, Math.max(-30, -30 + (scrollY / maxScroll) * 150))
-          setOffset(translateValue)
+          // Chuyển đổi scrollRatio (0 -> 1) thành offsetY (-30 -> 30)
+          const newOffset = -30 + scrollRatio * 60 // 60 = 30 - (-30)
+          setOffset(newOffset)
         }
       }
 
       window.addEventListener("scroll", handleScroll)
       return () => window.removeEventListener("scroll", handleScroll)
-    }, [isVisible])
-
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setIsVisible(entry.isIntersecting)
-        },
-        { threshold: 0.01 },
-      )
-
-      if (sectionRef.current) observer.observe(sectionRef.current)
-      return () => observer.disconnect()
     }, [])
 
     return (
