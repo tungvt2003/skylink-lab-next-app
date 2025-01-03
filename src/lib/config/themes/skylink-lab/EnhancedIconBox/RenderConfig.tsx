@@ -91,9 +91,10 @@ export const RenderConfig: ComponentConfig<EnhancedIconBoxProps> = {
             <h4 id={id} className={`flex-1 ${id} ${twMerge(className)} group-hover:text-white`}>
               {title}
             </h4>
-            <p className="self-stretch text-left text-[#616161] text-[13px] sm:text-[14px] font-medium leading-[23.4px] sm:leading-[25.2px] group-hover:text-white">
-              {description}
-            </p>
+            <p
+              className="self-stretch text-left text-[#616161] text-[13px] sm:text-[14px] font-medium leading-[23.4px] sm:leading-[25.2px] group-hover:text-white"
+              dangerouslySetInnerHTML={{ __html: description ?? "" }}
+            />
           </div>
         </div>
       </div>
