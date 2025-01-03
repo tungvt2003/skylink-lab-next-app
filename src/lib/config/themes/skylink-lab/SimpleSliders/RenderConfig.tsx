@@ -69,26 +69,32 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
 
     useEffect(() => {
       const handleScroll = () => {
-        const scrollY = window.scrollY
-        const scrollThreshold = 600
+        if (!sectionRef.current) return
 
-        if (scrollY >= scrollThreshold) {
-          const maxScroll = 900
+        const sectionTop = sectionRef.current.getBoundingClientRect().top // Khoảng cách từ top cửa sổ
+        const sectionHeight = sectionRef.current.clientHeight // Chiều cao của phần tử
+        const headerHeight = 100 // Chiều cao giả định của header
+        const threshold = headerHeight // Ngưỡng gần header để bắt đầu thay đổi
+
+        if (sectionTop <= threshold && sectionTop + sectionHeight >= 0) {
+          // Tính toán tỷ lệ cuộn dựa trên vị trí hiện tại của phần tử
+          const progress = Math.min(Math.max((threshold - sectionTop) / sectionHeight, 0), 1)
+
+          // Cập nhật giá trị rotation dựa vào progress
           const minRotation = -1.5
           const maxRotation = 2.3
+          const newRotation = progress * (maxRotation - minRotation) + minRotation
+
           const minDivRotation = 1.5
           const maxDivRotation = 5
+          const newDivRotation = progress * (maxDivRotation - minDivRotation) + minDivRotation
 
-          let newRotation =
-            ((scrollY - scrollThreshold) / (maxScroll - scrollThreshold)) * (maxRotation - minRotation) + minRotation
-          newRotation = Math.max(Math.min(newRotation, maxRotation), minRotation)
           setRotation(newRotation)
-
-          let newDivRotation =
-            ((scrollY - scrollThreshold) / (maxScroll - scrollThreshold)) * (maxDivRotation - minDivRotation) +
-            minDivRotation
-          newDivRotation = Math.max(Math.min(newDivRotation, maxDivRotation), minDivRotation)
           setDivRotation(newDivRotation)
+        } else {
+          // Reset nếu phần tử không còn trong khung nhìn
+          setRotation(-1.34993)
+          setDivRotation(1.5)
         }
       }
 

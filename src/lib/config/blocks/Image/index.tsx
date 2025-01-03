@@ -154,7 +154,14 @@ export const Image: ComponentConfig<ImageProps> = {
         },
       ],
     },
-
+    hoverEffect: {
+      label: "Hover Effect",
+      type: "radio",
+      options: [
+        { label: "Yes", value: true },
+        { label: "No", value: false },
+      ],
+    },
     ...commonStylesProps, // Include common CSS props
   },
   defaultProps: {
@@ -166,6 +173,7 @@ export const Image: ComponentConfig<ImageProps> = {
     multiple: false,
     objectFit: "cover",
     className: "",
+    hoverEffect: false,
   },
   ...RenderConfig,
 }
