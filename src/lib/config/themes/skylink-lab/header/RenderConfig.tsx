@@ -276,7 +276,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                           ))}
                       </nav>
 
-                      <button className="w-[calc(95%-10px)] mx-auto bg-[#bb3de5] hover:bg-[#7e4ff9] duration-300 text-white rounded-full px-6 py-3 text-sm mt-auto mb-[30px]">
+                      <button className="inline-block w-[calc(95%-10px)] mx-auto bg-[#cd41fa] hover:bg-[#7e4ff9] duration-300 text-white rounded-full px-6 py-4 text-sm font-medium mt-auto mb-[25%]">
                         Get the app
                       </button>
                     </div>
