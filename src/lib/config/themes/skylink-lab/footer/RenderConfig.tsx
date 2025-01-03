@@ -126,7 +126,7 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
           </div>
           <div className="w-full border-t border-[#FFFFFF1F] pb-[35px]"></div>
           <div className="flex sm:flex-row flex-col-reverse items-center justify-between text-white pt-4 pb-12 sm:text-base text-[15px] font-semibold">
-            <div className="p-[10px]">
+            <div className="p-[10px] text-center">
               {copyRight && (
                 <a>
                   <span>{copyRight}</span>
