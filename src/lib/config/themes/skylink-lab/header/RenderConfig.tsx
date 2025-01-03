@@ -265,7 +265,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                               key={item?.id}
                               className="w-full flex items-center cursor-pointer transition-opacity duration-300 group"
                             >
-                              <a href={item.url}>
+                              <a href={item.url} className="w-full">
                                 <span
                                   className={`menu-item item-${index} flex items-center h-full text-[18px] font-semibold text-black group-hover:text-[#CD41FA] transition-all duration-300`}
                                 >
