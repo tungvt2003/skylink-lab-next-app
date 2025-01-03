@@ -49,7 +49,7 @@ export const RenderConfig: ComponentConfig<CustomCounterProps> = {
     }, [countTo])
 
     return (
-      <div className="w-[40%] sm:w-[56.621%] p-2.5">
+      <div className="w-[45%] sm:w-[56.621%] p-2.5">
         {responsiveCSS}
         <p id={id} className={`${id} ${twMerge(className)} flex items-center`}>
           {Math.floor(count)}
