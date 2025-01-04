@@ -23,6 +23,7 @@ import { BannerHover } from "./themes/skylink-lab/bannerHover"
 import { ButtonSKLLab } from "./themes/skylink-lab/button"
 import { CardOurCoreValue } from "./themes/skylink-lab/CardOurCoreValue/index"
 import { CollapseSKLLab } from "./themes/skylink-lab/collapseCustom"
+import { ContactUsSKLLabs } from "./themes/skylink-lab/ContactUs"
 import { ContentCard } from "./themes/skylink-lab/ContentCard/index"
 import { CustomCounter } from "./themes/skylink-lab/CustomCounter/index"
 import { CustomImage } from "./themes/skylink-lab/CustomImage/index"
@@ -74,4 +75,5 @@ export const uiBuilderComponents = {
   ProfileCustomerCard,
   SKLSimpleSlider,
   SKLLabHeading,
+  ContactUsSKLLabs,
 }
