@@ -191,11 +191,17 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                 </div>
               </div>
               <div className="flex gap-5 items-center">
-                <LocalSwitcher />
+                <div className="hidden sm:block">
+                  <LocalSwitcher />
+                </div>
                 <button
                   className={`py-[13px] px-[25px] ${
-                    isHome ? (isTop ? "bg-white text-black" : "bg-[#CD41FA] text-white") : "bg-[#CD41FA] text-white"
-                  } hover:bg-[#7e4ff9] hover:text-white duration-300 text-sm leading-4 font-medium rounded-full`}
+                    isHome
+                      ? isTop
+                        ? "bg-white text-black"
+                        : "bg-labs-primary text-white"
+                      : "bg-labs-primary text-white"
+                  } hover:bg-labs-secondary hover:text-white duration-300 text-sm leading-4 font-medium rounded-full`}
                 >
                   {t("Get the app")}
                 </button>
@@ -244,6 +250,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                             </a>
                           </div>
                         </div>
+
                         <button
                           onClick={toggleMenu}
                           className={`transition-all duration-500 ${
@@ -266,12 +273,13 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                           </svg>
                         </button>
                       </div>
-
                       <nav
                         className={`flex flex-col gap-[30px] mt-6 flex-1 w-[95%] mx-auto ${
                           isMenuOpen ? "animate-slideUp opacity-100" : "opacity-0 translate-y-[100%]"
                         } transition-all duration-500 ease-in-out`}
                       >
+                        <LocalSwitcher />
+
                         {dataMenu &&
                           dataMenu.map((item, index) => (
                             <div
@@ -289,7 +297,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                           ))}
                       </nav>
 
-                      <button className="inline-block w-[calc(95%-10px)] mx-auto bg-[#cd41fa] hover:bg-[#7e4ff9] duration-300 text-white rounded-full px-6 py-4 text-sm font-medium mt-auto mb-[25%]">
+                      <button className="inline-block w-[calc(95%-10px)] mx-auto bg-labs-primary hover:bg-labs-secondary duration-300 text-white rounded-full px-6 py-4 text-sm font-medium mt-auto mb-[25%]">
                         {titleButton}
                       </button>
                     </div>

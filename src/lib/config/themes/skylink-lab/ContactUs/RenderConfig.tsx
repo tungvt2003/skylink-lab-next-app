@@ -3,10 +3,12 @@
 import { ComponentConfig } from "@measured/puck"
 import { Spin } from "antd"
 import { useTranslations } from "next-intl"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { twMerge } from "tailwind-merge"
+import { getSettings } from "../../../../navigation-services"
 import { CommonStylesProps } from "../../../lib/commonCSSProps"
 import { generateResponsiveCSS } from "../../../lib/helper"
+import { DataSettingItem } from "../../../types"
 
 export interface ContactUsProps extends CommonStylesProps {
   title: string
@@ -28,6 +30,7 @@ export const RenderConfig: ComponentConfig<ContactUsProps> = {
       email: "",
       phone: "",
       answer: "",
+      emailTo: "",
     })
 
     const [isPopupVisible, setIsPopupVisible] = useState(false)
@@ -38,6 +41,21 @@ export const RenderConfig: ComponentConfig<ContactUsProps> = {
       setFormData(prev => ({ ...prev, [name]: value }))
     }
 
+    const fetchSetting = async () => {
+      try {
+        const response = await getSettings()
+        const emailTo = response.find((item: DataSettingItem) => item.attributes.key === "SkylinkLabsEmail")?.attributes
+          .value
+        setFormData(prev => ({ ...prev, emailTo: emailTo }))
+      } catch (error) {
+        console.error("Error fetching setting data:", error)
+      }
+    }
+
+    useEffect(() => {
+      fetchSetting()
+    }, [])
+
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
       setIsLoading(true)
@@ -47,7 +65,16 @@ export const RenderConfig: ComponentConfig<ContactUsProps> = {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({
+            subject: "Câu trả lời từ khách hàng",
+            emailTo: formData.emailTo,
+            content: `<div>
+                <p>Tên: ${formData.name}</p>
+                <p>Email: ${formData.email}</p>
+                <p>Số điện thoại: ${formData.phone}</p>
+                <p>Câu trả lời: ${formData.answer}</p>
+              </div>`,
+          }),
         })
 
         if (!response.ok) {
@@ -60,6 +87,7 @@ export const RenderConfig: ComponentConfig<ContactUsProps> = {
           email: "",
           phone: "",
           answer: "",
+          emailTo: "",
         })
         setMessage("Gửi câu trả lời thành công!")
       } catch (error) {
@@ -168,7 +196,7 @@ export const RenderConfig: ComponentConfig<ContactUsProps> = {
                       type="submit"
                       className="py-[8px] bg-labs-primary hover:bg-labs-secondary duration-300 text-white font-semibold text-base leading-7 rounded-[40px] text-center whitespace-nowrap w-[147px] h-[42px] hover:bg-[#323232] max-sm:text-[15px] max-sm:w-[120px] max-sm:font-medium"
                     >
-                      Submit
+                      {t("Submit")}
                     </button>
                   </div>
                 </form>
