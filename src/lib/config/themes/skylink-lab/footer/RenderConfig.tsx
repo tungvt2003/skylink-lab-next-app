@@ -66,7 +66,7 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
         <div id={id}>
           <div className="flex sm:flex-row flex-col flex-wrap pb-[55px] sm:pb-[95px]">
             <div className="flex flex-col items-center sm:items-start gap-5 sm:gap-6 sm:w-[38.679%] p-[10px] mb-5 sm:mb-0">
-              <div>
+              <div className="shadow-md bg-white px-3 py-2 rounded-lg">
                 <img src={configs.API_URL + img} alt="logo" className="w-[120px] h-7" />
               </div>
               <div className="flex flex-col gap-5 sm:gap-6 w-auto sm:w-[350px]">
@@ -85,6 +85,7 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
                     <a
                       href={item.urlIcon}
                       key={index}
+                      target="_blank"
                       className="group p-1 border rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:border-[#bb3de5]"
                     >
                       <span className="text-white transition-colors duration-300 group-hover:text-[#bb3de5]">
