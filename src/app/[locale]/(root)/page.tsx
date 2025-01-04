@@ -5,7 +5,6 @@ import { APPCONFIG } from "../../../configs"
 import getPage from "../../../lib/config/lib/getPage"
 import { generateMeta } from "../../../lib/generateMeta"
 
-// Fetching page data
 const fetchPageData = async (slugs: string[], locale: string) => {
   const defaultSlug = APPCONFIG.DEFAULT_SLUG[locale as "vi" | "en"]
   const pageData = await getPage(last(slugs) ?? defaultSlug, locale)
@@ -24,13 +23,11 @@ const Page = async (props: { params: Promise<{ slugs: string[]; locale: string }
 export default Page
 
 export async function generateMetadata(context: {
-  params: Promise<{ slugs?: string[] }>
-  locale: string
+  params: Promise<{ slugs?: string[]; locale: string }>
 }): Promise<Metadata> {
   try {
     const resolvedParams = await context.params
-    const locale = context.locale
-    const pageData = await fetchPageData(resolvedParams.slugs ?? [], locale)
+    const pageData = await fetchPageData(resolvedParams.slugs ?? [], resolvedParams.locale)
 
     const metaData = pageData[0].attributes
     return generateMeta({ data: metaData })
