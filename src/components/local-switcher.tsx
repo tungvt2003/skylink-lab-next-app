@@ -24,7 +24,7 @@ export default function LocalSwitcher() {
   }
 
   return (
-    <div className="hidden relative sm:flex flex-row bg-[#CD41FA] w-[100px] p-0.5 rounded-full overflow-hidden">
+    <div className="relative flex flex-row bg-labs-primary w-[100px] p-0.5 rounded-full overflow-hidden">
       <div
         className={`absolute top-0.5 left-0.5 ring-0 w-[calc(50%-2px)] h-7 bg-white rounded-full transition-transform duration-300 z-0 ${
           selectedLanguage === "vi" ? "translate-x-0" : "translate-x-full"

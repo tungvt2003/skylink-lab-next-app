@@ -26,7 +26,7 @@ export const RenderConfig: ComponentConfig<BannerProps> = {
             ${id} 
             ${twMerge(
               className,
-            )}  banner-hover-wrap sm:w-[1200px] sm:h-[270px] sm:pt-0 sm:px-[20px] sm:pb-[10px] p-[10px]`}
+            )}  banner-hover-wrap sm:max-w-[1200px] sm:h-[270px] sm:pt-0 sm:px-[20px] sm:pb-[10px] p-[10px] rounded-[20px]`}
         >
           <img src={bannerImg ? generateImagePath(bannerImg, "large") : DefaultImage} alt="" className="object-cover" />
         </div>
