@@ -77,9 +77,6 @@ export const RenderConfig: ComponentConfig<ImageProps> = {
             } ${multiple ? "mix-blend-multiply" : ""}`}
             style={{ padding, borderRadius, margin }}
           />
-          {hoverEffect && (
-            <div className="absolute inset-5 border-2 top-[20px] left-[20px] right-[32%] sm:right-[20px] bottom-[20px] border-transparent opacity-0 group-hover:opacity-100 group-hover:border-[#0000001A] transition-all duration-500 ease-linear z-1 w-auto sm:w-[314px]"></div>
-          )}
         </a>
       </>
     )

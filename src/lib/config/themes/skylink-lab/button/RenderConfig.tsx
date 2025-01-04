@@ -22,14 +22,14 @@ export const RenderConfig: ComponentConfig<BannerProps> = {
 
     if (hoverEffect === "reverseColor") {
       baseStyle = `
-        bg-gradient-to-r from-[rgb(205,65,250)] to-[rgb(126,79,249)]
+        bg-labs-primary
         shadow-[0px_4px_8px_0px_rgba(0,0,0,0.12)]
         transition-all
       `
 
       hoverStyle = `
         .${id}:hover {
-          background: linear-gradient(90deg, rgb(126, 79, 249) 0%, rgb(205, 65, 250) 100%);
+          background: linear-gradient(90deg, #FF6634 0%, #FD5947 18.94%, #FB4C5A 35%, #FB4A5C 52.03%, #F83180 73.99%, #F03DB3 83.71%, #CD52D1 94.55%, #A559F5 100%);
           box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
         }
       `

@@ -21,10 +21,10 @@ const CollapsePanel = ({ question, answer }: { question?: string; answer?: strin
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex justify-between items-center md:py-6 py-4 group"
       >
-        <span className="text-[#212121] font-semibold md:leading-[31.2px] leading-[24.7px] md:text-2xl text-[19px] group-hover:text-[#b33cda] duration-300 transition-all text-left">
+        <span className="text-[#212121] font-semibold md:leading-[31.2px] leading-[24.7px] md:text-2xl text-[19px] group-hover:text-[#FB4C5A] duration-300 transition-all text-left">
           {question}
         </span>
-        <span className="text-2xl font-medium min-w-[24px] text-gray-500 group-hover:text-[#b33cda]">
+        <span className="text-2xl font-medium min-w-[24px] text-gray-500 group-hover:text-[#FB4C5A]">
           {isOpen ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
