@@ -88,7 +88,7 @@ export const RenderConfig: ComponentConfig<EnhancedIconBoxProps> = {
           </div>
           {responsiveCSS}
           <div className="flex flex-col items-start gap-3">
-            <h4 id={id} className={`flex-1 ${id} ${twMerge(className)} group-hover:text-white`}>
+            <h4 id={id} className={`flex-1 ${id} ${twMerge(className)} text-left group-hover:text-white`}>
               {title}
             </h4>
             <p
