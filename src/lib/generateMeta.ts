@@ -57,7 +57,7 @@ export const generateMeta = async (args: {
     title: `SKYLINK Lab`,
     description: "Skylink Lab",
     keywords: "Skylink Lab",
-    robots: "noindex, follow",
+    robots: "index, follow",
     openGraph: {
       title: "Skylink Lab",
       description: "Skylink Lab",
