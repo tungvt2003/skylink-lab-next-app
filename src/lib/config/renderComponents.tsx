@@ -23,6 +23,7 @@ import { RenderConfig as BannerHover } from "./themes/skylink-lab/bannerHover/Re
 import { RenderConfig as ButtonSKLLab } from "./themes/skylink-lab/button/RenderConfig"
 import { RenderConfig as CardOurCoreValue } from "./themes/skylink-lab/CardOurCoreValue/RenderConfig"
 import { RenderConfig as CollapseSKLLab } from "./themes/skylink-lab/collapseCustom/RenderConfig"
+import { RenderConfig as ContactUsSKLLabs } from "./themes/skylink-lab/ContactUs/RenderConfig"
 import { RenderConfig as ContentCard } from "./themes/skylink-lab/ContentCard/RenderConfig"
 import { RenderConfig as CustomCounter } from "./themes/skylink-lab/CustomCounter/RenderConfig"
 import { RenderConfig as CustomImage } from "./themes/skylink-lab/CustomImage/RenderConfig"
@@ -74,4 +75,5 @@ export const renderComponents = {
   ProfileCustomerCard,
   SKLSimpleSlider,
   SKLLabHeading,
+  ContactUsSKLLabs,
 }

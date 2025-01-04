@@ -22,6 +22,7 @@ import { BannerHover } from "./themes/skylink-lab/bannerHover"
 import { ButtonSKLLab } from "./themes/skylink-lab/button"
 import { CardOurCoreValue } from "./themes/skylink-lab/CardOurCoreValue/index"
 import { CollapseSKLLab } from "./themes/skylink-lab/collapseCustom"
+import { ContactUsSKLLabs } from "./themes/skylink-lab/ContactUs"
 import { ContentCard } from "./themes/skylink-lab/ContentCard/index"
 import { CustomCounter } from "./themes/skylink-lab/CustomCounter/index"
 import { CustomImage } from "./themes/skylink-lab/CustomImage/index"
@@ -75,6 +76,7 @@ const components = {
   CollapseSKLLab,
   CustomImage,
   ContentCard,
+  ContactUsSKLLabs,
 }
 
 export const common = {
@@ -121,6 +123,7 @@ export const common = {
         "CollapseSKLLab",
         "CustomImage",
         "ContentCard",
+        "ContactUsSKLLabs",
       ],
     },
   },
@@ -188,6 +191,7 @@ import { RenderConfig as NewBannerHover } from "./themes/skylink-lab/bannerHover
 import { RenderConfig as NewButtonSKLLab } from "./themes/skylink-lab/button/RenderConfig"
 import { RenderConfig as NewCardOurCoreValue } from "./themes/skylink-lab/CardOurCoreValue/RenderConfig"
 import { RenderConfig as NewCollapseSKLLab } from "./themes/skylink-lab/collapseCustom/RenderConfig"
+import { RenderConfig as NewContactUsSKLLabs } from "./themes/skylink-lab/ContactUs/RenderConfig"
 import { RenderConfig as NewContentCard } from "./themes/skylink-lab/ContentCard/RenderConfig"
 import { RenderConfig as NewCustomCounter } from "./themes/skylink-lab/CustomCounter/RenderConfig"
 import { RenderConfig as NewCustomImage } from "./themes/skylink-lab/CustomImage/RenderConfig"
@@ -241,6 +245,7 @@ export const newRenderComponents = {
   CollapseSKLLab: NewCollapseSKLLab,
   CustomImage: NewCustomImage,
   ContentCard: NewContentCard,
+  ContactUsSKLLabs: NewContactUsSKLLabs,
 }
 
 // @ts-ignore

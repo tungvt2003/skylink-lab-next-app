@@ -25,6 +25,7 @@ import { BannerHover } from "./themes/skylink-lab/bannerHover"
 import { ButtonSKLLab } from "./themes/skylink-lab/button"
 import { CardOurCoreValue } from "./themes/skylink-lab/CardOurCoreValue"
 import { CollapseSKLLab } from "./themes/skylink-lab/collapseCustom"
+import { ContactUsSKLLabs } from "./themes/skylink-lab/ContactUs"
 import { ContentCard } from "./themes/skylink-lab/ContentCard"
 import { CustomCounter } from "./themes/skylink-lab/CustomCounter"
 import { CustomImage } from "./themes/skylink-lab/CustomImage"
@@ -80,6 +81,7 @@ export const renderConfig: Config = {
     ProfileCustomerCard,
     SKLSimpleSlider,
     SKLLabHeading,
+    ContactUsSKLLabs,
   },
   // ...commonConfig,
   categories: {
@@ -125,6 +127,7 @@ export const renderConfig: Config = {
         "CollapseSKLLab",
         "CustomImage",
         "ContentCard",
+        "ContactUsSKLLabs",
       ],
     },
   },

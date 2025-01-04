@@ -18,10 +18,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: "Thông tin không đầy đủ!" }, { status: 400 })
     }
 
-    // const content = `
-    //   Email: ${email}
-    // `
-
     const mailOptions = {
       from: process.env.GMAIL_USER,
       to: emailTo,
