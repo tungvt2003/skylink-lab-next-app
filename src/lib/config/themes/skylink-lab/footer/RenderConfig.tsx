@@ -136,13 +136,13 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
             </div>
             <div className="p-[10px]">
               {termService && (
-                <>
+                <div className="flex gap-5">
                   {termService.map((item: any, index: number) => (
                     <a key={index} href={item.url} className="hover:text-[#bb3de5] duration-300">
                       <span className="">{item.title}</span>
                     </a>
                   ))}
-                </>
+                </div>
               )}
             </div>
           </div>

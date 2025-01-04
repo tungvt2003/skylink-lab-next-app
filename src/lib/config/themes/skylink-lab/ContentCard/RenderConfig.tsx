@@ -30,7 +30,7 @@ export const RenderConfig: ComponentConfig<ContentCardProps> = {
           id={id}
           className={`${id} ${twMerge(
             className,
-          )} group border border-[#E5E5E6] hover:border-[#FFFFFF00] hover:bg-hover-gradient transition-colors duration-500 ease-in-out`}
+          )} group border border-[#E5E5E6] hover:border-[#FFFFFF00] hover:bg-labs-secondary transition-colors duration-500 ease-in-out`}
         >
           <h3 className="text-[22px] leading-[26.4px] sm:text-[32px] sm:leading-[38.4px] font-bold text-[#212121] mb-3 group-hover:text-white">
             {title}

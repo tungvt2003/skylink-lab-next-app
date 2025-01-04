@@ -76,8 +76,8 @@ export const RenderConfig: ComponentConfig<EnhancedIconBoxProps> = {
         }}
         className="group rounded-[24px] p-2.5"
       >
-        <div className="rounded-[24px] py-8 px-6 sm:p-8 text-center flex flex-col items-start border border-[#E5E5E6] group-hover:bg-hover-gradient transition-all duration-300 ease-in-out transform">
-          <div className="relative rounded-[16px] p-[14px] sm:p-4 bg-gradient-to-r from-[#FFADFD54] to-[#ECEFFE] z-10 mb-[14px] sm:mb-4 group-hover:bg-white transition-colors duration-300 ease-in-out">
+        <div className="rounded-[24px] py-8 px-6 sm:p-8 text-center flex flex-col items-start border border-[#E5E5E6] group-hover:bg-labs-secondary transition-all duration-300 ease-in-out transform">
+          <div className="relative rounded-[16px] p-[14px] sm:p-4 bg-gradient-to-r from-[#ff6a9954] to-[#ECEFFE] z-10 mb-[14px] sm:mb-4 group-hover:bg-white transition-colors duration-300 ease-in-out">
             <img
               src={image ? `${configs.API_URL}${image}` : DefaultImage}
               alt={`${title} icon`}

@@ -176,7 +176,7 @@ const config: Config = {
       backgroundImage: {
         "custom-gradient": "linear-gradient(180deg, #6D428C -5.58%, #00A29A 106.62%)",
         "hover-gradient": "linear-gradient(90deg, #CD41FA 0%, #7E4FF9 100%)",
-        "gradient-180": "linear-gradient(180deg, #FFADFD54 0%, #ECEFFE 100%)",
+        "gradient-180": "linear-gradient(180deg, #ff6a9954 0%, #ECEFFE 100%)",
         "gradient-core-value": "linear-gradient(180deg, #FFADFD54 0%, #ECEFFE 100%)",
         "labs-primary":
           "linear-gradient(90deg, #A559F5 0%, #CD52D1 18.94%, #F03DB3 35%, #F83180 52.03%, #FB4A5C 73.99%, #FB4C5A 83.71%, #FD5947 94.55%, #FF6634 100%)",

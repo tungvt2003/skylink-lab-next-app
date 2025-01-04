@@ -188,7 +188,7 @@ export const SKLLabFooter: ComponentConfig<FooterProps> = {
       type: "text",
     },
     termService: {
-      label: "Terms of Service",
+      label: "Policy & Terms of Service",
       type: "array",
       arrayFields: {
         title: {
