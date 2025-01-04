@@ -72,7 +72,7 @@ export const RenderConfig: ComponentConfig<CardOurCoreValueProps> = {
             alt={`${title} icon`}
             width={319}
             height={452}
-            className="h-[452px] w-[319px] object-contain z-20 sm:mb-7 rounded-lg"
+            className="h-[452px] w-[319px] object-contain z-20 sm:mb-7 mb-5 rounded-lg"
           />
         </div>
         {responsiveCSS}

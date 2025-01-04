@@ -151,7 +151,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
           <div id="header" className="w-[95%] sm:max-w-[1200px] mx-auto px-[10px] ">
             <div className="flex justify-between h-[59px] items-center">
               <div className="flex h-full">
-                <div className="pr-5 h-full flex items-center">
+                <div className="h-full flex items-center">
                   <a href="/">
                     {configs?.API_URL &&
                       (isHome ? (
@@ -159,13 +159,13 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                           <img
                             src={configs.API_URL + imgTop}
                             alt="logo"
-                            className="w-[116px] h-7 sm:w-[174px] sm:h-9"
+                            className="w-[155px] h-7 sm:w-[174px] sm:h-9"
                           />
                         ) : (
-                          <img src={configs.API_URL + img} alt="logo" className="w-[116px] h-7 sm:w-[174px] sm:h-9" />
+                          <img src={configs.API_URL + img} alt="logo" className="w-[155px] h-7 sm:w-[174px] sm:h-9" />
                         )
                       ) : (
-                        <img src={configs.API_URL + img} alt="logo" className="w-[116px] h-7 sm:w-[174px] sm:h-9" />
+                        <img src={configs.API_URL + img} alt="logo" className="w-[155px] h-7 sm:w-[174px] sm:h-9" />
                       ))}
                   </a>
                 </div>
@@ -190,12 +190,12 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                   )}
                 </div>
               </div>
-              <div className="flex gap-5 items-center">
+              <div className="flex gap-4 sm:gap-5 items-center">
                 <div className="hidden sm:block">
                   <LocalSwitcher />
                 </div>
                 <button
-                  className={`py-[13px] px-[25px] ${
+                  className={`py-[13px] px-5 ${
                     isHome
                       ? isTop
                         ? "bg-white text-black"
@@ -244,13 +244,13 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                     >
                       <div className="flex items-center justify-between h-[59px] w-[95%] mx-auto">
                         <div className="flex h-full">
-                          <div className="pr-5 h-full flex items-center">
+                          <div className="h-full flex items-center">
                             <a href="/">
                               {configs?.API_URL && (
                                 <img
                                   src={configs.API_URL + img}
                                   alt="logo"
-                                  className="w-[116px] h-7 sm:w-[174px] sm:h-9"
+                                  className="w-[155px] h-7 sm:w-[174px] sm:h-9"
                                 />
                               )}
                             </a>
