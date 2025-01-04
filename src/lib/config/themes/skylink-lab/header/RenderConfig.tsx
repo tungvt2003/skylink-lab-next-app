@@ -9,7 +9,9 @@ import {
 } from "@ant-design/icons/lib/icons"
 import { ComponentConfig } from "@measured/puck"
 import { message } from "antd"
+import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
+import LocalSwitcher from "../../../../../components/local-switcher"
 import { configs } from "../../../../external-components"
 import httpClient from "../../../../http-client"
 import { CommonStylesProps } from "../../../lib/commonCSSProps"
@@ -36,6 +38,7 @@ export interface SKLLabHeaderProps extends CommonStylesProps {
   imgTop?: string
   title?: string
   idMenu: string
+  titleButton: string
 }
 
 interface MenuItem {
@@ -44,12 +47,13 @@ interface MenuItem {
   url: string
 }
 export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
-  render: ({ img, title, idMenu, responsiveType, styles, imgTop }) => {
+  render: ({ img, title, idMenu, responsiveType, styles, imgTop, titleButton }) => {
     const id = `header-${Math.random().toString(36).substr(2, 9)}`
     const responsiveCSS = generateResponsiveCSS(id, styles || {}, responsiveType)
-
+    const t = useTranslations()
     const [dataMenu, setdataMenu] = useState<MenuItem[]>([])
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [selectedLanguage, setSelectedLanguage] = useState("vi")
 
     const containerStyle = {
       width: "100%",
@@ -73,7 +77,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
       if (!isClient) return
 
       const currentPath = window.location.pathname
-      setIsHome(currentPath === "/")
+      setIsHome(currentPath === "/" || currentPath === "/en")
 
       const handleScroll = () => {
         const currentScrollY = window.scrollY
@@ -100,7 +104,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
       try {
         const API_PREFIX_MENUPREFERENCE_PATH = "menu-preferences"
         const response = await httpClient.get<{ data: { attributes: { items: MenuItem[] } } }>(
-          `${API_PREFIX_MENUPREFERENCE_PATH}/${17}`,
+          `${API_PREFIX_MENUPREFERENCE_PATH}/${idMenu}`,
           {
             params: {
               populate: "*",
@@ -152,12 +156,16 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                     {configs?.API_URL &&
                       (isHome ? (
                         isTop ? (
-                          <img src={configs.API_URL + imgTop} alt="logo" className="w-[116px] h-7" />
+                          <img
+                            src={configs.API_URL + imgTop}
+                            alt="logo"
+                            className="w-[116px] h-7 sm:w-[174px] sm:h-9"
+                          />
                         ) : (
-                          <img src={configs.API_URL + img} alt="logo" className="w-[93px] h-7" />
+                          <img src={configs.API_URL + img} alt="logo" className="w-[116px] h-7 sm:w-[174px] sm:h-9" />
                         )
                       ) : (
-                        <img src={configs.API_URL + img} alt="logo" className="w-[93px] h-7" />
+                        <img src={configs.API_URL + img} alt="logo" className="w-[116px] h-7 sm:w-[174px] sm:h-9" />
                       ))}
                   </a>
                 </div>
@@ -183,12 +191,13 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                 </div>
               </div>
               <div className="flex gap-5 items-center">
+                <LocalSwitcher />
                 <button
                   className={`py-[13px] px-[25px] ${
                     isHome ? (isTop ? "bg-white text-black" : "bg-[#CD41FA] text-white") : "bg-[#CD41FA] text-white"
                   } hover:bg-[#7e4ff9] hover:text-white duration-300 text-sm leading-4 font-medium rounded-full`}
                 >
-                  Get the app
+                  {t("Get the app")}
                 </button>
                 <div>
                   <div className="sm:hidden block">
@@ -226,7 +235,11 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                           <div className="pr-5 h-full flex items-center">
                             <a href="/">
                               {configs?.API_URL && (
-                                <img src={configs.API_URL + img} alt="logo" className="w-[93px] h-7" />
+                                <img
+                                  src={configs.API_URL + img}
+                                  alt="logo"
+                                  className="w-[116px] h-7 sm:w-[174px] sm:h-9"
+                                />
                               )}
                             </a>
                           </div>
@@ -277,7 +290,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                       </nav>
 
                       <button className="inline-block w-[calc(95%-10px)] mx-auto bg-[#cd41fa] hover:bg-[#7e4ff9] duration-300 text-white rounded-full px-6 py-4 text-sm font-medium mt-auto mb-[25%]">
-                        Get the app
+                        {titleButton}
                       </button>
                     </div>
                   )}

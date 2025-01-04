@@ -2,12 +2,16 @@
 
 import { ComponentConfig } from "@measured/puck"
 import { Button, Modal } from "antd"
+import dynamic from "next/dynamic"
 import { useState } from "react"
 import { configs, DefaultImage, Media, MediaUpload } from "../../../../external-components"
-import CKEditorComponent from "../../../lib/Ckeditor"
 import getClassNameFactory from "../../../lib/get-class-name-factory"
 import { EnhancedIconBoxProps, RenderConfig } from "./RenderConfig"
 import styles from "./styles.module.css"
+
+const CKEditorComponent = dynamic(() => import("../../../lib/Ckeditor"), {
+  ssr: false,
+})
 
 const getClassName = getClassNameFactory("IconBox", styles)
 

@@ -1,11 +1,36 @@
-import { defaultLocale } from "@/constants/locales"
 import createMiddleware from "next-intl/middleware" // Import middleware từ next-intl
 import { NextResponse, type NextRequest } from "next/server"
-import { i18n } from "../i18n-config"
-import { routing } from "./i18n/routing" // Import routing từ file của bạn
+import { routing } from "./i18n/routing"
+export type LocaleType = (typeof routing.locales)[number]
+
+function getPreferredLocale(acceptLanguage: string | null): LocaleType {
+  const locales = routing.locales
+  const defaultLocale = routing.defaultLocale
+
+  if (!acceptLanguage) return defaultLocale
+
+  const languages = acceptLanguage
+    .split(",")
+    .map(lang => {
+      const [locale, weight] = lang.split(";q=")
+      return { locale: locale.trim(), weight: parseFloat(weight) || 1.0 }
+    })
+    .sort((a, b) => b.weight - a.weight)
+
+  for (const lang of languages) {
+    const baseLocale = lang.locale.split("-")[0] as LocaleType
+    if (locales.includes(baseLocale)) {
+      return baseLocale
+    }
+  }
+
+  return defaultLocale
+}
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
+  const acceptLanguage = request.headers.get("accept-language")
+  const defaultLocale = getPreferredLocale(acceptLanguage)
 
   const ignorePaths = ["/sitemap.xml", "/robots.txt", "/api", "/_next"]
 
@@ -23,26 +48,23 @@ export function middleware(request: NextRequest) {
     )
   }
 
-  const pathnameIsMissingLocale = i18n.locales.every(
+  const pathnameIsMissingLocale = routing.locales.every(
     locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   )
 
   if (pathnameIsMissingLocale) {
     return NextResponse.rewrite(new URL(`/${defaultLocale}${pathname}${request.nextUrl.search}`, request.nextUrl.href))
   }
-  const isSearchPathWithLocale = i18n.locales.some(locale => pathname.startsWith(`/${locale}/search*`))
+
+  const isSearchPathWithLocale = routing.locales.some(locale => pathname.startsWith(`/${locale}/search*`))
 
   if (isSearchPathWithLocale) {
     return NextResponse.rewrite(new URL("/search", request.url))
   }
 
-  // Apply next-intl middleware routing
-  return createMiddleware(routing)(request) // Gọi middleware của next-intl với routing của bạn
+  return createMiddleware(routing)(request)
 }
 
 export const config = {
-  matcher: [
-    "/((?!_next).*)", // Match tất cả các route ngoại trừ _next
-    "/(vi|en)/:path*", // Match các route với ngôn ngữ (de|en)
-  ],
+  matcher: ["/((?!_next).*)", "/(en|vi)/:path*"],
 }

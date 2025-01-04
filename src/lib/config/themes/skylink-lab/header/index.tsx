@@ -168,6 +168,10 @@ export const SKLLabHeader: ComponentConfig<SKLLabHeaderProps> = {
       label: "Menu ID",
       render: props => <SelectMultiple {...props} />,
     },
+    titleButton: {
+      label: "Title Button",
+      type: "text",
+    },
 
     ...commonStylesProps,
   },
@@ -186,6 +190,7 @@ export const SKLLabHeader: ComponentConfig<SKLLabHeaderProps> = {
       },
     },
     idMenu: "17",
+    titleButton: "Get the app",
   },
 
   ...RenderConfig,

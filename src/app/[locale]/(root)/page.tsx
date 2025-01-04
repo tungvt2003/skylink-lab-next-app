@@ -6,28 +6,31 @@ import getPage from "../../../lib/config/lib/getPage"
 import { generateMeta } from "../../../lib/generateMeta"
 
 // Fetching page data
-const fetchPageData = async (slugs: string[]) => {
-  const lang = "vi"
-  const defaultSlug = APPCONFIG.DEFAULT_SLUG[lang as "vi" | "en"]
-  const pageData = await getPage(last(slugs) ?? defaultSlug, lang)
+const fetchPageData = async (slugs: string[], locale: string) => {
+  const defaultSlug = APPCONFIG.DEFAULT_SLUG[locale as "vi" | "en"]
+  const pageData = await getPage(last(slugs) ?? defaultSlug, locale)
   return pageData
 }
 
-export const revalidate = 60 // 1 day
+export const revalidate = 60
 
-const Page = async (props: { params: Promise<{ slugs: string[] }> }) => {
+const Page = async (props: { params: Promise<{ slugs: string[]; locale: string }> }) => {
   const params = await props.params
-  const pageData = await fetchPageData(params.slugs)
+  const pageData = await fetchPageData(params.slugs, params.locale)
 
   return <PageRender pageData={pageData} />
 }
 
 export default Page
 
-export async function generateMetadata(context: { params: Promise<{ slugs?: string[] }> }): Promise<Metadata> {
+export async function generateMetadata(context: {
+  params: Promise<{ slugs?: string[] }>
+  locale: string
+}): Promise<Metadata> {
   try {
     const resolvedParams = await context.params
-    const pageData = await fetchPageData(resolvedParams.slugs ?? [])
+    const locale = context.locale
+    const pageData = await fetchPageData(resolvedParams.slugs ?? [], locale)
 
     const metaData = pageData[0].attributes
     return generateMeta({ data: metaData })
