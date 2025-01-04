@@ -134,7 +134,7 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
                 </a>
               )}
             </div>
-            <div className="p-[10px]">
+            <div className="p-[10px] flex gap-8">
               {termService && (
                 <div className="flex gap-5">
                   {termService.map((item: any, index: number) => (
