@@ -203,7 +203,13 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                       : "bg-labs-primary text-white"
                   } hover:bg-labs-secondary hover:text-white duration-300 text-sm leading-4 font-medium rounded-full`}
                 >
-                  {t("Get the app")}
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.skylinklabs.magicswap&pli=1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t("Get the app")}
+                  </a>
                 </button>
                 <div>
                   <div className="sm:hidden block">
