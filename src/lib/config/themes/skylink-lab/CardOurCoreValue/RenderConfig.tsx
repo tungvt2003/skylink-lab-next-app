@@ -72,12 +72,12 @@ export const RenderConfig: ComponentConfig<CardOurCoreValueProps> = {
             alt={`${title} icon`}
             width={319}
             height={452}
-            className="h-[452px] w-[319px] object-cover z-20"
+            className="h-[452px] w-[319px] object-contain z-20 sm:mb-7 rounded-lg"
           />
         </div>
         {responsiveCSS}
         <div className="flex flex-col items-start transition-transform duration-300 ease-in-out group-hover:-translate-y-[7px]">
-          <h4 id={id} className={`flex-1 ${id} ${twMerge(className)} mb-5`}>
+          <h4 id={id} className={`flex-1 ${id} ${twMerge(className)} mb-5 text-left`}>
             {title}
           </h4>
           <p className="text-[14px] sm:text-base text-left font-medium leading-[25.2px] sm:leading-[28.8px] text-[#616161]">
