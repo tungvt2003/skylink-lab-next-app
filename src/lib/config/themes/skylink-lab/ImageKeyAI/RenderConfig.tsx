@@ -62,7 +62,7 @@ export const RenderConfig: ComponentConfig<ImageKeyAIProps> = {
           const scrollRatio = Math.min(1, Math.max(0, (windowHeight - rect.top) / maxScrollHeight))
 
           // Chuyển đổi scrollRatio (0 -> 1) thành offsetY (-30 -> 30)
-          const newOffset = -30 + scrollRatio * 60 // 60 = 30 - (-30)
+          const newOffset = -30 + scrollRatio * 50 // 60 = 30 - (-30)
           setOffset(newOffset)
         }
       }
