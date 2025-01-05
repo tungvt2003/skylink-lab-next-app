@@ -5,6 +5,15 @@ const nextConfig = {
   typescript: {
     tsconfigPath: "./tsconfig.json",
   },
+  async rewrites() {
+    return [
+      {
+        // Match any requests to the old API path and redirect to the new API
+        source: "/uploads/:path*",
+        destination: "https://api-cms-skylink.dansolutions.vn/uploads/:path*",
+      },
+    ]
+  },
   async headers() {
     return [
       {
