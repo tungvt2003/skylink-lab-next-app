@@ -182,6 +182,8 @@ const config: Config = {
           "linear-gradient(90deg, #A559F5 0%, #CD52D1 18.94%, #F03DB3 35%, #F83180 52.03%, #FB4A5C 73.99%, #FB4C5A 83.71%, #FD5947 94.55%, #FF6634 100%)",
         "labs-secondary":
           "linear-gradient(90deg, #FF6634 0%, #FD5947 18.94%, #FB4C5A 35%, #FB4A5C 52.03%, #F83180 73.99%, #F03DB3 83.71%, #CD52D1 94.55%, #A559F5 100%)",
+        "gradient-text":
+          "linear-gradient(0deg, #a559f5, #cd52d1 18.94%, #f03db3 35%, #f83180 52.03%, #fb4a5c 73.99%, #fb4c5a 83.71%, #fd5947 94.55%, #ff6634)",
       },
       keyframes: {
         fadeInScale: {

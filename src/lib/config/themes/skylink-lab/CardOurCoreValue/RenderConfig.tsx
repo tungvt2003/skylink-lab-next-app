@@ -66,13 +66,13 @@ export const RenderConfig: ComponentConfig<CardOurCoreValueProps> = {
 
     return (
       <div className="rounded-[12px] p-[30px] text-center bg-gradient-core-value w-full sm:w-1/3 group">
-        <div className="relative rounded-[16px]">
+        <div className="relative rounded-[16px] px-5">
           <img
             src={image ? `${configs.API_URL}${image}` : DefaultImage}
             alt={`${title} icon`}
             width={319}
             height={452}
-            className="h-[452px] w-[319px] object-contain z-20 sm:mb-7 mb-5 rounded-lg"
+            className="object-contain z-20 sm:mb-7 mb-5 rounded-[16px]"
           />
         </div>
         {responsiveCSS}

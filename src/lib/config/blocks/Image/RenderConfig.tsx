@@ -55,7 +55,7 @@ export const RenderConfig: ComponentConfig<ImageProps> = {
 
     return (
       <>
-        <a href={link ?? "#"} className="relative group">
+        <a href={link ?? "#"} className="relative group flex justify-center">
           {hoverEffect && (
             <div className="absolute sm:hidden left-0 sm:left-[10%] w-full h-[220px] sm:w-[80%] sm:h-[300px] top-[25%] z-0 bg-gradient-180 rounded-[16px] sm:rounded-[24px]"></div>
           )}

@@ -169,7 +169,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                       ))}
                   </a>
                 </div>
-                <div className="hidden sm:flex h-full">
+                <div className="hidden sm:flex h-full ml-[2rem]">
                   {(!isHome || !isTop) && (
                     <div className="h-full flex items-center group">
                       {dataMenu?.map((item, index) => (
@@ -179,7 +179,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                         >
                           <a href={item.url} className="flex items-center h-full w-full">
                             <span
-                              className={`menu-item item-${index} flex items-center h-full px-5 text-[13px] font-semibold text-[#7E4FF9] transition-all duration-300 hover:text-black`}
+                              className={`menu-item item-${index} flex items-center h-full px-5 transition-all duration-300 hover:text-black text-transparent bg-clip-text bg-gradient-text font-medium text-[16px]`}
                             >
                               {item?.name}
                             </span>
@@ -294,7 +294,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                             >
                               <a href={item.url} className="w-full">
                                 <span
-                                  className={`menu-item item-${index} flex items-center h-full text-[18px] font-semibold text-black group-hover:text-[#CD41FA] transition-all duration-300`}
+                                  className={`menu-item item-${index} flex items-center h-full hover:text-black text-transparent bg-clip-text bg-gradient-text font-medium text-[18px] transition-all duration-300`}
                                 >
                                   {item?.name}
                                 </span>
