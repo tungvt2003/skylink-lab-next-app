@@ -71,7 +71,7 @@ export const RenderConfig: ComponentConfig<CardOurCoreValueProps> = {
             src={image ? `${configs.API_URL}${image}` : DefaultImage}
             alt={`${title} icon`}
             width={319}
-            height={452}
+            height={474}
             className="object-contain z-20 sm:mb-7 mb-5 rounded-[16px]"
           />
         </div>

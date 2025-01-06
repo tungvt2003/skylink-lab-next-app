@@ -40,17 +40,34 @@ export const generateMeta = async (args: {
   //     (item: { attributes: { key: string; value: string } }) => item.attributes.key === "websiteDescription",
   //   )?.attributes.value || "SKYLINK LAB"
 
+  // return {
+  //   title: `${title ? `${title} | ` : ""}${"SKYLINK LAB"}`,
+  //   description: data?.SEO?.metaDescription || "Skylink Labs - Trí Tuệ Nhân Tạo, Tinh Chỉnh Từng Chi Tiết",
+  //   keywords: data?.SEO?.keywords ? data?.SEO?.keywords : "",
+  //   robots: data?.SEO?.metaRobots || "index, follow",
+  //   openGraph: {
+  //     title: data?.SEO?.metaTitle || "SkyLink Lab",
+  //     description: data?.SEO?.metaDescription || "Skylink Labs - Trí Tuệ Nhân Tạo, Tinh Chỉnh Từng Chi Tiết",
+  //     type: "website",
+  //     url: `${configs.API_URL}${data?.SEO?.canonicalURL || ""}`,
+  //     // images: `${configs.API_URL}${data?.SEO?.metaImage?.daloata?.attributes.url}` || "",
+  //     images: "https://api-cms-skylink.dansolutions.vn/uploads/logo_labs_e354377849.png",
+  //   },
+  //   alternates: {
+  //     canonical: data?.SEO?.canonicalURL || "",
+  //   },
+  // }
+
   return {
     title: `${title ? `${title} | ` : ""}${"SKYLINK LAB"}`,
-    description: data?.SEO?.metaDescription || "Skylink Labs - Trí Tuệ Nhân Tạo, Tinh Chỉnh Từng Chi Tiết",
+    description: "Skylink Labs - Trí Tuệ Nhân Tạo, Tinh Chỉnh Từng Chi Tiết",
     keywords: data?.SEO?.keywords ? data?.SEO?.keywords : "",
     robots: data?.SEO?.metaRobots || "index, follow",
     openGraph: {
-      title: data?.SEO?.metaTitle || "SkyLiNK Lab",
-      description: data?.SEO?.metaDescription || "Skylink Labs - Trí Tuệ Nhân Tạo, Tinh Chỉnh Từng Chi Tiết",
+      title: data?.SEO?.metaTitle || "SkyLink Lab",
+      description: "Skylink Labs - Trí Tuệ Nhân Tạo, Tinh Chỉnh Từng Chi Tiết",
       type: "website",
       url: `${configs.API_URL}${data?.SEO?.canonicalURL || ""}`,
-      // images: `${configs.API_URL}${data?.SEO?.metaImage?.data?.attributes.url}` || "",
       images: "https://api-cms-skylink.dansolutions.vn/uploads/logo_labs_e354377849.png",
     },
     alternates: {
