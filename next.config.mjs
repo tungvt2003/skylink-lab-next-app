@@ -17,6 +17,15 @@ const nextConfig = {
   async headers() {
     return [
       {
+        source: "/app-ads.txt",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/plain",
+          },
+        ],
+      },
+      {
         // Routes this applies to
         source: "/api/(.*)",
         // Headers

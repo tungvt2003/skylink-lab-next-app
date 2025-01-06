@@ -28,6 +28,7 @@ export const RenderConfig: ComponentConfig<ItemKeyAIProps> = {
           <>
             {responsiveCSS}
             <div
+              key={item.title}
               className={`${id} ${twMerge(className)} border w-fit border-[#E5E5E6] flex ${
                 isMobile ? "" : item.position === "left" ? "self-start" : "self-end"
               } hover:text-white hover:border-[#FB4A5C] hover:bg-labs-secondary z-10 transition-colors duration-300 ease-in-out`}
