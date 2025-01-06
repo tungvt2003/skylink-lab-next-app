@@ -74,7 +74,16 @@ export const generateMeta = async (args: {
           : "Skylink Labs - Precision Through AI",
       type: "website",
       url: `${configs.API_URL}${data?.SEO?.canonicalURL || ""}`,
-      images: "https://api-cms-skylink.dansolutions.vn/uploads/logo_labs_e354377849.png",
+      images: [
+        {
+          url: "https://api-cms-skylink.dansolutions.vn/uploads/logo_labs_e354377849.png",
+          width: 400,
+          height: 300,
+          type: "image/png",
+        },
+      ],
+      siteName: "Skylink Labs",
+      locale: locale == "/vi" ? "vi_VN" : "en_US",
     },
     alternates: {
       canonical: data?.SEO?.canonicalURL || "",
