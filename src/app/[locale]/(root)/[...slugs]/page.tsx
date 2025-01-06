@@ -30,7 +30,7 @@ export async function generateMetadata(context: {
     const pageData = await fetchPageData(slugs, locale)
     const metaData = pageData[0].attributes
 
-    return generateMeta({ data: metaData })
+    return generateMeta({ data: metaData, locale })
   } catch (error) {}
 
   return generateMeta({ data: null })
