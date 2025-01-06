@@ -25,9 +25,9 @@ export interface ResponseMetaData {
 
 export const generateMeta = async (args: {
   data?: (ResponseMetaData & Record<string, unknown>) | null | undefined
+  locale?: string
 }): Promise<Metadata> => {
-  const { data } = args || {}
-
+  const { data, locale } = args || {}
   const title = data?.SEO?.metaTitle || data?.name
   const settingsData = await getSettings()
 
@@ -60,12 +60,18 @@ export const generateMeta = async (args: {
 
   return {
     title: `${title ? `${title} | ` : ""}${"SKYLINK LAB"}`,
-    description: "Skylink Labs - Trí Tuệ Nhân Tạo, Tinh Chỉnh Từng Chi Tiết",
+    description:
+      locale == "/vi"
+        ? "Skylink Labs - Trí Tuệ Nhân Tạo, Tinh Chỉnh Từng Chi Tiết"
+        : "Skylink Labs - Precision Through AI",
     keywords: data?.SEO?.keywords ? data?.SEO?.keywords : "",
     robots: data?.SEO?.metaRobots || "index, follow",
     openGraph: {
       title: data?.SEO?.metaTitle || "SkyLink Lab",
-      description: "Skylink Labs - Trí Tuệ Nhân Tạo, Tinh Chỉnh Từng Chi Tiết",
+      description:
+        locale == "/vi"
+          ? "Skylink Labs - Trí Tuệ Nhân Tạo, Tinh Chỉnh Từng Chi Tiết"
+          : "Skylink Labs - Precision Through AI",
       type: "website",
       url: `${configs.API_URL}${data?.SEO?.canonicalURL || ""}`,
       images: "https://api-cms-skylink.dansolutions.vn/uploads/logo_labs_e354377849.png",

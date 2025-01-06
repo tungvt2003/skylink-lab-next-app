@@ -145,12 +145,7 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
         >
           {slides.map(({ id, image, url }, index) => (
             <SwiperSlide key={index}>
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative w-full h-[48px] sm:h-[80px] block overflow-hidden"
-              >
+              <div rel="noopener noreferrer" className="relative w-full h-[48px] sm:h-[80px] block overflow-hidden">
                 <div className="w-full h-full transition-transform duration-300 ease-in-out transform hover:scale-105">
                   <img
                     src={getImageUrl(image) || DefaultImage}
@@ -160,7 +155,7 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
                     height="128"
                   />
                 </div>
-              </a>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       //   allow: "/",
-      disallow: "/", // Disallow everything
+      disallow: "", // Disallow everything
     },
     // sitemap: "https://acme.com/sitemap.xml",
   }
