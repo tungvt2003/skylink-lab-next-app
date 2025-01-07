@@ -186,7 +186,7 @@ export const RenderConfig: ComponentConfig<ContactUsProps> = {
                     name="answer"
                     value={formData.answer}
                     onChange={handleChange}
-                    placeholder={t("Add answer here")}
+                    placeholder={t("Add question here")}
                     rows={4}
                     className="flex-1 py-3 pl-4 w-full bg-[#F9F9F9] rounded-[15px] placeholder:text-[#a69f9d] focus:outline-none max-sm:placeholder:text-[13px]"
                     required
