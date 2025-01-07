@@ -34,10 +34,12 @@ export function middleware(request: NextRequest) {
 
   const ignorePaths = ["/sitemap.xml", "/robots.txt", "/api", "/_next", "/app-ads.txt"]
 
+  //bỏ qua các path cần ignore
   if (ignorePaths.some(path => pathname.startsWith(path))) {
     return NextResponse.next()
   }
 
+  // Nếu path là favicon thì redirect về path /favicon.ico
   if (pathname === "/favicon.ico") {
     return NextResponse.rewrite(new URL("/favicon.ico", request.url))
   }
@@ -46,6 +48,11 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(
       new URL(pathname.replace(`/${defaultLocale}`, pathname === `/${defaultLocale}` ? "/" : ""), request.url),
     )
+  }
+
+  // Redirect /vi to /
+  if (pathname === `/${defaultLocale}`) {
+    return NextResponse.redirect(new URL("/", request.url))
   }
 
   const pathnameIsMissingLocale = routing.locales.every(
