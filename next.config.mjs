@@ -30,7 +30,7 @@ const nextConfig = {
         headers: [
           {
             key: "Content-Type",
-            value: "text/plain",
+            value: "application/json",
           },
         ],
       },
