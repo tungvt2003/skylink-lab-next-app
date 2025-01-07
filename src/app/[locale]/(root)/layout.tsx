@@ -10,11 +10,10 @@ import { notFound } from "next/navigation"
 import Providers from "../../../components/progress-bar/progress-bar"
 import ScrollToTop from "../../../components/scroll-to-top"
 import { routing } from "../../../i18n/routing"
-import { getSettings } from "../../../lib/navigation-services"
 
 export const metadata: Metadata = {
-  title: "Hệ thống Giáo dục Sky-Line",
-  description: "Hệ thống Giáo dục Sky-Line",
+  title: "SkyLink Labs",
+  description: "SkyLink Labs",
 }
 
 type Props = {
@@ -30,22 +29,11 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
   const messages = await getMessages({ locale })
-  const settingsData = await getSettings()
-  const DEFAULT_HEADERSCRIPTS =
-    settingsData?.find(
-      (item: { attributes: { key: string; value: string } }) => item.attributes.key === "headerScripts",
-    )?.attributes.value || ""
+
   return (
     <html lang={locale}>
       <head>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <script
-          id="headerScripts"
-          type={DEFAULT_HEADERSCRIPTS}
-          dangerouslySetInnerHTML={{
-            __html: DEFAULT_HEADERSCRIPTS,
-          }}
-        ></script>
       </head>
       <body className={`${inter.variable} ${open_sans.variable} bg-white`}>
         <NextIntlClientProvider messages={messages}>
