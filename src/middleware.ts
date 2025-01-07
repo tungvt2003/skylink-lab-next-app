@@ -32,7 +32,7 @@ export function middleware(request: NextRequest) {
   const acceptLanguage = request.headers.get("accept-language")
   const defaultLocale = getPreferredLocale(acceptLanguage)
 
-  const ignorePaths = ["/sitemap.xml", "/robots.txt", "/api", "/_next", "/app-ads.txt"]
+  const ignorePaths = ["/sitemap.xml", "/robots.txt", "/api", "/_next", "/app-ads.txt", "/.well-known"]
 
   //bỏ qua các path cần ignore
   if (ignorePaths.some(path => pathname.startsWith(path))) {

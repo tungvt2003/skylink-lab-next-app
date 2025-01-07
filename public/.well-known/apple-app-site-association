@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appIDs": [ "32G88JCDA5.com.skylinklabs.faceswap"],
+                "paths": ["*"]
+            }
+        ]
+    }
+}
