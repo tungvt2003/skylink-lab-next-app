@@ -1,6 +1,7 @@
 "use client"
 
 import { ComponentConfig } from "@measured/puck"
+import { Button } from "antd"
 import AOS from "aos"
 import "aos/dist/aos.css"
 import { useEffect } from "react"
@@ -45,19 +46,6 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
       })
     }, [])
 
-    const paginationCustom = {
-      clickable: true,
-      bulletClass:
-        pagination === "default" ? "custom-swiper-pagination-bullet" : "custom-swiper-pagination-section-bullet",
-      bulletActiveClass:
-        pagination === "default"
-          ? "custom-swiper-pagination-bullet-active"
-          : "custom-swiper-pagination-section-bullet-active",
-      renderBullet: function (index: number, className: string) {
-        return `<span class="${className}">${""}</span>`
-      },
-    }
-
     const id = `simple-slider-${Math.random().toString(36).substr(2, 9)}`
 
     // Merge default styles with user-defined styles
@@ -76,9 +64,11 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
         <Swiper
           spaceBetween={spaceBetween}
           slidesPerView={slidesPerView}
-          pagination={paginationCustom}
           modules={[Pagination, Autoplay, Navigation]}
-          navigation={{ nextEl: ".custom-next-slick-arrow-orange", prevEl: ".custom-prev-slick-arrow-orange" }}
+          navigation={{
+            nextEl: ".custom-next-slick-arrow",
+            prevEl: ".custom-prev-slick-arrow",
+          }}
           loop={loop}
           speed={speed}
           autoplay={{ delay: timeDelay }}
@@ -106,6 +96,31 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
               </a>
             </SwiperSlide>
           ))}
+          <Button
+            className={`custom-prev-slick-arrow absolute opacity-80 left-5 z-10 top-[50%]  -translate-y-[70%] p-0 h-[45px] w-[45px] rounded-[50%] transition-all duration-500 ease-out -translate-x-full lg:translate-x-0 rotate-180 border-0 max-sm:hidden`}
+          >
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M9.40433 0.893996C9.64841 0.649918 10.0441 0.649918 10.2882 0.893996L15.2882 5.894C15.5323 6.13807 15.5323 6.5338 15.2882 6.77788L10.2882 11.7779C10.0441 12.022 9.64841 12.022 9.40433 11.7779C9.16025 11.5338 9.16025 11.1381 9.40433 10.894L13.3374 6.96094H1.51294C1.16776 6.96094 0.887939 6.68112 0.887939 6.33594C0.887939 5.99076 1.16776 5.71094 1.51294 5.71094H13.3374L9.40433 1.77788C9.16025 1.5338 9.16025 1.13807 9.40433 0.893996Z"
+                fill="#100F0F"
+              />
+            </svg>
+          </Button>
+
+          <Button
+            className={`custom-next-slick-arrow absolute opacity-80 right-5 z-10 top-[50%] -translate-y-[70%] p-0 h-[45px] w-[45px] rounded-[50%] transition-all duration-500 ease-out -translate-x-full lg:translate-x-0 border-0 max-sm:hidden`}
+          >
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M9.40433 0.893996C9.64841 0.649918 10.0441 0.649918 10.2882 0.893996L15.2882 5.894C15.5323 6.13807 15.5323 6.5338 15.2882 6.77788L10.2882 11.7779C10.0441 12.022 9.64841 12.022 9.40433 11.7779C9.16025 11.5338 9.16025 11.1381 9.40433 10.894L13.3374 6.96094H1.51294C1.16776 6.96094 0.887939 6.68112 0.887939 6.33594C0.887939 5.99076 1.16776 5.71094 1.51294 5.71094H13.3374L9.40433 1.77788C9.16025 1.5338 9.16025 1.13807 9.40433 0.893996Z"
+                fill="#100F0F"
+              />
+            </svg>
+          </Button>
         </Swiper>
       </>
     )
