@@ -24,18 +24,17 @@ export const RenderConfig: ComponentConfig<ItemKeyAIProps> = {
 
     return (
       <div className="w-full sm:w-[30%] h-full flex flex-col justify-center items-center gap-5 sm:gap-20 p-2.5">
-        {items.map(item => (
-          <>
+        {items.map((item, index) => (
+          <div key={index}>
             {responsiveCSS}
             <div
-              key={item.title}
               className={`${id} ${twMerge(className)} border w-fit border-[#E5E5E6] flex ${
                 isMobile ? "" : item.position === "left" ? "self-start" : "self-end"
               } hover:text-white hover:border-[#FB4A5C] hover:bg-labs-secondary z-10 transition-colors duration-300 ease-in-out`}
             >
               <div>{item.title}</div>
             </div>
-          </>
+          </div>
         ))}
       </div>
     )
