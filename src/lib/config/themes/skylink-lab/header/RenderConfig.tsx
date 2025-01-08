@@ -53,7 +53,6 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
     const t = useTranslations()
     const [dataMenu, setdataMenu] = useState<MenuItem[]>([])
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const [selectedLanguage, setSelectedLanguage] = useState("vi")
 
     const containerStyle = {
       width: "100%",
@@ -88,7 +87,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
           setIsScrollingUp(true)
         }
 
-        setIsTop(currentScrollY === 0)
+        setIsTop(currentScrollY <= 10)
 
         setLastScrollY(currentScrollY)
       }
@@ -144,7 +143,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
           className={`${
             isScrollingUp || isTop ? "translate-y-0" : "-translate-y-[100px]"
           } transition-transform duration-300 fixed top-0 w-full z-50 ${
-            isHome ? (isTop ? "bg-white shadow-md" : "bg-[#eceffe] shadow-md") : "bg-[#eceffe] shadow-md"
+            isHome ? (isTop ? "bg-white shadow-md" : "bg-white shadow-md") : "bg-white shadow-md"
           }`}
           style={{ height: "59px" }}
         >
@@ -170,7 +169,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                   </a>
                 </div>
                 <div className="hidden sm:flex h-full ml-[2rem]">
-                  {(!isHome || !isTop) && (
+                  {
                     <div className="h-full flex items-center group">
                       {dataMenu?.map((item, index) => (
                         <div
@@ -179,7 +178,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                         >
                           <a href={item.url} className="flex items-center h-full w-full">
                             <span
-                              className={`menu-item item-${index} flex items-center h-full px-5 transition-all duration-300 hover:text-black text-transparent bg-clip-text bg-gradient-text font-medium text-[16px]`}
+                              className={`menu-item item-${index} flex items-center h-full px-5 transition-all duration-300 hover:text-black text-transparent bg-clip-text bg-black font-medium text-[16px]`}
                             >
                               {item?.name}
                             </span>
@@ -187,7 +186,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                         </div>
                       ))}
                     </div>
-                  )}
+                  }
                 </div>
               </div>
               <div className="flex gap-4 sm:gap-5 items-center">
@@ -196,11 +195,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                 </div>
                 <button
                   className={`py-[13px] px-5 ${
-                    isHome
-                      ? isTop
-                        ? "bg-white text-black"
-                        : "bg-labs-primary text-white"
-                      : "bg-labs-primary text-white"
+                    isHome ? (isTop ? "bg-white text-black" : "bg-white text-black") : "bg-white text-black"
                   } hover:bg-labs-secondary hover:text-white duration-300 text-sm leading-4 font-medium rounded-full`}
                 >
                   <a
@@ -294,7 +289,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                             >
                               <a href={item.url} className="w-full">
                                 <span
-                                  className={`menu-item item-${index} flex items-center h-full hover:text-black text-transparent bg-clip-text bg-gradient-text font-medium text-[18px] transition-all duration-300`}
+                                  className={`menu-item item-${index} flex items-center h-full hover:text-black text-transparent bg-clip-text bg-black font-medium text-[18px] transition-all duration-300`}
                                 >
                                   {item?.name}
                                 </span>
