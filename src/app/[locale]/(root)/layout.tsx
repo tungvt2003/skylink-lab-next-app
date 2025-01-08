@@ -39,6 +39,11 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale}>
       <head>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link
+          rel="preload"
+          href="https://api-cms-skylink.dansolutions.vn/uploads/Homepage1_6054b94462.webp"
+          as="image"
+        />
         <script
           id="headerScripts"
           type={DEFAULT_HEADERSCRIPTS}
