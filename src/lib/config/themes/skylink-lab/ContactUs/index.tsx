@@ -11,8 +11,16 @@ export const ContactUsSKLLabs: ComponentConfig<ContactUsProps> = {
       label: "Title",
       type: "text",
     },
+    fullNameCompany: {
+      label: "Full Name Company",
+      type: "text",
+    },
     nameLocation: {
       label: "Name Location",
+      type: "text",
+    },
+    phone: {
+      label: "Phone",
       type: "text",
     },
     iframeSrc: {
@@ -27,7 +35,9 @@ export const ContactUsSKLLabs: ComponentConfig<ContactUsProps> = {
     ...commonStylesProps,
   },
   defaultProps: {
-    title: "SKYLINK LABS",
+    title: "SKYLINK Labs",
+    fullNameCompany: "SKYLINK LABS TECHNOLOGY JOINT STOCK COMPANY",
+    phone: "086.254.9999",
     nameLocation:
       "8th floor, Cantavil Premier Building, No. 1 Song Hanh - Xa Lo Ha Noi, An Phu Ward, Thu Duc City, HCMC.",
     iframeSrc:
