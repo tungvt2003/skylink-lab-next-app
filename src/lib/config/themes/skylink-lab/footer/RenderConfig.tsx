@@ -66,8 +66,8 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
         <div id={id}>
           <div className="flex sm:flex-row flex-col flex-wrap pb-[55px] sm:pb-[95px]">
             <div className="flex flex-col items-center sm:items-start gap-5 sm:gap-6 sm:w-[38.679%] p-[10px] mb-5 sm:mb-0">
-              <div className="shadow-md bg-white px-3 py-2 rounded-lg">
-                <img src={configs.API_URL + img} alt="logo" className="w-[120px] h-7" />
+              <div className="">
+                <img src={configs.API_URL + img} alt="logo" className="w-[120px] h-9" />
               </div>
               <div className="flex flex-col gap-5 sm:gap-6 w-auto sm:w-[350px]">
                 {descriptionItems &&
