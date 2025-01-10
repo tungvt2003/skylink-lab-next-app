@@ -64,7 +64,7 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
       <>
         {responsiveCSS}
         <div id={id}>
-          <div className="flex sm:flex-row flex-col flex-wrap pb-[55px] sm:pb-[95px]">
+          <div className="flex sm:flex-row flex-col flex-wrap pb-8 sm:pb-[40px]">
             <div className="flex flex-col items-center sm:items-start gap-5 sm:gap-6 sm:w-[38.679%] p-[10px] mb-5 sm:mb-0">
               <div className="">
                 <img src={configs.API_URL + img} alt="logo" className="w-[120px] h-9" />
@@ -125,8 +125,8 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
               ))}
             </div>
           </div>
-          <div className="w-full border-t border-[#FFFFFF1F] pb-[35px]"></div>
-          <div className="flex sm:flex-row flex-col-reverse items-center justify-between text-white pt-4 pb-12 sm:text-base text-[15px] font-semibold">
+          <div className="w-full border-t border-[#FFFFFF1F] pb-4"></div>
+          <div className="flex sm:flex-row flex-col-reverse items-center justify-between text-white sm:text-base text-[15px] font-semibold">
             <div className="p-[10px] text-center">{copyRight && <span>{copyRight}</span>}</div>
             <div className="p-[10px] flex gap-8">
               {termService && (
