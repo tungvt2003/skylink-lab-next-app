@@ -18,6 +18,7 @@ import { Text } from "./blocks/Text"
 import { VericalSpace } from "./blocks/VerticalSpace"
 import { Video as VideoConfig } from "./blocks/Video"
 import { VideoLibrary } from "./blocks/VideoLibrary"
+import { SKLAutoSlider } from "./themes/skylink-lab/AutoSliders/index"
 import { BannerHover } from "./themes/skylink-lab/bannerHover"
 import { ButtonSKLLab } from "./themes/skylink-lab/button"
 import { CardOurCoreValue } from "./themes/skylink-lab/CardOurCoreValue/index"
@@ -28,6 +29,7 @@ import { CustomCounter } from "./themes/skylink-lab/CustomCounter/index"
 import { CustomImage } from "./themes/skylink-lab/CustomImage/index"
 import { EnhancedIconBox } from "./themes/skylink-lab/EnhancedIconBox/index"
 import { SKLLabFooter } from "./themes/skylink-lab/footer"
+import { GridImageSKL } from "./themes/skylink-lab/GridImage/index"
 import { SKLLabHeader } from "./themes/skylink-lab/header"
 import { ImageSKLLab } from "./themes/skylink-lab/imageCustom"
 import { ImageKeyAI } from "./themes/skylink-lab/ImageKeyAI/index"
@@ -77,6 +79,8 @@ const components = {
   CustomImage,
   ContentCard,
   ContactUsSKLLabs,
+  GridImageSKL,
+  SKLAutoSlider,
 }
 
 export const common = {
@@ -124,6 +128,8 @@ export const common = {
         "CustomImage",
         "ContentCard",
         "ContactUsSKLLabs",
+        "GridImageSKL",
+        "SKLAutoSlider",
       ],
     },
   },
@@ -187,6 +193,7 @@ import { RenderConfig as NewText } from "./blocks/Text/RenderConfig"
 import { RenderConfig as NewVericalSpace } from "./blocks/VerticalSpace/RenderConfig"
 import { RenderConfig as NewVideo } from "./blocks/Video/RenderConfig"
 import { RenderConfig as NewVideoLibrary } from "./blocks/VideoLibrary/RenderConfig"
+import { RenderConfig as NewSKLAutoSlider } from "./themes/skylink-lab/AutoSliders/RenderConfig"
 import { RenderConfig as NewBannerHover } from "./themes/skylink-lab/bannerHover/RenderConfig"
 import { RenderConfig as NewButtonSKLLab } from "./themes/skylink-lab/button/RenderConfig"
 import { RenderConfig as NewCardOurCoreValue } from "./themes/skylink-lab/CardOurCoreValue/RenderConfig"
@@ -197,6 +204,7 @@ import { RenderConfig as NewCustomCounter } from "./themes/skylink-lab/CustomCou
 import { RenderConfig as NewCustomImage } from "./themes/skylink-lab/CustomImage/RenderConfig"
 import { RenderConfig as NewEnhancedIconBox } from "./themes/skylink-lab/EnhancedIconBox/RenderConfig"
 import { RenderConfig as NewSKLLabFooter } from "./themes/skylink-lab/footer/RenderConfig"
+import { RenderConfig as NewGridImageSKL } from "./themes/skylink-lab/GridImage/RenderConfig"
 import { RenderConfig as NewSKLLabHeader } from "./themes/skylink-lab/header/RenderConfig"
 import { RenderConfig as NewImageSKLLab } from "./themes/skylink-lab/imageCustom/RenderConfig"
 import { RenderConfig as NewImageKeyAI } from "./themes/skylink-lab/ImageKeyAI/RenderConfig"
@@ -246,6 +254,8 @@ export const newRenderComponents = {
   CustomImage: NewCustomImage,
   ContentCard: NewContentCard,
   ContactUsSKLLabs: NewContactUsSKLLabs,
+  GridImageSKL: NewGridImageSKL,
+  SKLAutoSlider: NewSKLAutoSlider,
 }
 
 // @ts-ignore

@@ -19,6 +19,7 @@ import { Text } from "./blocks/Text"
 import { VericalSpace } from "./blocks/VerticalSpace"
 import { Video } from "./blocks/Video"
 import { VideoLibrary } from "./blocks/VideoLibrary"
+import { SKLAutoSlider } from "./themes/skylink-lab/AutoSliders/index"
 import { BannerHover } from "./themes/skylink-lab/bannerHover"
 import { ButtonSKLLab } from "./themes/skylink-lab/button"
 import { CardOurCoreValue } from "./themes/skylink-lab/CardOurCoreValue/index"
@@ -29,6 +30,7 @@ import { CustomCounter } from "./themes/skylink-lab/CustomCounter/index"
 import { CustomImage } from "./themes/skylink-lab/CustomImage/index"
 import { EnhancedIconBox } from "./themes/skylink-lab/EnhancedIconBox/index"
 import { SKLLabFooter } from "./themes/skylink-lab/footer"
+import { GridImageSKL } from "./themes/skylink-lab/GridImage/index"
 import { SKLLabHeader } from "./themes/skylink-lab/header"
 import { ImageSKLLab } from "./themes/skylink-lab/imageCustom"
 import { ImageKeyAI } from "./themes/skylink-lab/ImageKeyAI/index"
@@ -76,4 +78,6 @@ export const uiBuilderComponents = {
   SKLSimpleSlider,
   SKLLabHeading,
   ContactUsSKLLabs,
+  GridImageSKL,
+  SKLAutoSlider,
 }

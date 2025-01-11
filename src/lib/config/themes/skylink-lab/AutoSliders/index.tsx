@@ -97,8 +97,8 @@ const SlideItem = ({ value, onChange }: any) => {
   )
 }
 
-export const SKLSimpleSlider: ComponentConfig<SimpleSliderProps> = {
-  label: "SKL - Custom Slider",
+export const SKLAutoSlider: ComponentConfig<SimpleSliderProps> = {
+  label: "Auto Sliders",
   //@ts-ignore
   fields: {
     slides: {
