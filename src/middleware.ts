@@ -24,9 +24,9 @@ export function middleware(request: NextRequest) {
     )
   }
 
-  if (pathname === `/${defaultLocale}`) {
-    return NextResponse.redirect(new URL("/", request.url))
-  }
+  // if (pathname === `/${defaultLocale}`) {
+  //   return NextResponse.redirect(new URL("/", request.url))
+  // }
 
   const pathnameIsMissingLocale = routing.locales.every(
     locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
