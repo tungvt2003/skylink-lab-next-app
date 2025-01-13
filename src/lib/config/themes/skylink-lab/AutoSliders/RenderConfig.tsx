@@ -9,7 +9,6 @@ import { twMerge } from "tailwind-merge"
 import { configs, DefaultImage } from "../../../../external-components"
 import { CommonStylesProps } from "../../../lib/commonCSSProps"
 import { generateResponsiveCSS } from "../../../lib/helper"
-import useIsMobile from "../../../lib/use-is-mobile"
 import "./css/custom-bullet.css"
 
 export interface SimpleSliderProps extends CommonStylesProps {
@@ -38,7 +37,6 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
     className,
   }) => {
     const id = `simple-slider-${Math.random().toString(36).substr(2, 9)}`
-    const isMobile = useIsMobile()
     // Merge default styles with user-defined styles
     const mergedStyles = {
       mobile: { ...styles?.mobile },
@@ -54,7 +52,7 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
         {responsiveCSS}
         <Swiper
           spaceBetween={30}
-          slidesPerView={isMobile ? 1 : 2}
+          slidesPerView={1}
           autoplay={{ delay: 3500 }}
           navigation={{ nextEl: ".custom-next-slick-arrow-auto", prevEl: ".custom-prev-slick-arrow-auto" }}
           modules={[Autoplay, Navigation]}
@@ -62,7 +60,6 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
           loop={true}
           centeredSlides
           className={`${id} ${twMerge(className)}`}
-          initialSlide={2}
         >
           {slides.concat(slides).map(({ id, image, url }, index) => (
             <SwiperSlide key={index}>
@@ -76,7 +73,7 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
                   <img
                     src={image ? `${configs.API_URL}${image}` : DefaultImage}
                     alt={`Slide ${index}`}
-                    className="sm:h-full object-cover h-[228px] w-full"
+                    className="sm:h-[690px] sm:object-cover aspect-[1200/690] w-full"
                   />
                 </div>
               </a>
