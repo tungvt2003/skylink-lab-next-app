@@ -12,10 +12,6 @@ const nextConfig = {
         source: "/uploads/:path*",
         destination: "https://api-cms-skylink.dansolutions.vn/uploads/:path*",
       },
-      {
-        source: "/skylink-lab-privacy-policies",
-        destination: "/en/skylink-lab-privacy-policies",
-      },
     ]
   },
   async headers() {
