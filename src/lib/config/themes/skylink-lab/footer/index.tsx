@@ -163,6 +163,18 @@ export const SKLLabFooter: ComponentConfig<FooterProps> = {
         },
       },
     },
+    fullNameCompany: {
+      label: "Full Name Company",
+      type: "text",
+    },
+    phone: {
+      label: "Phone",
+      type: "text",
+    },
+    email: {
+      label: "Email",
+      type: "text",
+    },
     iconItems: {
       label: "Icon Social",
       type: "array",

@@ -1,5 +1,6 @@
 "use client"
 
+import { MailFilled, PhoneFilled } from "@ant-design/icons"
 import { ComponentConfig } from "@measured/puck"
 import { message } from "antd"
 import { useEffect, useState } from "react"
@@ -14,6 +15,9 @@ export interface FooterProps extends CommonStylesProps {
   img: string
   copyRight: string
   descriptionItems: []
+  fullNameCompany: string
+  phone: string
+  email: string
   iconItems: []
   idMenu: string
   termService: []
@@ -29,7 +33,20 @@ interface MenuItemWithSubItems extends MenuItem {
 }
 
 export const RenderConfig: ComponentConfig<FooterProps> = {
-  render: ({ img, className, styles, responsiveType, copyRight, descriptionItems, iconItems, idMenu, termService }) => {
+  render: ({
+    img,
+    className,
+    styles,
+    responsiveType,
+    copyRight,
+    descriptionItems,
+    iconItems,
+    idMenu,
+    termService,
+    fullNameCompany,
+    phone,
+    email,
+  }) => {
     const id = `footer-SKLLab-${Math.random().toString(36).substr(2, 9)}`
 
     const responsiveCSS = generateResponsiveCSS(id, styles || {}, responsiveType)
@@ -69,15 +86,48 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
               <div className="">
                 <img src={configs.API_URL + img} alt="logo" className="w-[120px] h-9" />
               </div>
-              <div className="flex flex-col gap-5 sm:gap-6 w-auto sm:w-[350px]">
+              <div className="flex flex-col gap-2 sm:gap-2 w-auto sm:w-[350px]">
+                {fullNameCompany && (
+                  <p className="text-[#9E9E9E] text-base font-semibold text-center sm:text-start">{fullNameCompany}</p>
+                )}
                 {descriptionItems &&
                   descriptionItems.map((item: any, index: number) => (
                     <div key={index}>
-                      <p className="text-[#9E9E9E] text-base font-semibold text-center sm:text-start">
-                        {item.description}
-                      </p>
+                      <div className="flex">
+                        <svg
+                          data-bbox="41.501 20 116.999 160.001"
+                          viewBox="50 -20 150 200"
+                          height="20"
+                          width="40"
+                          xmlns="http://www.w3.org/2000/svg"
+                          data-type="shape"
+                        >
+                          <g>
+                            <path
+                              fill="white"
+                              d="M157.367 66.82c-3.105-14.146-10.205-25.614-21.1-34.083-14.606-11.356-31.093-15.144-48.998-11.261-10.993 2.385-20.647 7.708-28.696 15.821-8.462 8.531-13.882 18.86-16.109 30.7-1.122 5.953-1.262 11.473-.43 16.874.862 5.609 2.729 10.685 4.442 14.912 4.273 10.539 9.918 20.076 14.358 27.205 8.241 13.235 17.874 26.672 29.45 41.082a248.399 248.399 0 0 0 3.199 3.874l6.694 8.057 5.455-6.944c13.755-16.57 25.171-32.357 34.9-48.262 6.309-10.316 10.816-19.203 14.182-27.969 3.898-10.164 4.793-20.259 2.653-30.006zM119.04 91.152c-5.093 5.141-11.835 7.976-18.984 7.983h-.025c-14.797.001-26.848-12.115-26.872-27.02-.023-14.812 11.962-26.911 26.717-26.972 7.134-.006 13.868 2.764 18.978 7.868 5.141 5.136 7.982 11.955 8 19.2.019 7.109-2.756 13.835-7.814 18.941z"
+                            ></path>
+                          </g>
+                        </svg>
+                        <p className="text-[#9E9E9E] text-base font-semibold text-center sm:text-start">
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
                   ))}
+
+                {phone && (
+                  <div className="flex gap-2">
+                    <PhoneFilled className="text-base text-white font-medium rotate-90" />
+                    <p className="text-[#9E9E9E] text-base font-semibold text-center sm:text-start">{phone}</p>
+                  </div>
+                )}
+                {email && (
+                  <div className="flex gap-2">
+                    <MailFilled className="text-base text-white font-medium" />
+                    <p className="text-[#9E9E9E] text-base font-semibold text-center sm:text-start">{email}</p>
+                  </div>
+                )}
               </div>
               <div className="h-fit flex gap-5 sm:gap-4">
                 {iconItems &&

@@ -2,6 +2,7 @@ import React from "react"
 import { ArrowLeftSVG } from "../assets/arrow-left-svg"
 import { ArrowRightSVG } from "../assets/arrow-right-svg"
 import { IconFacebookSVG } from "../assets/icon-facebook-svg"
+import { IconLinkedinSVG } from "../assets/icon-linkedin-svg"
 import { IconYoutubeSVG } from "../assets/icon-youtube-svg"
 import { LeftOutlinedSVG } from "../assets/left-outlined"
 
@@ -18,6 +19,7 @@ export const iconOptions: IconOption[] = [
   { label: "LeftOutlined", value: "LeftOutlined", svgFile: LeftOutlinedSVG },
   { label: "Facebook", value: "Facebook", svgFile: IconFacebookSVG },
   { label: "Youtube", value: "Youtube", svgFile: IconYoutubeSVG },
+  { label: "Linkedin", value: "Linkedin", svgFile: IconLinkedinSVG },
 ]
 
 interface SvgIconRendererProps {
