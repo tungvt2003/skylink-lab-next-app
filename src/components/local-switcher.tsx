@@ -1,13 +1,14 @@
 "use client"
 
+import { useLocale } from "next-intl"
 import { useRouter } from "next/navigation"
 import { useState, useTransition } from "react"
 
 export default function LocalSwitcher() {
   const [isPending, startTransition] = useTransition()
   const router = useRouter()
-  const localActive = document.documentElement.lang || "en"
-  const [selectedLanguage, setSelectedLanguage] = useState(document.documentElement.lang || "en")
+  const localActive = useLocale()
+  const [selectedLanguage, setSelectedLanguage] = useState(localActive)
 
   const handleLanguageChange = (nextLocale: string) => {
     if (nextLocale === selectedLanguage) return

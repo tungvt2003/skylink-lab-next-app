@@ -3,34 +3,9 @@ import { NextResponse, type NextRequest } from "next/server"
 import { routing } from "./i18n/routing"
 export type LocaleType = (typeof routing.locales)[number]
 
-function getPreferredLocale(acceptLanguage: string | null): LocaleType {
-  const locales = routing.locales
-  const defaultLocale = routing.defaultLocale
-
-  if (!acceptLanguage) return defaultLocale
-
-  const languages = acceptLanguage
-    .split(",")
-    .map(lang => {
-      const [locale, weight] = lang.split(";q=")
-      return { locale: locale.trim(), weight: parseFloat(weight) || 1.0 }
-    })
-    .sort((a, b) => b.weight - a.weight)
-
-  for (const lang of languages) {
-    const baseLocale = lang.locale.split("-")[0] as LocaleType
-    if (locales.includes(baseLocale)) {
-      return baseLocale
-    }
-  }
-
-  return defaultLocale
-}
-
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
-  const acceptLanguage = request.headers.get("accept-language")
-  const defaultLocale = getPreferredLocale(acceptLanguage)
+  const defaultLocale = routing.defaultLocale
 
   const ignorePaths = ["/sitemap.xml", "/robots.txt", "/api", "/_next", "/app-ads.txt", "/.well-known"]
 
@@ -39,7 +14,6 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // Nếu path là favicon thì redirect về path /favicon.ico
   if (pathname === "/favicon.ico") {
     return NextResponse.rewrite(new URL("/favicon.ico", request.url))
   }
@@ -50,7 +24,6 @@ export function middleware(request: NextRequest) {
     )
   }
 
-  // Redirect /vi to /
   if (pathname === `/${defaultLocale}`) {
     return NextResponse.redirect(new URL("/", request.url))
   }
