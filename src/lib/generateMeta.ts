@@ -19,8 +19,16 @@ export interface MetaTags {
   }
 }
 
+export interface Image {
+  data: {
+    attributes: {
+      url?: string | undefined
+    }
+  }
+}
 export interface ResponseMetaData {
   SEO?: MetaTags
+  image?: Image
 }
 
 export const generateMeta = async (args: {
@@ -30,7 +38,6 @@ export const generateMeta = async (args: {
   const { data, locale } = args || {}
   const title = data?.SEO?.metaTitle || data?.name
   const settingsData = await getSettings()
-
   // const DEFAULT_TITLE =
   //   settingsData?.find((item: { attributes: { key: string; value: string } }) => item.attributes.key === "websiteName")
   //     ?.attributes.value || "SKYLINK LAB"
@@ -59,27 +66,24 @@ export const generateMeta = async (args: {
   // }
 
   return {
-    title: `${title ? `${title} | ` : ""}${"SKYLINK LAB"}`,
-    description:
-      locale == "/vi"
-        ? "Skylink Labs - Trí Tuệ Nhân Tạo, Tinh Chỉnh Từng Chi Tiết"
-        : "Skylink Labs - Precision Through AI",
+    title: `${title ? `${title} | ` : ""}${"Skylink Labs"}`,
+    description: data?.SEO?.metaDescription || "Skylink Labs - Precision Through AI",
     keywords: data?.SEO?.keywords ? data?.SEO?.keywords : "",
     robots: data?.SEO?.metaRobots || "index, follow",
     openGraph: {
-      title: data?.SEO?.metaTitle || "SkyLink Lab",
-      description:
-        locale == "/vi"
-          ? "Skylink Labs - Trí Tuệ Nhân Tạo, Tinh Chỉnh Từng Chi Tiết"
-          : "Skylink Labs - Precision Through AI",
+      title: data?.SEO?.metaTitle || "SkyLink Labs",
+      description: data?.SEO?.metaDescription || "Skylink Labs - Precision Through AI",
       type: "website",
       url: `${configs.API_URL}${data?.SEO?.canonicalURL || ""}`,
       images: [
         {
-          url: "https://api-cms-skylink.dansolutions.vn/uploads/logo_labs_e354377849.png",
-          width: 400,
-          height: 300,
+          url:
+            `${configs.API_URL}${data?.image?.data?.attributes?.url}` ||
+            "https://api-cms-skylink.dansolutions.vn/uploads/skylink_labs_logo_2777926455.png",
+          width: 1200,
+          height: 627,
           type: "image/png",
+          alt: "Skylink Labs",
         },
       ],
       siteName: "Skylink Labs",
