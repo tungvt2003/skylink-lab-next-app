@@ -66,7 +66,7 @@ export const generateMeta = async (args: {
   // }
 
   return {
-    title: `${title ? `${title} | ` : ""}${"Skylink Labs"}`,
+    title: `${title ? `${title} | ` : ""}${"SKYLINK LABS"}`,
     description: data?.SEO?.metaDescription || "Skylink Labs - Precision Through AI",
     keywords: data?.SEO?.keywords ? data?.SEO?.keywords : "",
     robots: data?.SEO?.metaRobots || "index, follow",
@@ -79,9 +79,9 @@ export const generateMeta = async (args: {
         {
           url:
             `${configs.API_URL}${data?.image?.data?.attributes?.url}` ||
-            "https://api-cms-skylink.dansolutions.vn/uploads/skylink_labs_logo_2777926455.png",
-          width: 400,
-          height: 300,
+            "https://api-cms-skylink.dansolutions.vn/uploads/Logo_Skylink_Labs_40c55131af.png",
+          width: 1200,
+          height: 630,
           type: "image/png",
           alt: "Skylink Labs",
         },
