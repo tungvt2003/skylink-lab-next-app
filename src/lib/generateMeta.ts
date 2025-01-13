@@ -80,8 +80,8 @@ export const generateMeta = async (args: {
           url:
             `${configs.API_URL}${data?.image?.data?.attributes?.url}` ||
             "https://api-cms-skylink.dansolutions.vn/uploads/skylink_labs_logo_2777926455.png",
-          width: 1200,
-          height: 627,
+          width: 400,
+          height: 300,
           type: "image/png",
           alt: "Skylink Labs",
         },
