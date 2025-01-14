@@ -147,7 +147,7 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
               {structuredMenu?.map((item, index) => (
                 <div
                   key={item?.id}
-                  className="h-full flex flex-col items-center sm:items-start gap-6 transition-opacity duration-300 group w-[50%] sm:w-[25%] p-[10px]"
+                  className="h-full flex flex-col items-center sm:items-start gap-6 transition-opacity duration-300 group w-[50%] sm:w-[30%] p-[10px]"
                 >
                   <a href={item.url}>
                     <span
