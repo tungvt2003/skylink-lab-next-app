@@ -82,13 +82,13 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
         {responsiveCSS}
         <div id={id}>
           <div className="flex sm:flex-row flex-col flex-wrap pb-8 sm:pb-[40px]">
-            <div className="flex flex-col items-center sm:items-start gap-5 sm:gap-6 sm:w-[38.679%] p-[10px] mb-5 sm:mb-0">
+            <div className="flex flex-col items-center sm:items-start gap-5 sm:gap-6 sm:w-[45%] p-[10px] mb-5 sm:mb-0">
               <div className="">
-                <img src={configs.API_URL + img} alt="logo" className="w-[120px] h-9" />
+                <img src={configs.API_URL + img} alt="logo" className="w-[120px] h-[42px]" />
               </div>
-              <div className="flex flex-col gap-2 sm:gap-2 w-auto sm:w-[350px]">
+              <div className="flex flex-col gap-2 sm:gap-2 w-full sm:w-[83%]">
                 {fullNameCompany && (
-                  <p className="text-[#9E9E9E] text-base font-semibold text-center sm:text-start">{fullNameCompany}</p>
+                  <p className="text-[#9E9E9E] text-base font-semibold sm:text-start">{fullNameCompany}</p>
                 )}
                 {descriptionItems &&
                   descriptionItems.map((item: any, index: number) => (
@@ -109,9 +109,7 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
                             ></path>
                           </g>
                         </svg>
-                        <p className="text-[#9E9E9E] text-base font-semibold text-center sm:text-start">
-                          {item.description}
-                        </p>
+                        <p className="text-[#9E9E9E] text-base font-semibold sm:text-start">{item.description}</p>
                       </div>
                     </div>
                   ))}
@@ -119,13 +117,13 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
                 {phone && (
                   <div className="flex gap-2">
                     <PhoneFilled className="text-base text-white font-medium rotate-90" />
-                    <p className="text-[#9E9E9E] text-base font-semibold text-center sm:text-start">{phone}</p>
+                    <p className="text-[#9E9E9E] text-base font-semibold sm:text-start">{phone}</p>
                   </div>
                 )}
                 {email && (
                   <div className="flex gap-2">
                     <MailFilled className="text-base text-white font-medium" />
-                    <p className="text-[#9E9E9E] text-base font-semibold text-center sm:text-start">{email}</p>
+                    <p className="text-[#9E9E9E] text-base font-semibold sm:text-start">{email}</p>
                   </div>
                 )}
               </div>
@@ -145,7 +143,7 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
                   ))}
               </div>
             </div>
-            <div className="flex w-full sm:w-[61.321%] flex-wrap">
+            <div className="flex w-full sm:w-[55%] flex-wrap">
               {structuredMenu?.map((item, index) => (
                 <div
                   key={item?.id}
