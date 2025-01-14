@@ -21,6 +21,7 @@ import { Text } from "./blocks/Text"
 import { VericalSpace } from "./blocks/VerticalSpace"
 import { Video } from "./blocks/Video"
 import { VideoLibrary } from "./blocks/VideoLibrary"
+import { SKLAutoSlider } from "./themes/skylink-lab/AutoSliders"
 import { BannerHover } from "./themes/skylink-lab/bannerHover"
 import { ButtonSKLLab } from "./themes/skylink-lab/button"
 import { CardOurCoreValue } from "./themes/skylink-lab/CardOurCoreValue"
@@ -31,6 +32,7 @@ import { CustomCounter } from "./themes/skylink-lab/CustomCounter"
 import { CustomImage } from "./themes/skylink-lab/CustomImage"
 import { EnhancedIconBox } from "./themes/skylink-lab/EnhancedIconBox"
 import { SKLLabFooter } from "./themes/skylink-lab/footer"
+import { GridImageSKL } from "./themes/skylink-lab/GridImage"
 import { SKLLabHeader } from "./themes/skylink-lab/header"
 import { ImageSKLLab } from "./themes/skylink-lab/imageCustom"
 import { ImageKeyAI } from "./themes/skylink-lab/ImageKeyAI"
@@ -82,6 +84,8 @@ export const renderConfig: Config = {
     SKLSimpleSlider,
     SKLLabHeading,
     ContactUsSKLLabs,
+    GridImageSKL,
+    SKLAutoSlider,
   },
   // ...commonConfig,
   categories: {
@@ -128,6 +132,8 @@ export const renderConfig: Config = {
         "CustomImage",
         "ContentCard",
         "ContactUsSKLLabs",
+        "GridImageSKL",
+        "SKLAutoSlider",
       ],
     },
   },

@@ -1,3 +1,4 @@
+import { REVALIDATION_TIME } from "../../../constants/constant"
 import httpClient from "../../http-client"
 
 const getPage = async (slug: string, lang?: string) => {
@@ -6,7 +7,7 @@ const getPage = async (slug: string, lang?: string) => {
     null,
     {
       next: {
-        revalidate: 15,
+        revalidate: REVALIDATION_TIME,
         tags: [`pages_${slug}`, "homepage", `posts_${slug}`, `category_${slug}`],
       },
     },

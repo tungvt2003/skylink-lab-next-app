@@ -84,6 +84,7 @@ export const RenderConfig: ComponentConfig<EnhancedIconBoxProps> = {
               width={32}
               height={32}
               className="h-[28px] w-[28px] sm:h-[32px] sm:w-[32px] object-cover z-20"
+              loading="lazy"
             />
           </div>
           {responsiveCSS}

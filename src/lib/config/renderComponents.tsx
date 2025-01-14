@@ -19,6 +19,7 @@ import { RenderConfig as Text } from "./blocks/Text/RenderConfig"
 import { RenderConfig as VericalSpace } from "./blocks/VerticalSpace/RenderConfig"
 import { RenderConfig as Video } from "./blocks/Video/RenderConfig"
 import { RenderConfig as VideoLibrary } from "./blocks/VideoLibrary/RenderConfig"
+import { RenderConfig as SKLAutoSlider } from "./themes/skylink-lab/AutoSliders/RenderConfig"
 import { RenderConfig as BannerHover } from "./themes/skylink-lab/bannerHover/RenderConfig"
 import { RenderConfig as ButtonSKLLab } from "./themes/skylink-lab/button/RenderConfig"
 import { RenderConfig as CardOurCoreValue } from "./themes/skylink-lab/CardOurCoreValue/RenderConfig"
@@ -29,6 +30,7 @@ import { RenderConfig as CustomCounter } from "./themes/skylink-lab/CustomCounte
 import { RenderConfig as CustomImage } from "./themes/skylink-lab/CustomImage/RenderConfig"
 import { RenderConfig as EnhancedIconBox } from "./themes/skylink-lab/EnhancedIconBox/RenderConfig"
 import { RenderConfig as SKLLabFooter } from "./themes/skylink-lab/footer/RenderConfig"
+import { RenderConfig as GridImageSKL } from "./themes/skylink-lab/GridImage/RenderConfig"
 import { RenderConfig as SKLLabHeader } from "./themes/skylink-lab/header/RenderConfig"
 import { RenderConfig as ImageSKLLab } from "./themes/skylink-lab/imageCustom/RenderConfig"
 import { RenderConfig as ImageKeyAI } from "./themes/skylink-lab/ImageKeyAI/RenderConfig"
@@ -76,4 +78,6 @@ export const renderComponents = {
   SKLSimpleSlider,
   SKLLabHeading,
   ContactUsSKLLabs,
+  GridImageSKL,
+  SKLAutoSlider,
 }

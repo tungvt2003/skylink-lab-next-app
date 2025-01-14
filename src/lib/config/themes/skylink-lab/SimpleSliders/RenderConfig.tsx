@@ -153,6 +153,7 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
                     className="object-contain h-[48px] w-auto sm:h-[80px] sm:w-[233px]"
                     width="128"
                     height="128"
+                    loading="lazy"
                   />
                 </div>
               </div>

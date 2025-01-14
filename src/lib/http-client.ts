@@ -6,6 +6,8 @@
 // 6. Use typescript with fully typed
 // 7. Use async await
 
+import { REVALIDATION_TIME } from "../constants/constant"
+
 const PREFIX_URL = process.env.NEXT_PUBLIC_API_URL
 
 const DEFAULT_REVALIDATE_TIME = 60 * 5 // 5 minutes
@@ -25,6 +27,7 @@ const httpClient = {
       headers: {
         "Content-Type": "application/json",
       },
+      next: { revalidate: REVALIDATION_TIME },
       ...otherOptions,
     }
 

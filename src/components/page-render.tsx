@@ -3,10 +3,7 @@
 import { Render } from "@measured/puck"
 import { useEffect, useState } from "react"
 import NotFound from "../app/[locale]/not-found"
-import { tryParse } from "../lib/config/lib/helper"
 import { newRenderConfig } from "../lib/config/uiBuilderConfig"
-import BreadCrumb from "./breadcrumb"
-import { Spinner } from "./ui/loading"
 
 interface PageData {
   id: number
@@ -40,7 +37,6 @@ interface PageData {
 
 const NormalContent = ({ content }: { content?: string }) => {
   if (!content) return null
-
   return <div dangerouslySetInnerHTML={{ __html: content }} />
 }
 
@@ -53,55 +49,20 @@ interface PageRenderProps {
 }
 
 const PageRender = ({ pageData, hasBreadcrumb, isTemplate, dict, base_url }: PageRenderProps) => {
-  const [loading, setLoading] = useState(true)
-  const [uiBuilderData, setUiBuilderData] = useState<any>(null)
-  const [breadcrumbData, setBreadcrumbData] = useState()
-
+  const [parsedData, setParsedData] = useState<any>(null)
+  const [uiBuilder, setUiBuilder] = useState<any>(null)
+  if (!pageData || pageData.length === 0) return <NotFound dict={dict} />
   useEffect(() => {
-    const fetchData = async () => {
-      if (pageData) {
-        setLoading(true)
-        let parsedData = null
-        if (isTemplate) {
-          parsedData = tryParse(pageData?.[0]?.attributes?.content ?? "")
-        } else {
-          parsedData = tryParse(pageData?.[0]?.attributes?.blockContent?.data?.attributes?.content ?? "")
-        }
+    if (!pageData || pageData.length === 0) return
+    const content = isTemplate
+      ? pageData[0]?.attributes?.content ?? "{}"
+      : pageData[0]?.attributes?.blockContent?.data?.attributes?.content ?? "{}"
+    setParsedData(JSON.parse(content))
+  }, [pageData, isTemplate])
 
-        if (parsedData) {
-          setUiBuilderData(parsedData)
-        }
+  if (!parsedData) return null
 
-        if (hasBreadcrumb) {
-          const getBreadCrumbs = parsedData && parsedData?.root.props.breadcrumb
-
-          setBreadcrumbData(getBreadCrumbs)
-        }
-
-        setLoading(false)
-      }
-    }
-
-    fetchData()
-  }, [pageData])
-
-  if (loading) return <Spinner />
-
-  const checkContent = () => {
-    {
-      if (uiBuilderData) {
-        return <Render config={newRenderConfig} data={uiBuilderData} />
-      } else {
-        return <NotFound dict={dict} />
-      }
-    }
-  }
-  return (
-    <>
-      {breadcrumbData && <BreadCrumb items={breadcrumbData} />}
-      {checkContent()}
-    </>
-  )
+  return parsedData ? <Render config={newRenderConfig} data={parsedData} /> : <NotFound dict={dict} />
 }
 
 export default PageRender

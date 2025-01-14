@@ -1,18 +1,11 @@
 "use client"
 
-import { MenuItem } from "@/components/create-menu-structure"
 import "@/styles/globals.css"
 import { useEffect, useState } from "react"
 import { APPCONFIG } from "../configs"
 import { PageData } from "../lib/config/types"
 import { getHeader } from "../lib/navigation-services"
 import PageRender from "./page-render"
-
-interface Menu {
-  attributes: {
-    items: MenuItem[]
-  }
-}
 
 type HeaderProps = {
   locale: string

@@ -6,7 +6,7 @@ import { configs, DefaultImage, Media, MediaUpload } from "../../../../external-
 import { commonStylesProps } from "../../../lib/commonCSSProps"
 import getClassNameFactory from "../../../lib/get-class-name-factory"
 import styles from "./css/styles.module.css"
-import { RenderConfig, SimpleSliderProps } from "./RenderConfig"
+import { GridImageProps, RenderConfig } from "./RenderConfig"
 
 const getClassName = getClassNameFactory("SimpleSlider", styles)
 
@@ -97,79 +97,50 @@ const SlideItem = ({ value, onChange }: any) => {
   )
 }
 
-export const SKLSimpleSlider: ComponentConfig<SimpleSliderProps> = {
-  label: "SKL - Custom Slider",
+export const GridImageSKL: ComponentConfig<GridImageProps> = {
+  label: "SKL - Grid Image",
   //@ts-ignore
   fields: {
     slides: {
       label: "Slides",
       type: "array",
-      getItemSummary: (slides, index = 0) => `Slide: ${index + 1}`,
+      getItemSummary: (slides, index = 0) => `Slide: ${index}`,
       arrayFields: {
         image: {
           label: "Image",
           type: "custom",
           render: props => <SlideItem {...props} />,
         },
-        url: {
-          label: "Link",
-          type: "text",
-        },
       },
     },
-    spaceBetween: {
-      label: "Space Between Slides (px)",
+    // imageHeight: {
+    //   label: "Image Height (px)",
+    //   type: "number",
+    //   min: 0,
+    // },
+    // imageWidth: {
+    //   label: "Image Width (px)",
+    //   type: "number",
+    //   min: 0,
+    // },
+    imageBorderRadius: {
+      label: "Image Border Radius (px)",
       type: "number",
       min: 0,
     },
-    slidesPerView: {
-      label: "Slides Per View",
-      type: "number",
-      min: 1,
-    },
-    loop: {
-      label: "Loop",
-      type: "select",
-      options: [
-        { label: "Yes", value: true },
-        { label: "No", value: false },
-      ],
-    },
-    speed: {
-      label: "Speed (ms)",
-      type: "number",
-      min: 0,
-    },
-    timeDelay: {
-      label: "Time Delay (ms)",
-      type: "number",
-      min: 0,
-    },
-    pagination: {
-      label: "Pagination",
-      type: "select",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Custom", value: "custom" },
-      ],
-    },
+
     ...commonStylesProps,
   },
   defaultProps: {
-    slides: [
-      {
-        id: 1,
-        url: "",
-      },
-      {
-        id: 2,
-        url: "",
-      },
-    ],
+    slides: [],
     spaceBetween: 30,
     slidesPerView: 1,
+    autoPlay: true,
     speed: 600,
     timeDelay: 3500,
+    isPagination: true,
+    isNavigation: true,
+    loop: true,
     pagination: "default",
     className: "",
     styles: {

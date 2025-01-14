@@ -100,6 +100,7 @@ export const RenderConfig: ComponentConfig<ImageKeyAIProps> = {
               willChange: "transform",
               transition: "transform 0.3s ease-out",
             }}
+            loading="lazy"
           />
         </div>
       </div>

@@ -35,6 +35,7 @@ export const RenderConfig: ComponentConfig<ImageProps> = {
             alt=""
             className="relative z-10 object-contain rounded-[24px] md:w-auto md:h-auto w-5/6 h-5/6 max-w-full mx-auto"
             style={{ maxHeight: maxHeight }}
+            loading="lazy"
           />
         </div>
       </>
