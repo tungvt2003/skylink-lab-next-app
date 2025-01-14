@@ -76,6 +76,7 @@ export const RenderConfig: ComponentConfig<ImageProps> = {
                 : ""
             } ${multiple ? "mix-blend-multiply" : ""}`}
             style={{ padding, borderRadius, margin }}
+            loading="lazy"
           />
         </a>
       </>

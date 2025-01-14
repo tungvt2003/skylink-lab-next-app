@@ -11,7 +11,7 @@ const fetchPageData = async (slugs: string[], locale: string) => {
   return pageData
 }
 
-export const revalidate = 60
+export const revalidate = 60 * 60
 
 const Page = async (props: { params: Promise<{ slugs: string[]; locale: string }> }) => {
   const params = await props.params

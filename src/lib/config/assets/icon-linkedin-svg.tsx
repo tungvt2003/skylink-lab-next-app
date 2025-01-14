@@ -3,39 +3,39 @@ export const IconLinkedinSVG = () => {
     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="19" height="19" viewBox="0,0,256,256">
       <g transform="">
         <g
-          fill-opacity="0"
+          fillOpacity="0"
           fill="#dddddd"
-          fill-rule="nonzero"
+          fillRule="nonzero"
           stroke="none"
           strokeWidth="1"
           strokeLinecap="butt"
           strokeLinejoin="miter"
-          stroke-miterlimit="10"
-          stroke-dasharray=""
-          stroke-dashoffset="0"
-          font-family="none"
-          font-weight="none"
-          font-size="none"
-          text-anchor="none"
+          strokeMiterlimit="10"
+          strokeDasharray=""
+          strokeDashoffset="0"
+          fontFamily="none"
+          fontWeight="none"
+          fontSize="none"
+          textAnchor="none"
           style={{ mixBlendMode: "normal" }}
         >
           <path d="M0,256v-256h256v256z" id="bgRectangle"></path>
         </g>
         <g
-          fill-opacity="0.98824"
+          fillOpacity="0.98824"
           fill="#fffcfc"
-          fill-rule="nonzero"
+          fillRule="nonzero"
           stroke="none"
-          stroke-width="1"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          stroke-miterlimit="10"
-          stroke-dasharray=""
-          stroke-dashoffset="0"
-          font-family="none"
-          font-weight="none"
-          font-size="none"
-          text-anchor="none"
+          strokeWidth="1"
+          strokeLinecap="butt"
+          strokeLinejoin="miter"
+          strokeMiterlimit="10"
+          strokeDasharray=""
+          strokeDashoffset="0"
+          fontFamily="none"
+          fontWeight="none"
+          fontSize="none"
+          textAnchor="none"
           style={{ mixBlendMode: "normal" }}
         >
           <g transform="scale(8.53333,8.53333)">

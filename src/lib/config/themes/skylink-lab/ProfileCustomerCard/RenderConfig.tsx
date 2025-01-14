@@ -50,6 +50,7 @@ export const RenderConfig: ComponentConfig<ProfileCustomerCardProps> = {
               alt="banner"
               className="object-cover rounded-[16px] h-[56px] w-[56px] sm:h-[64px] sm:w-[64px]"
               sizes="33vw"
+              loading="lazy"
             />
             <div className="flex flex-col">
               <div className="sm:text-lg text-[16px] leading-[19.2px] font-bold sm:leading-[21.6px] text-[#212121] mb-1 sm:mb-1.5">
