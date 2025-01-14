@@ -55,7 +55,7 @@ export const RenderConfig: ComponentConfig<CustomCounterProps> = {
           {Math.floor(count)}
           {unit}
         </p>
-        <p className="text-[14px] leading-[25.2px] sm:text-base sm:leading-[28.8px] font-normal text-[#999ea7]">
+        <p className="text-[14px] leading-[25.2px] sm:text-base sm:leading-[28.8px] font-normal text-[#595959]">
           {subText}
         </p>
       </div>

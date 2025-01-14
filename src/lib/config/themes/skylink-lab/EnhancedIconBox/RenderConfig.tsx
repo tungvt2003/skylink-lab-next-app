@@ -89,9 +89,9 @@ export const RenderConfig: ComponentConfig<EnhancedIconBoxProps> = {
           </div>
           {responsiveCSS}
           <div className="flex flex-col items-start gap-3">
-            <h4 id={id} className={`flex-1 ${id} ${twMerge(className)} text-left group-hover:text-white`}>
+            <h3 id={id} className={`flex-1 ${id} ${twMerge(className)} text-left group-hover:text-white`}>
               {title}
-            </h4>
+            </h3>
             <p
               className="self-stretch text-left text-[#616161] text-[13px] sm:text-[14px] font-medium leading-[23.4px] sm:leading-[25.2px] group-hover:text-white"
               dangerouslySetInnerHTML={{ __html: description ?? "" }}
