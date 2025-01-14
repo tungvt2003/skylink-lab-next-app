@@ -54,10 +54,6 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
     const [dataMenu, setdataMenu] = useState<MenuItem[]>([])
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-    const containerStyle = {
-      width: "100%",
-      height: "100%",
-    }
     const [isScrollingUp, setIsScrollingUp] = useState(false)
     const [lastScrollY, setLastScrollY] = useState(0)
     const [isTop, setIsTop] = useState(true)
@@ -152,16 +148,14 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
               <div className="flex h-full">
                 <div className="h-full flex items-center">
                   <a href="/">
-                    {configs?.API_URL &&
-                      (isHome ? (
-                        isTop ? (
-                          <img src={configs.API_URL + imgTop} alt="logo" className="w-32 sm:w-[140px] h-9" />
-                        ) : (
-                          <img src={configs.API_URL + img} alt="logo" className="w-32 sm:w-[140px] h-9" />
-                        )
-                      ) : (
-                        <img src={configs.API_URL + img} alt="logo" className="w-32 sm:w-[140px] h-9" />
-                      ))}
+                    {configs?.API_URL && (
+                      <img
+                        src={configs.API_URL + (isTop ? imgTop : img)}
+                        alt="logo"
+                        className="w-32 sm:w-[140px] h-9"
+                        height={36}
+                      />
+                    )}
                   </a>
                 </div>
                 <div className="hidden sm:flex h-full ml-[2rem]">

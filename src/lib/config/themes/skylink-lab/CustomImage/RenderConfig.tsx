@@ -73,6 +73,9 @@ export const RenderConfig: ComponentConfig<CustomImageProps> = {
               borderRadius,
               margin,
             }}
+            rel="preload"
+            height={220}
+            loading="lazy"
           />
         </div>
       </div>

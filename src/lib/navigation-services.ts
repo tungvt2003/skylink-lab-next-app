@@ -1,4 +1,5 @@
 import httpClient from "@/lib/http-client"
+import { REVALIDATION_TIME } from "../constants/constant"
 
 export const getMainMenu = async (id: number, lang?: string) => {
   const response = await httpClient.get<{ data: any }>(`menu-preferences/${id}?locale=${lang}`)
@@ -11,7 +12,9 @@ export const getFooterMenu = async (id: number) => {
 }
 
 export const getFooter = async (id: number, lang?: string) => {
-  const response = await httpClient.get<{ data: any }>(`pages/${id}?populate=*&locale=${lang}`)
+  const response = await httpClient.get<{ data: any }>(`pages/${id}?populate=*&locale=${lang}`, null, {
+    next: { revalidate: REVALIDATION_TIME },
+  })
 
   if (response.data?.attributes?.publishedAt) {
     return response.data
@@ -21,7 +24,9 @@ export const getFooter = async (id: number, lang?: string) => {
 }
 
 export const getHeader = async (id: number, lang?: string) => {
-  const response = await httpClient.get<{ data: any }>(`pages/${id}?populate=*&locale=${lang}`)
+  const response = await httpClient.get<{ data: any }>(`pages/${id}?populate=*&locale=${lang}`, null, {
+    next: { revalidate: REVALIDATION_TIME },
+  })
   if (response.data?.attributes?.publishedAt) {
     return response.data
   }

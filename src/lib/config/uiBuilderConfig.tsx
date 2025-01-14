@@ -11,8 +11,6 @@ import { Image as ImageConfig } from "./blocks/Image"
 import { ImageCard } from "./blocks/ImageCard"
 import { Input } from "./blocks/Input"
 import { PhotoLibrary } from "./blocks/PhotoLibrary"
-import { PostGridByCategory as PostGridByCategoryConfig } from "./blocks/PostGridByCategory"
-import { ProfileUserCard } from "./blocks/ProfileUserCard"
 import { SimpleSlider as SimpleSliderConfig } from "./blocks/SimpleSliders"
 import { Text } from "./blocks/Text"
 import { VericalSpace } from "./blocks/VerticalSpace"
@@ -46,10 +44,10 @@ const components = {
   Heading,
   Text,
   Button,
-  CustomTabs,
-  ButtonLocation,
+  // CustomTabs,
+  // ButtonLocation,
   ImageCard,
-  ProfileUserCard,
+  // ProfileUserCard,
   PhotoLibrary,
   VideoLibrary,
   DropDown,
@@ -58,7 +56,7 @@ const components = {
   GalleryConfig,
   GalleryLayoutConfig,
   SimpleSliderConfig,
-  PostGridByCategoryConfig,
+  // PostGridByCategoryConfig,
   // New components
   IconSocial,
   Input,
@@ -91,7 +89,7 @@ export const common = {
     },
     content: {
       title: "Content",
-      components: ["Heading", "Text", "Button", "ButtonLocation", "DropDown"],
+      components: ["Heading", "Text", "Button", "DropDown"],
     },
     media: {
       title: "Media",
@@ -102,10 +100,10 @@ export const common = {
       components: [
         "GalleryLayoutConfig",
         "GalleryConfig",
-        "ProfileUserCard",
+        // "ProfileUserCard",
         "SimpleSliderConfig",
-        "PostGridByCategoryConfig",
-        "CustomTabs",
+        // "PostGridByCategoryConfig",
+        // "CustomTabs",
       ],
     },
     themesSKLLab: {
@@ -171,9 +169,9 @@ export const uiBuilderConfig: Config = {
 // import { Config } from "@measured/puck"
 import { RenderConfig as NewBox } from "./blocks/Box/RenderConfig"
 import { RenderConfig as NewButton } from "./blocks/Button/RenderConfig"
-import { ButtonLocation } from "./blocks/ButtonLocation"
-import { RenderConfig as NewButtonLocation } from "./blocks/ButtonLocation/RenderConfig"
-import { RenderConfig as NewColumns } from "./blocks/Columns/RenderConfig"
+// import { ButtonLocation } from "./blocks/ButtonLocation"
+// import { RenderConfig as NewButtonLocation } from "./blocks/ButtonLocation/RenderConfig"
+// import { RenderConfig as NewColumns } from "./blocks/Columns/RenderConfig"
 import { RenderConfig as NewContainer } from "./blocks/Container/RenderConfig"
 import { DropDown } from "./blocks/DropDown"
 import { RenderConfig as NewDropDown } from "./blocks/DropDown/RenderConfig"
@@ -184,11 +182,10 @@ import { RenderConfig as NewIconSocial } from "./blocks/IconSocial/RenderConfig"
 import { RenderConfig as NewImage } from "./blocks/Image/RenderConfig"
 import { RenderConfig as NewImageCard } from "./blocks/ImageCard/RenderConfig"
 import { RenderConfig as NewPhotoLibrary } from "./blocks/PhotoLibrary/RenderConfig"
-import { RenderConfig as NewPostGridByCategory } from "./blocks/PostGridByCategory/RenderConfig"
-import { RenderConfig as NewProfileUserCard } from "./blocks/ProfileUserCard/RenderConfig"
+// import { RenderConfig as NewPostGridByCategory } from "./blocks/PostGridByCategory/RenderConfig"
+// import { RenderConfig as NewProfileUserCard } from "./blocks/ProfileUserCard/RenderConfig"
 import { RenderConfig as NewSimpleSlider } from "./blocks/SimpleSliders/RenderConfig"
-import { CustomTabs } from "./blocks/Tabs"
-import { RenderConfig as NewCustomTabs } from "./blocks/Tabs/RenderConfig"
+// import { RenderConfig as NewCustomTabs } from "./blocks/Tabs/RenderConfig"
 import { RenderConfig as NewText } from "./blocks/Text/RenderConfig"
 import { RenderConfig as NewVericalSpace } from "./blocks/VerticalSpace/RenderConfig"
 import { RenderConfig as NewVideo } from "./blocks/Video/RenderConfig"
@@ -215,22 +212,22 @@ import { RenderConfig as NewSKLLabHeading } from "./themes/skylink-lab/SKLLabHea
 
 export const newRenderComponents = {
   Container: NewContainer,
-  Columns: NewColumns,
+  // Columns: NewColumns,
   Box: NewBox,
   VericalSpace: NewVericalSpace,
   Heading: NewHeading,
   Text: NewText,
   Button: NewButton,
-  CustomTabs: NewCustomTabs,
-  ButtonLocation: NewButtonLocation,
+  // CustomTabs: NewCustomTabs,
+  // ButtonLocation: NewButtonLocation,
   ImageConfig: NewImage,
   ImageCard: NewImageCard,
   VideoConfig: NewVideo,
   GalleryConfig: NewGallery,
   GalleryLayoutConfig: NewGalleryLayout,
-  ProfileUserCard: NewProfileUserCard,
+  // ProfileUserCard: NewProfileUserCard,
   SimpleSliderConfig: NewSimpleSlider,
-  PostGridByCategoryConfig: NewPostGridByCategory,
+  // PostGridByCategoryConfig: NewPostGridByCategory,
   PhotoLibrary: NewPhotoLibrary,
   VideoLibrary: NewVideoLibrary,
   DropDown: NewDropDown,
