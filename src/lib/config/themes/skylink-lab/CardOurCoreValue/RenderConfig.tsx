@@ -77,9 +77,9 @@ export const RenderConfig: ComponentConfig<CardOurCoreValueProps> = {
         </div>
         {responsiveCSS}
         <div className="flex flex-col items-start transition-transform duration-300 ease-in-out group-hover:-translate-y-[7px]">
-          <h4 id={id} className={`flex-1 ${id} ${twMerge(className)} mb-5 text-left`}>
+          <h3 id={id} className={`flex-1 ${id} ${twMerge(className)} mb-5 text-left`}>
             {title}
-          </h4>
+          </h3>
           <p className="text-[14px] sm:text-base text-left font-medium leading-[25.2px] sm:leading-[28.8px] text-[#616161]">
             {description}
           </p>
