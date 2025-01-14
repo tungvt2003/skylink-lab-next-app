@@ -41,7 +41,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  if (pathname === "/favicon.ico") {
+  if (pathname === "/favicon.ico" || pathname === "/en/favicon.ico") {
     return NextResponse.rewrite(new URL("/favicon.ico", request.url))
   }
 
