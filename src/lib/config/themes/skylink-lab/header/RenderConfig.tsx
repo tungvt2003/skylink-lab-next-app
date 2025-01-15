@@ -152,7 +152,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                       <img
                         src={configs.API_URL + (isTop ? imgTop : img)}
                         alt="logo"
-                        className="w-[150px] h-[50px]"
+                        className="w-[150px] h-[50px] object-cover"
                         height={36}
                       />
                     )}
@@ -232,7 +232,11 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                           <div className="h-full flex items-center">
                             <a href="/">
                               {configs?.API_URL && (
-                                <img src={configs.API_URL + img} alt="logo" className="w-[150px] h-[50px]" />
+                                <img
+                                  src={configs.API_URL + img}
+                                  alt="logo"
+                                  className="w-[150px] h-[50px] object-cover"
+                                />
                               )}
                             </a>
                           </div>
