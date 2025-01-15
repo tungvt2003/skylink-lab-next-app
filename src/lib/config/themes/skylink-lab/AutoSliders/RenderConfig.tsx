@@ -67,13 +67,13 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative w-full h-full block  rounded-[15px] overflow-hidden"
+                className="relative w-full h-full block rounded-[15px] overflow-hidden"
               >
                 <div className="w-full h-full transition-transform duration-300 ease-in-out transform hover:scale-105 overflow-hidden">
                   <img
                     src={image ? `${configs.API_URL}${image}` : DefaultImage}
                     alt={`Slide ${index}`}
-                    className="sm:h-[690px] sm:object-cover aspect-[1200/690] w-full"
+                    className="sm:h-[600px] sm:object-cover aspect-[1200/690] w-full"
                   />
                 </div>
               </a>
