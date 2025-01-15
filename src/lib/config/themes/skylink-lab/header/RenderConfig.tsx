@@ -141,10 +141,10 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
           } transition-transform duration-300 fixed top-0 w-full z-50 ${
             isHome ? (isTop ? "bg-white shadow-md" : "bg-white shadow-md") : "bg-white shadow-md"
           }`}
-          style={{ height: "59px" }}
+          style={{ height: "70px" }}
         >
           <div id="header" className="w-[95%] sm:max-w-[1200px] mx-auto px-[10px] ">
-            <div className="flex justify-between h-[59px] items-center">
+            <div className="flex justify-between h-[70px] items-center">
               <div className="flex h-full">
                 <div className="h-full flex items-center">
                   <a href="/">
@@ -152,7 +152,7 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                       <img
                         src={configs.API_URL + (isTop ? imgTop : img)}
                         alt="logo"
-                        className="w-32 sm:w-[140px] h-10"
+                        className="w-[150px] h-[50px]"
                         height={36}
                       />
                     )}
@@ -227,12 +227,12 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                     <div
                       className={`fixed top-0 left-0 bg-white z-50 flex flex-col h-screen px-[10px] w-full transition-all duration-500 ease-in-out`}
                     >
-                      <div className="flex items-center justify-between h-[59px] w-[95%] mx-auto">
+                      <div className="flex items-center justify-between h-[70px] w-[95%] mx-auto">
                         <div className="flex h-full">
                           <div className="h-full flex items-center">
                             <a href="/">
                               {configs?.API_URL && (
-                                <img src={configs.API_URL + img} alt="logo" className="w-32 sm:w-[140px] h-10" />
+                                <img src={configs.API_URL + img} alt="logo" className="w-[150px] h-[50px]" />
                               )}
                             </a>
                           </div>
