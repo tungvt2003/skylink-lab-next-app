@@ -132,7 +132,7 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
           navigation={{ nextEl: ".custom-next-slick-arrow-orange", prevEl: ".custom-prev-slick-arrow-orange" }}
           loop={loop}
           speed={speed}
-          autoplay={{ delay: timeDelay }}
+          // autoplay={{ delay: timeDelay }}
           className={`${id} ${twMerge(className)}`}
           style={{
             transform: `rotate(${rotation}deg)`,
@@ -145,12 +145,12 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
         >
           {slides.map(({ id, image, url }, index) => (
             <SwiperSlide key={index}>
-              <div rel="noopener noreferrer" className="relative w-full h-[48px] sm:h-[80px] block overflow-hidden">
+              <div rel="noopener noreferrer" className="relative w-full h-[48px] sm:h-[80px] block">
                 <div className="w-full h-full transition-transform duration-300 ease-in-out transform hover:scale-105">
                   <img
                     src={getImageUrl(image) || DefaultImage}
                     alt={`Slide ${index}`}
-                    className="object-contain h-[48px] w-auto sm:h-[80px] sm:w-[233px]"
+                    className="object-contain h-[50px] w-auto sm:h-[90px] sm:w-[233px]"
                     width="128"
                     height="128"
                     loading="lazy"
