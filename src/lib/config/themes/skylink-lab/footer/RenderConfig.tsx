@@ -88,7 +88,9 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
               </div>
               <div className="flex flex-col gap-2 sm:gap-2 w-full sm:w-[83%]">
                 {fullNameCompany && (
-                  <p className="text-[#9E9E9E] text-base font-semibold sm:text-start">{fullNameCompany}</p>
+                  <p className="text-[#9E9E9E] text-[14px] sm:text-base font-semibold sm:text-start">
+                    {fullNameCompany}
+                  </p>
                 )}
                 {descriptionItems &&
                   descriptionItems.map((item: any, index: number) => (
@@ -109,7 +111,9 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
                             ></path>
                           </g>
                         </svg>
-                        <p className="text-[#9E9E9E] text-base font-semibold sm:text-start">{item.description}</p>
+                        <p className="text-[#9E9E9E] text-[14px] sm:text-base font-semibold sm:text-start">
+                          {item.description}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -117,13 +121,13 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
                 {phone && (
                   <div className="flex gap-2">
                     <PhoneFilled className="text-base text-white font-medium rotate-90" />
-                    <p className="text-[#9E9E9E] text-base font-semibold sm:text-start">{phone}</p>
+                    <p className="text-[#9E9E9E] text-[14px] sm:text-base font-semibold sm:text-start">{phone}</p>
                   </div>
                 )}
                 {email && (
                   <div className="flex gap-2">
                     <MailFilled className="text-base text-white font-medium" />
-                    <p className="text-[#9E9E9E] text-base font-semibold sm:text-start">{email}</p>
+                    <p className="text-[#9E9E9E] text-[14px] sm:text-base font-semibold sm:text-start">{email}</p>
                   </div>
                 )}
               </div>

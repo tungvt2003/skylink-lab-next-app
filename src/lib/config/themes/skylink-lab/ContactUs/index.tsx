@@ -7,10 +7,6 @@ export const ContactUsSKLLabs: ComponentConfig<ContactUsProps> = {
   label: "Contact Us Custom",
   //@ts-ignore
   fields: {
-    title: {
-      label: "Title",
-      type: "text",
-    },
     fullNameCompany: {
       label: "Full Name Company",
       type: "text",
@@ -35,7 +31,6 @@ export const ContactUsSKLLabs: ComponentConfig<ContactUsProps> = {
     ...commonStylesProps,
   },
   defaultProps: {
-    title: "SKYLINK Labs",
     fullNameCompany: "SKYLINK LABS TECHNOLOGY JOINT STOCK COMPANY",
     phone: "086.254.9999",
     nameLocation:

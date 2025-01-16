@@ -12,7 +12,6 @@ import { generateResponsiveCSS } from "../../../lib/helper"
 import { DataSettingItem } from "../../../types"
 
 export interface ContactUsProps extends CommonStylesProps {
-  title: string
   nameLocation: string
   fullNameCompany: string
   phone: string
@@ -27,7 +26,6 @@ export const RenderConfig: ComponentConfig<ContactUsProps> = {
     styles,
     responsiveType,
     className,
-    title,
     nameLocation,
     fullNameCompany,
     phone,
@@ -130,12 +128,9 @@ export const RenderConfig: ComponentConfig<ContactUsProps> = {
         {responsiveCSS}
         <div className={`${id} ${twMerge(className)} w-full`}>
           <div className="flex sm:flex-row flex-col-reverse sm:gap-5 gap-20">
-            <div className="px-5 sm:px-0">
-              <h2 className="uppercase sm:text-3xl text-[23px] font-bold text-[#3f4349] sm:mb-5 text-center sm:text-left">
-                {title}
-              </h2>
+            <div className="md:w-3/5">
               <div className="flex flex-col gap-2">
-                <h3 className="uppercase text-base text-[#3f4349] font-medium">{fullNameCompany}</h3>
+                <h2 className="uppercase sm:text-xl text-[14px] text-[#3f4349] font-bold">{fullNameCompany}</h2>
                 <div className="flex">
                   <svg
                     data-bbox="41.501 20 116.999 160.001"
@@ -149,15 +144,15 @@ export const RenderConfig: ComponentConfig<ContactUsProps> = {
                       <path d="M157.367 66.82c-3.105-14.146-10.205-25.614-21.1-34.083-14.606-11.356-31.093-15.144-48.998-11.261-10.993 2.385-20.647 7.708-28.696 15.821-8.462 8.531-13.882 18.86-16.109 30.7-1.122 5.953-1.262 11.473-.43 16.874.862 5.609 2.729 10.685 4.442 14.912 4.273 10.539 9.918 20.076 14.358 27.205 8.241 13.235 17.874 26.672 29.45 41.082a248.399 248.399 0 0 0 3.199 3.874l6.694 8.057 5.455-6.944c13.755-16.57 25.171-32.357 34.9-48.262 6.309-10.316 10.816-19.203 14.182-27.969 3.898-10.164 4.793-20.259 2.653-30.006zM119.04 91.152c-5.093 5.141-11.835 7.976-18.984 7.983h-.025c-14.797.001-26.848-12.115-26.872-27.02-.023-14.812 11.962-26.911 26.717-26.972 7.134-.006 13.868 2.764 18.978 7.868 5.141 5.136 7.982 11.955 8 19.2.019 7.109-2.756 13.835-7.814 18.941z"></path>
                     </g>
                   </svg>
-                  <p className="text-base text-[#3f4349] font-medium">{nameLocation}</p>
+                  <p className="text-[14px] sm:text-base text-[#3f4349] font-medium w-[88%]">{nameLocation}</p>
                 </div>
                 <div className="flex gap-2">
                   <PhoneFilled className="text-base text-black font-medium rotate-90" />
-                  <p className="text-base text-[#3f4349] font-medium">{phone}</p>
+                  <p className="text-[14px] sm:text-base text-[#3f4349] font-medium">{phone}</p>
                 </div>
                 <div className="flex gap-2">
                   <MailFilled className="text-base text-black font-medium" />
-                  <p className="text-base text-[#3f4349] font-medium">{formData.emailTo}</p>
+                  <p className="text-[14px] sm:text-base text-[#3f4349] font-medium">{formData.emailTo}</p>
                 </div>
               </div>
               <div className="sm:h-[451px] h-[241px] overflow-scroll sm:mt-[35px] mt-[25px]">
@@ -172,8 +167,8 @@ export const RenderConfig: ComponentConfig<ContactUsProps> = {
                 ></iframe>
               </div>
             </div>
-            <div className="px-[30px] sm:px-0">
-              <h3 className="mb-5 text-[23px] sm:text-[18px] font-semibold text-[#3F4349] text-center sm:text-left">
+            <div className="px-[30px] sm:px-0 md:w-2/5">
+              <h3 className="mb-5 text-[16px] sm:text-[17px] font-bold text-[#3F4349] text-center sm:text-left">
                 {titleForm}
               </h3>
               <div>
