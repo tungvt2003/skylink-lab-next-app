@@ -12,7 +12,7 @@ export default function LocalSwitcher() {
   const handleLanguageChange = (nextLocale: string) => {
     if (nextLocale === selectedLanguage) return
     setSelectedLanguage(nextLocale)
-    router.replace(`/${nextLocale}`)
+    router.push(`/${nextLocale}`)
   }
 
   return (
