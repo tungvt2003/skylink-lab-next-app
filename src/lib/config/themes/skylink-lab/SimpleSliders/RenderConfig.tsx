@@ -150,7 +150,7 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
                   <img
                     src={getImageUrl(image) || DefaultImage}
                     alt={`Slide ${index}`}
-                    className="object-contain h-[50px] w-auto sm:h-[90px] sm:w-[233px]"
+                    className="object-contain h-[50px] w-auto sm:h-[100px] sm:w-[233px]"
                     width="128"
                     height="128"
                     loading="lazy"
