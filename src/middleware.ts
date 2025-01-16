@@ -30,23 +30,17 @@ function getPreferredLocale(acceptLanguage: string | null): LocaleType {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   const acceptLanguage = request.headers.get("accept-language")
-  const defaultLocale = getPreferredLocale(acceptLanguage)
+  const acceptLocale = getPreferredLocale(acceptLanguage)
+  const defaultLocale = routing.defaultLocale
 
   const ignorePaths = ["/sitemap.xml", "/robots.txt", "/api", "/_next", "/app-ads.txt", "/.well-known"]
 
-  const redirectEnglishToRoot = ["/skylink-lab-privacy-policies", "/skylink-lab-terms-conditions"]
-
-  //bỏ qua các path cần ignore
   if (ignorePaths.some(path => pathname.startsWith(path))) {
     return NextResponse.next()
   }
 
-  if (pathname === "/favicon.ico" || pathname === "/en/favicon.ico") {
+  if (pathname === "/favicon.ico") {
     return NextResponse.rewrite(new URL("/favicon.ico", request.url))
-  }
-
-  if (redirectEnglishToRoot.some(path => pathname.startsWith(path))) {
-    return NextResponse.rewrite(new URL(`/en${pathname}`, request.url))
   }
 
   if (pathname.startsWith(`/${defaultLocale}/`) || pathname === `/${defaultLocale}`) {
