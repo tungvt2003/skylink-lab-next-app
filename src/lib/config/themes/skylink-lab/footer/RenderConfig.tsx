@@ -121,13 +121,17 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
                 {phone && (
                   <div className="flex gap-2">
                     <PhoneFilled className="text-base text-white font-medium rotate-90" />
-                    <p className="text-[#9E9E9E] text-[14px] sm:text-base font-semibold sm:text-start">{phone}</p>
+                    <p className="text-[#9E9E9E] text-[14px] sm:text-base font-semibold sm:text-start no-underline">
+                      {phone}
+                    </p>
                   </div>
                 )}
                 {email && (
                   <div className="flex gap-2">
                     <MailFilled className="text-base text-white font-medium" />
-                    <p className="text-[#9E9E9E] text-[14px] sm:text-base font-semibold sm:text-start">{email}</p>
+                    <p className="text-[#9E9E9E] text-[14px] sm:text-base font-semibold sm:text-start no-underline">
+                      {email}
+                    </p>
                   </div>
                 )}
               </div>
