@@ -81,7 +81,7 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
       <>
         {responsiveCSS}
         <div id={id}>
-          <div className="flex sm:flex-row flex-col flex-wrap pb-8 sm:pb-[40px]">
+          <div className="flex sm:flex-row flex-col justify-between flex-wrap pb-8 sm:pb-[40px]">
             <div className="flex flex-col items-center sm:items-start gap-5 sm:gap-6 sm:w-[45%] p-[10px] mb-5 sm:mb-0">
               <div className="">
                 <img src={configs.API_URL + img} alt="logo" className="w-[222px] h-[80px] object-fill" />
@@ -143,11 +143,11 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
                   ))}
               </div>
             </div>
-            <div className="flex w-full sm:w-[55%] flex-wrap">
+            <div className="flex w-full sm:w-[55%] flex-wrap sm:pl-20">
               {structuredMenu?.map((item, index) => (
                 <div
                   key={item?.id}
-                  className="h-full flex flex-col items-center sm:items-start gap-6 transition-opacity duration-300 group w-[50%] sm:w-[30%] p-[10px]"
+                  className="h-full flex flex-col items-center sm:items-start gap-6 transition-opacity duration-300 group w-[50%] py-[10px] px-5"
                 >
                   <a href={item.url}>
                     <span
@@ -156,7 +156,7 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
                       {item?.title}
                     </span>
                   </a>
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-3 sm:items-start items-center">
                     {item?.attribute &&
                       item?.attribute?.length > 0 &&
                       item.attribute.map((subItem, subIndex) => (
