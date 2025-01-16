@@ -80,7 +80,7 @@ export const RenderConfig: ComponentConfig<GridImageProps> = {
               key={id || index}
             >
               <div
-                className={`gridItem mx-[10px] md:mx-0 w-full sm:rounded-[25px] rounded-[15px] max-sm:w-full max-sm:my-[10px] sm:pb-[3px] pb-0 md:h-[350px]`}
+                className={`gridItem mx-[10px] md:mx-0 w-full sm:rounded-[25px] rounded-[15px] max-sm:w-full max-sm:my-[10px] sm:pb-[3px] pb-0 md:h-[300px]`}
                 onClick={() => handlePreview(image)}
               >
                 <img
