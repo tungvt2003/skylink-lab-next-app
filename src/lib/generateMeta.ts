@@ -74,7 +74,7 @@ export const generateMeta = async (args: {
       title: data?.SEO?.metaTitle || "SkyLink Labs",
       description: data?.SEO?.metaDescription || "Skylink Labs - Precision Through AI",
       type: "website",
-      url: `${configs.API_URL}${data?.SEO?.canonicalURL || ""}`,
+      url: `${configs.BASE_URL}${data?.SEO?.canonicalURL || ""}`,
       images: [
         {
           url:
