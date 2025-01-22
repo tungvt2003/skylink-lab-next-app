@@ -829,3 +829,27 @@ export interface AddCategoryPayload {
   slug: string
   description: string
 }
+
+export interface JobDetailProps {
+  JobTitle?: string
+  Location?: string
+  Type?: string
+  Description?: string
+  Slug?: string
+  Requirements?: {
+    name: string
+    text: string[]
+  }[]
+}
+
+export interface JobsResponse {
+  data: JobDetailData[]
+  meta: {
+    pagination: Pagination
+  }
+}
+
+export interface JobDetailData {
+  id: number
+  attributes: JobDetailProps
+}

@@ -38,6 +38,9 @@ import { ListKeyAI } from "./themes/skylink-lab/ListKeyAI/index"
 import { ProfileCustomerCard } from "./themes/skylink-lab/ProfileCustomerCard/index"
 import { SKLSimpleSlider } from "./themes/skylink-lab/SimpleSliders/index"
 import { SKLLabHeading } from "./themes/skylink-lab/SKLLabHeading/index"
+import { Benefits } from "./themes/skylink-studio/benefits/index"
+import { GridImageSKS } from "./themes/skylink-studio/GridImage/index"
+import { JobGrid } from "./themes/skylink-studio/JobGrid/index"
 
 export const uiBuilderComponents = {
   Container,
@@ -80,4 +83,7 @@ export const uiBuilderComponents = {
   ContactUsSKLLabs,
   GridImageSKL,
   SKLAutoSlider,
+  Benefits,
+  GridImageSKS,
+  JobGrid,
 }

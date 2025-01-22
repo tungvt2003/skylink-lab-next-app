@@ -35,6 +35,9 @@ import { ListKeyAI } from "./themes/skylink-lab/ListKeyAI/index"
 import { ProfileCustomerCard } from "./themes/skylink-lab/ProfileCustomerCard/index"
 import { SKLSimpleSlider } from "./themes/skylink-lab/SimpleSliders/index"
 import { SKLLabHeading } from "./themes/skylink-lab/SKLLabHeading"
+import { Benefits } from "./themes/skylink-studio/benefits/index"
+import { GridImageSKS } from "./themes/skylink-studio/GridImage/index"
+import { JobGrid } from "./themes/skylink-studio/JobGrid/index"
 
 const components = {
   Container,
@@ -79,6 +82,9 @@ const components = {
   ContactUsSKLLabs,
   GridImageSKL,
   SKLAutoSlider,
+  Benefits,
+  GridImageSKS,
+  JobGrid,
 }
 
 export const common = {
@@ -105,6 +111,10 @@ export const common = {
         // "PostGridByCategoryConfig",
         // "CustomTabs",
       ],
+    },
+    theme: {
+      title: "Themes - Skylink Studio",
+      components: ["GridImageSKS", "JobGrid", "Benefits"],
     },
     themesSKLLab: {
       title: "Themes - SKYLINK Lab",
@@ -209,6 +219,9 @@ import { RenderConfig as NewListKeyAI } from "./themes/skylink-lab/ListKeyAI/Ren
 import { RenderConfig as NewProfileCustomerCard } from "./themes/skylink-lab/ProfileCustomerCard/RenderConfig"
 import { RenderConfig as NewSimpleSliders } from "./themes/skylink-lab/SimpleSliders/RenderConfig"
 import { RenderConfig as NewSKLLabHeading } from "./themes/skylink-lab/SKLLabHeading/RenderConfig"
+import { RenderConfig as NewBenefits } from "./themes/skylink-studio/benefits/RenderConfig"
+import { RenderConfig as NewGridImageSKS } from "./themes/skylink-studio/GridImage/RenderConfig"
+import { RenderConfig as NewJobGrid } from "./themes/skylink-studio/JobGrid/RenderConfig"
 
 export const newRenderComponents = {
   Container: NewContainer,
@@ -253,6 +266,9 @@ export const newRenderComponents = {
   ContactUsSKLLabs: NewContactUsSKLLabs,
   GridImageSKL: NewGridImageSKL,
   SKLAutoSlider: NewSKLAutoSlider,
+  Benefits: NewBenefits,
+  GridImageSKS: NewGridImageSKS,
+  JobGrid: NewJobGrid,
 }
 
 // @ts-ignore
