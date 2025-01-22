@@ -1,6 +1,7 @@
 "use client"
 
 import { ComponentConfig } from "@measured/puck"
+import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 import { twMerge } from "tailwind-merge"
 import { getAllJobDetails } from "../../../../get-job-detail"
@@ -34,7 +35,6 @@ export interface SimpleGridProps extends CommonStylesProps {
   pagination?: "default" | "custom"
   breakpoint?: []
 }
-
 interface JobDetailProps {
   JobTitle?: string
   Location?: string
@@ -45,6 +45,13 @@ interface JobDetailProps {
     name: string
     text: string[]
   }[]
+  recruitment?: {
+    data: {
+      attributes: {
+        company: string
+      }
+    }
+  }
 }
 
 interface JobDetailResponse {
@@ -57,11 +64,15 @@ export const RenderConfig: ComponentConfig<SimpleGridProps> = {
     const id = `simple-slider-${Math.random().toString(36).substr(2, 9)}`
     const [jobDetailData, setJobDetailData] = useState<JobDetailResponse[]>()
     const [isMobile, setIsMobile] = useState(false)
-
+    const t = useTranslations()
     useEffect(() => {
       getAllJobDetails().then(data => {
-        setJobDetailData(data)
+        const filteredData = data.filter(
+          (job: JobDetailResponse) => job?.attributes?.recruitment?.data?.attributes?.company === "Skylink Labs",
+        )
+        setJobDetailData(filteredData)
       })
+
       const handleResize = () => {
         setIsMobile(window.innerWidth <= 768)
       }
@@ -100,9 +111,8 @@ export const RenderConfig: ComponentConfig<SimpleGridProps> = {
               <div
                 className={`gridItem relative transition-transform pt-[35px] pb-[38px] max-sm:pt-[30px] max-sm:pb-[20px] bg-[#F5F5F5] flex flex-col duration-300 mb-[15px] w-[231px] ease-in-out transform rounded-[15px] overflow-hidden max-sm:mt-[10px] group-hover:bg-[#A559F5]`}
               >
-                <div className="bg-[#1B1C1E] opacity-10  mb-[10px] rounded-[10px] flex justify-center items-center w-[104px] h-[40px] self-center"></div>
-                <div className="text-white text-center text-[17px] absolute left-[43%] top-[16%] font-semibold">
-                  <p className={`font-semibold`}>JOB</p>
+                <div className="text-white text-center text-[17px] font-semibold bg-[#cbc7c7] mb-[10px] rounded-[10px] flex justify-center items-center w-[104px] h-[40px] self-center">
+                  <p className={`font-semibold`}>{t("JOB")}</p>
                 </div>
                 <div className="text-center">
                   <h3 className="h-[50px] max-sm:text-[18px] duration-1000 transition-all ease-in-out transform  tracking-[0.4px] group-hover:text-[#fff] font-bold md:text-[20px] leading-[22px] my-[10px] px-2 ">
@@ -113,10 +123,10 @@ export const RenderConfig: ComponentConfig<SimpleGridProps> = {
                   </p>
                 </div>
                 <a
-                  href={`/careers/${attributes.Slug}`}
+                  href={`https://careers.skylink.vn/skylink-tuyen-dung/${attributes.Slug}`}
                   className="flex flex-row justify-center items-center self-center bg-labs-primary text-white w-[146px] h-[40px] rounded-[40px] text-[15px] duration-500 transition-all ease-in-out group-hover:bg-labs-secondary hover:!bg-labs-secondary"
                 >
-                  <p>View Job Detail</p>
+                  <p>{t("View Job Detail")}</p>
                 </a>
               </div>
             </div>
