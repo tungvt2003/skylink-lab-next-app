@@ -40,6 +40,9 @@ import { ListKeyAI } from "./themes/skylink-lab/ListKeyAI"
 import { ProfileCustomerCard } from "./themes/skylink-lab/ProfileCustomerCard"
 import { SKLSimpleSlider } from "./themes/skylink-lab/SimpleSliders"
 import { SKLLabHeading } from "./themes/skylink-lab/SKLLabHeading"
+import { Benefits } from "./themes/skylink-studio/benefits"
+import { GridImageSKS } from "./themes/skylink-studio/GridImage"
+import { JobGrid } from "./themes/skylink-studio/JobGrid"
 
 export const renderConfig: Config = {
   components: {
@@ -86,6 +89,9 @@ export const renderConfig: Config = {
     ContactUsSKLLabs,
     GridImageSKL,
     SKLAutoSlider,
+    Benefits,
+    JobGrid,
+    GridImageSKS,
   },
   // ...commonConfig,
   categories: {
@@ -111,6 +117,10 @@ export const renderConfig: Config = {
         "PostGridByCategoryConfig",
         "CustomTabs",
       ],
+    },
+    theme: {
+      title: "Themes - Skylink Studio",
+      components: ["GridImageSKS", "JobGrid", "Benefits"],
     },
     themesSKLLab: {
       title: "Themes - SKYLINK Lab",

@@ -38,6 +38,9 @@ import { RenderConfig as ListKeyAI } from "./themes/skylink-lab/ListKeyAI/Render
 import { RenderConfig as ProfileCustomerCard } from "./themes/skylink-lab/ProfileCustomerCard/RenderConfig"
 import { RenderConfig as SKLSimpleSlider } from "./themes/skylink-lab/SimpleSliders/RenderConfig"
 import { RenderConfig as SKLLabHeading } from "./themes/skylink-lab/SKLLabHeading/RenderConfig"
+import { RenderConfig as Benefits } from "./themes/skylink-studio/benefits/RenderConfig"
+import { RenderConfig as GridImageSKS } from "./themes/skylink-studio/GridImage/RenderConfig"
+import { RenderConfig as JobGrid } from "./themes/skylink-studio/JobGrid/RenderConfig"
 
 export const renderComponents = {
   Container,
@@ -80,4 +83,7 @@ export const renderComponents = {
   ContactUsSKLLabs,
   GridImageSKL,
   SKLAutoSlider,
+  JobGrid,
+  GridImageSKS,
+  Benefits,
 }
