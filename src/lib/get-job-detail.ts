@@ -15,7 +15,6 @@ export const getJobDetailBySlug = async (slug: string) => {
 
 export const getAllJobDetails = async () => {
   const response = await httpClient.get<{ data: any }>("job-details?populate=*&publicationState=preview")
-  console.log(response.data, "response.data")
   return response.data
 }
 
