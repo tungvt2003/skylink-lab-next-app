@@ -79,13 +79,13 @@ export const RenderConfig: ComponentConfig<GridImageProps> = {
               key={id || index}
             >
               <div
-                className={`gridItem mx-[10px] md:mx-0 w-full sm:rounded-[25px] rounded-[15px] max-sm:w-full max-sm:my-[10px] sm:pb-[3px] pb-0 md:h-[300px]`}
+                className={`gridItem mx-[10px] md:mx-0 w-full sm:rounded-[25px] rounded-[15px] max-sm:w-full max-sm:my-[10px] sm:pb-[3px] pb-0 md:h-[340px]`}
                 onClick={() => handlePreview(image)}
               >
                 <img
                   src={image ? `${configs.API_URL}${image}` : DefaultImage}
                   alt={`Slide ${index}`}
-                  className={`md:w-full max-sm:w-full max-sm:h-[153px] hover:scale-105 duration-500 ease-in-out transform sm:rounded-[25px] rounded-[15px] md:h-full`}
+                  className={`md:w-full max-sm:w-full max-sm:h-[200px] hover:scale-105 duration-500 ease-in-out transform sm:rounded-[25px] rounded-[15px] md:h-full`}
                 />
               </div>
             </div>
