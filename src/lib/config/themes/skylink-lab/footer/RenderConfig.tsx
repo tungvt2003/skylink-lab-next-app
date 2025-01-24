@@ -159,7 +159,7 @@ export const RenderConfig: ComponentConfig<FooterProps> = {
                 >
                   <a href={item.url}>
                     <span
-                      className={`menu-item item-${index} flex items-center text-lg font-semibold text-white transition-all duration-300`}
+                      className={`menu-item item-${index} flex items-center text-center text-lg font-semibold text-white transition-all duration-300`}
                     >
                       {item?.title}
                     </span>
