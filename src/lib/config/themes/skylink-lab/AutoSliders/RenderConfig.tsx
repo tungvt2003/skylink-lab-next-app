@@ -73,7 +73,7 @@ export const RenderConfig: ComponentConfig<SimpleSliderProps> = {
                   <img
                     src={image ? `${configs.API_URL}${image}` : DefaultImage}
                     alt={`Slide ${index}`}
-                    className="sm:h-[520px] sm:object-cover aspect-[1200/690] w-full"
+                    className="sm:h-[520px] h-[220px] sm:object-cover aspect-[1200/690] w-full"
                   />
                 </div>
               </a>
