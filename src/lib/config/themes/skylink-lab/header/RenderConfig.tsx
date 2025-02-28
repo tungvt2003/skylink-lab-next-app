@@ -39,6 +39,8 @@ export interface SKLLabHeaderProps extends CommonStylesProps {
   title?: string
   idMenu: string
   titleButton: string
+  urlIos: string
+  urlAndroid: string
 }
 
 interface MenuItem {
@@ -47,7 +49,7 @@ interface MenuItem {
   url: string
 }
 export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
-  render: ({ img, title, idMenu, responsiveType, styles, imgTop, titleButton }) => {
+  render: ({ img, title, idMenu, responsiveType, styles, imgTop, titleButton, urlAndroid, urlIos }) => {
     const id = `header-${Math.random().toString(36).substr(2, 9)}`
     const responsiveCSS = generateResponsiveCSS(id, styles || {}, responsiveType)
     const t = useTranslations()
@@ -59,6 +61,11 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
     const [isTop, setIsTop] = useState(true)
     const [isHome, setIsHome] = useState(false)
     const [isClient, setIsClient] = useState(false)
+    const isIOS =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+    const isAndroid = /Android/.test(navigator.userAgent)
+
+    const appLink = isIOS ? urlIos : isAndroid ? urlAndroid : urlIos
 
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen)
@@ -183,19 +190,16 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                 <div className="hidden sm:block">
                   <LocalSwitcher />
                 </div>
-                <button
+                <a
+                  href={appLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`py-[13px] px-5 ${
                     isHome ? (isTop ? "bg-white text-black" : "bg-white text-black") : "bg-white text-black"
                   } hover:bg-labs-secondary hover:text-white duration-300 text-sm leading-4 font-medium rounded-full`}
                 >
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.skylinklabs.magicswap&pli=1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {t("Get the app")}
-                  </a>
-                </button>
+                  {t(titleButton)}
+                </a>
                 <div>
                   <div className="sm:hidden block">
                     {!isMenuOpen && (
@@ -288,9 +292,14 @@ export const RenderConfig: ComponentConfig<SKLLabHeaderProps> = {
                           ))}
                       </nav>
 
-                      <button className="inline-block w-[calc(95%-10px)] mx-auto bg-labs-primary hover:bg-labs-secondary duration-300 text-white rounded-full px-6 py-4 text-sm font-medium mt-auto mb-[25%]">
-                        {titleButton}
-                      </button>
+                      <a
+                        href={appLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block text-center w-[calc(95%-10px)] mx-auto bg-labs-primary hover:bg-labs-secondary duration-300 text-white rounded-full px-6 py-4 text-sm font-medium mt-auto mb-[25%]"
+                      >
+                        {t(titleButton)}
+                      </a>
                     </div>
                   )}
                 </div>
