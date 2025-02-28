@@ -148,11 +148,11 @@ export const RenderConfig: ComponentConfig<ContactUsProps> = {
 
                 <div className="flex gap-2">
                   <PhoneFilled className="text-base text-black font-medium rotate-90" />
-                  <p className="text-[14px] sm:text-base text-[#3f4349] font-medium no-underline">{phone}</p>
+                  <a className="text-[14px] sm:text-base text-[#3f4349] font-medium no-underline">{phone}</a>
                 </div>
                 <div className="flex gap-2">
                   <MailFilled className="text-base text-black font-medium" />
-                  <p className="text-[14px] sm:text-base text-[#3f4349] font-medium no-underline">{formData.emailTo}</p>
+                  <a className="text-[14px] sm:text-base text-[#3f4349] font-medium no-underline">{formData.emailTo}</a>
                 </div>
               </div>
               <div className="sm:h-[451px] h-[241px] overflow-scroll sm:mt-[35px] mt-[25px]">
