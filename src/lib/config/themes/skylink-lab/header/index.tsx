@@ -172,6 +172,14 @@ export const SKLLabHeader: ComponentConfig<SKLLabHeaderProps> = {
       label: "Title Button",
       type: "text",
     },
+    urlIos: {
+      label: "URL IOS",
+      type: "text",
+    },
+    urlAndroid: {
+      label: "URL Android",
+      type: "text",
+    },
 
     ...commonStylesProps,
   },
@@ -191,6 +199,8 @@ export const SKLLabHeader: ComponentConfig<SKLLabHeaderProps> = {
     },
     idMenu: "17",
     titleButton: "Get the app",
+    urlIos: "https://apps.apple.com/vn/app/magicswap-photo-editor-ai/id6504757719",
+    urlAndroid: "https://play.google.com/store/apps/details?id=com.skylinklabs.magicswap&pli=1",
   },
 
   ...RenderConfig,
